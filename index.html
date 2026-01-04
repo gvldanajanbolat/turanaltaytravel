@@ -49,9 +49,14 @@
         .hero { 
             height: 100vh; 
             background: linear-gradient(rgba(10,46,31,0.5), rgba(10,46,31,0.5)), 
-                        url('hero..JPG'); 
-            background-size: cover; background-position: center; background-attachment: fixed;
-            display: flex; justify-content: center; align-items: center; text-align: center;
+                        url('Hero..JPG'); 
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center;
         }
         .hero-inner { border: 1px solid var(--gold); padding: 40px; background: rgba(10,46,31,0.3); backdrop-filter: blur(5px); }
         .hero-inner h2 { color: var(--gold); font-size: 3rem; text-transform: uppercase; letter-spacing: 4px; margin: 0; }
@@ -65,6 +70,7 @@
         .image-container:hover img { transform: scale(1.06); }
         .text-container { max-width: 750px; text-align: center; margin-top: 35px; }
         .text-container h3 { font-size: 2.2rem; color: var(--deep-green); text-transform: uppercase; margin-bottom: 15px; letter-spacing: 2px; }
+        .text-container p { font-size: 1.15rem; line-height: 1.8; color: #444; }
 
         /* INCLUSIONS */
         .inclusions-section { padding: 80px 10%; background-color: white; text-align: center; }
@@ -79,7 +85,7 @@
         .nauryz-highlight { background: linear-gradient(rgba(197, 160, 89, 0.12), rgba(10, 46, 31, 0.05)) !important; border-top: 4px solid var(--gold); border-bottom: 4px solid var(--gold); }
         .nauryz-badge { background: var(--gold); color: var(--deep-green); padding: 7px 25px; font-weight: bold; margin-bottom: 20px; display: inline-block; }
 
-        /* PRICING */
+        /* PRICE BANNER */
         .price-banner { background: var(--deep-green); color: var(--gold); padding: 90px 5%; text-align: center; }
         .price-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 45px; }
         .price-box { border: 1px solid var(--gold); padding: 35px; width: 260px; }
@@ -115,17 +121,15 @@
 
 <div class="tour-section">
     <div class="image-container"><img src="altay.JPG" alt="Altay"></div>
-    <div class="text-container"><h3>The Majestic Altay</h3><p>Explore the cradle of nomadic civilization where nature meets the sky.</p></div>
+    <div class="text-container">
+        <h3>The Majestic Altay Peaks</h3>
+        <p>Step into the land where the eternal snow-capped mountains touch the blue sky. The Altai is not just a destination; it's a sacred sanctuary of the nomadic soul, where the air is pure and the spirit of freedom reigns supreme. Feel the awe-inspiring power of our ancestral peaks.</p>
+    </div>
 </div>
 
 <div class="tour-section">
     <div class="image-container"><img src="eagle..jpg" alt="Eagle"></div>
-    <div class="text-container"><h3>Master of the Skies</h3><p>Experience the thousand-year-old tradition of golden eagle hunting.</p></div>
-</div>
-
-<div class="tour-section">
-    <div class="image-container"><img src="stones..JPG" alt="Stones"></div>
-    <div class="text-container"><h3>Ancient Whispers</h3><p>Sacred balbals and petroglyphs—silent witnesses of history.</p></div>
+    <div class="text-container"><h3>Master of the Skies</h3><p>Witness the timeless bond between the nomad and the Golden Eagle, a symbol of pride and majesty.</p></div>
 </div>
 
 <div class="tour-section nauryz-highlight">
@@ -133,25 +137,21 @@
     <div class="image-container"><img src="nauryz.JPG" alt="Nauryz"></div>
     <div class="text-container">
         <h3 style="color: #b38b4d;">The Great Nauryz Festival</h3>
-        <p>Celebrate the nomadic New Year with traditional games and festivities.</p>
-        <div style="font-size: 2.2rem; color: var(--deep-green); font-weight: bold; margin-top: 15px;">$4000</div>
+        <p>Celebrate the renewal of nature and the Great Steppe’s New Year with horse games, archery, and nomadic hospitality.</p>
+        <div style="font-size: 2.2rem; color: var(--deep-green); font-weight: bold; margin-top: 15px;">$5000</div>
     </div>
 </div>
 
 <div class="tour-section">
-    <div class="image-container"><img src="lake..JPG" alt="Lake"></div>
-    <div class="text-container"><h3>Turquoise Mirrors</h3><p>Pristine alpine lakes reflecting the eternal glaciers.</p></div>
-</div>
-
-<div class="tour-section">
-    <div class="image-container"><img src="camel..JPG" alt="Camel"></div>
-    <div class="text-container"><h3>Nomadic Caravan</h3><p>Journey through the vast steppe on a traditional camel trek.</p></div>
-</div>
-
-<div class="tour-section">
     <div class="image-container"><img src="yurt..JPG" alt="Yurt"></div>
-    <div class="text-container"><h3>The White Home</h3><p>Authentic luxury yurt stays under a thousand stars.</p></div>
+    <div class="text-container">
+        <h3>The Sacred Kazakh Yurt</h3>
+        <p>Experience life in an authentic Kazakh ethno-home. The yurt is a masterpiece of nomadic architecture—a cozy, ecological, and spiritual dwelling. Surrounded by the tranquility of the mountains, you will sleep under a canopy of stars, feeling the warmth of true nomadic culture.</p>
+    </div>
 </div>
+
+<div class="tour-section"><div class="image-container"><img src="stones..JPG" alt="Stones"></div><div class="text-container"><h3>Ancient Whispers</h3><p>Sacred balbals and petroglyphs—silent witnesses of history.</p></div></div>
+<div class="tour-section"><div class="image-container"><img src="lake..JPG" alt="Lake"></div><div class="text-container"><h3>Turquoise Mirrors</h3><p>Pristine alpine lakes reflecting the eternal glaciers.</p></div></div>
 
 <section class="inclusions-section">
     <h3 style="font-size: 2.5rem; color: var(--deep-green); text-transform: uppercase;">Full Service Package</h3>
@@ -186,9 +186,8 @@
 <div class="price-banner">
     <h2>EXPEDITION PRICING</h2>
     <div class="price-grid">
-        <div class="price-box"><h4>Solo Explorer</h4><span>$500</span></div>
+        <div class="price-box"><h4>Solo Explorer</h4><span>$5000</span></div>
         <div class="price-box" style="background:rgba(197, 160, 89, 0.1)"><h4>Group (2+)</h4><span>$4500</span></div>
-        <div class="price-box"><h4>Nauryz Tour</h4><span>$4000</span></div>
     </div>
     <a href="https://wa.me/97688460210" class="btn-booking">Book Your Journey Now</a>
 </div>
@@ -197,3 +196,5 @@
 
 </body>
 </html>
+
+        
