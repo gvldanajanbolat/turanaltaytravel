@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turan Altay Travel | Spirit of Freedom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { 
+            --deep-green: #0a2e1f; 
+            --gold: #c5a059; 
+            --white: #ffffff;
+            --soft-bg: #fdfdfd;
+        }
+        
+        body { margin: 0; font-family: 'Georgia', serif; background-color: var(--soft-bg); color: #333; scroll-behavior: smooth; }
+
+        /* HEADER */
+        header { 
+            background-color: var(--deep-green); 
+            padding: 10px 5%; 
+            position: sticky; top: 0;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 2px solid var(--gold);
+            z-index: 1000;
+            min-height: 75px;
+        }
+
+        .header-ornament {
+            position: absolute; top: 0; left: 0;
+            width: 85px; height: 85px;
+            background-image: url('ornament.png');
+            background-size: contain; background-repeat: no-repeat;
+            z-index: 1; pointer-events: none;
+        }
+
+        .logo-box { display: flex; align-items: center; z-index: 5; margin-left: 25px; }
+        .logo-img { height: 45px; width: auto; margin-right: 12px; }
+        
+        .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+        .logo-text h1 { margin: 0; font-size: 1.2rem; color: var(--gold); text-transform: uppercase; font-weight: bold; }
+        .logo-text span { color: var(--gold); font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; opacity: 0.9; }
+
+        .contacts { text-align: right; color: white; z-index: 5; font-family: Arial, sans-serif; }
+        .contacts a { color: white; text-decoration: none; display: block; font-size: 0.8rem; margin-bottom: 2px; }
+        .contacts i { color: var(--gold); margin-right: 5px; }
+
+        /* HERO SECTION */
+        .hero { 
+            height: 100vh; 
+            background: linear-gradient(rgba(10,46,31,0.5), rgba(10,46,31,0.5)), 
+                        url('hero..JPG'); 
+            background-size: cover; background-position: center; background-attachment: fixed;
+            display: flex; justify-content: center; align-items: center; text-align: center;
+        }
+        .hero-inner { border: 1px solid var(--gold); padding: 40px; background: rgba(10,46,31,0.3); backdrop-filter: blur(5px); }
+        .hero-inner h2 { color: var(--gold); font-size: 3rem; text-transform: uppercase; letter-spacing: 4px; margin: 0; }
+        .hero-inner p { color: white; font-size: 1.3rem; font-style: italic; margin-top: 15px; }
+
+        /* TOUR SECTIONS */
+        .tour-section { padding: 80px 10%; display: flex; flex-direction: column; align-items: center; border-bottom: 1px solid #eee; }
+        .tour-section:nth-child(even) { background-color: #f9f9f9; }
+        .image-container { width: 100%; max-width: 900px; height: 500px; overflow: hidden; border: 1px solid var(--gold); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .image-container img { width: 100%; height: 100%; object-fit: cover; transition: 1.2s ease; }
+        .image-container:hover img { transform: scale(1.06); }
+        .text-container { max-width: 750px; text-align: center; margin-top: 35px; }
+        .text-container h3 { font-size: 2.2rem; color: var(--deep-green); text-transform: uppercase; margin-bottom: 15px; letter-spacing: 2px; }
+
+        /* INCLUSIONS */
+        .inclusions-section { padding: 80px 10%; background-color: white; text-align: center; }
+        .inclusions-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 40px; }
+        .incl-item { width: 300px; text-align: left; background: #fbfbfb; padding: 25px; border-left: 4px solid var(--gold); }
+        .incl-item h4 { color: var(--deep-green); margin-bottom: 15px; text-transform: uppercase; }
+        .incl-item ul { list-style: none; padding: 0; }
+        .incl-item li { padding: 8px 0; font-size: 1rem; color: #444; border-bottom: 1px dashed #eee; }
+        .incl-item i { color: var(--gold); margin-right: 12px; }
+
+        /* NAURYZ SPECIAL */
+        .nauryz-highlight { background: linear-gradient(rgba(197, 160, 89, 0.12), rgba(10, 46, 31, 0.05)) !important; border-top: 4px solid var(--gold); border-bottom: 4px solid var(--gold); }
+        .nauryz-badge { background: var(--gold); color: var(--deep-green); padding: 7px 25px; font-weight: bold; margin-bottom: 20px; display: inline-block; }
+
+        /* PRICING */
+        .price-banner { background: var(--deep-green); color: var(--gold); padding: 90px 5%; text-align: center; }
+        .price-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 45px; }
+        .price-box { border: 1px solid var(--gold); padding: 35px; width: 260px; }
+        .price-box span { display: block; font-size: 2.6rem; font-weight: bold; margin-top: 15px; }
+
+        .btn-booking { display: inline-block; padding: 20px 60px; margin-top: 50px; background: var(--gold); color: var(--deep-green); text-decoration: none; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
+        .btn-booking:hover { background: var(--white); transform: translateY(-3px); }
+
+        footer { background: #051a11; color: #777; text-align: center; padding: 50px; }
+        @media (max-width: 768px) { .image-container { height: 320px; } header { flex-direction: column; gap: 15px; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-ornament"></div>
+    <div class="logo-box">
+        <img src="logo.JPG" alt="Logo" class="logo-img">
+        <div class="logo-text"><h1>Turan Altay</h1><span>Travel</span></div>
+    </div>
+    <div class="contacts">
+        <a href="https://wa.me/97688460210"><i class="fab fa-whatsapp"></i> +976 88460210</a>
+        <a href="mailto:turanaltaytravel@gmail.com"><i class="fas fa-envelope"></i> turanaltaytravel@gmail.com</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-inner">
+        <h2>The Spirit of Altai</h2>
+        <p>"A spiritual journey to reconnect with your ancestral roots."</p>
+    </div>
+</section>
+
+<div class="tour-section">
+    <div class="image-container"><img src="altay.jpg" alt="Altay"></div>
+    <div class="text-container"><h3>The Majestic Altay</h3><p>Explore the cradle of nomadic civilization where nature meets the sky.</p></div>
+</div>
+
+<div class="tour-section">
+    <div class="image-container"><img src="eagle..jpg" alt="Eagle"></div>
+    <div class="text-container"><h3>Master of the Skies</h3><p>Experience the thousand-year-old tradition of golden eagle hunting.</p></div>
+</div>
+
+<div class="tour-section">
+    <div class="image-container"><img src="stones..JPG" alt="Stones"></div>
+    <div class="text-container"><h3>Ancient Whispers</h3><p>Sacred balbals and petroglyphs—silent witnesses of history.</p></div>
+</div>
+
+<div class="tour-section nauryz-highlight">
+    <div class="nauryz-badge">March 21-23 Exclusive</div>
+    <div class="image-container"><img src="nauryz.JPG" alt="Nauryz"></div>
+    <div class="text-container">
+        <h3 style="color: #b38b4d;">The Great Nauryz Festival</h3>
+        <p>Celebrate the nomadic New Year with traditional games and festivities.</p>
+        <div style="font-size: 2.2rem; color: var(--deep-green); font-weight: bold; margin-top: 15px;">$4000</div>
+    </div>
+</div>
+
+<div class="tour-section">
+    <div class="image-container"><img src="lake..JPG" alt="Lake"></div>
+    <div class="text-container"><h3>Turquoise Mirrors</h3><p>Pristine alpine lakes reflecting the eternal glaciers.</p></div>
+</div>
+
+<div class="tour-section">
+    <div class="image-container"><img src="camel..JPG" alt="Camel"></div>
+    <div class="text-container"><h3>Nomadic Caravan</h3><p>Journey through the vast steppe on a traditional camel trek.</p></div>
+</div>
+
+<div class="tour-section">
+    <div class="image-container"><img src="yurt..JPG" alt="Yurt"></div>
+    <div class="text-container"><h3>The White Home</h3><p>Authentic luxury yurt stays under a thousand stars.</p></div>
+</div>
+
+<section class="inclusions-section">
+    <h3 style="font-size: 2.5rem; color: var(--deep-green); text-transform: uppercase;">Full Service Package</h3>
+    <div class="inclusions-grid">
+        <div class="incl-item">
+            <h4>Tickets & Transport</h4>
+            <ul>
+                <li><i class="fas fa-plane"></i> <b>Ulaanbaatar ↔ Olgii</b> Flight Tickets</li>
+                <li><i class="fas fa-car-side"></i> Professional 4x4 Off-road Vehicles</li>
+                <li><i class="fas fa-shuttle-van"></i> Airport Pick-up & Drop-off</li>
+            </ul>
+        </div>
+        <div class="incl-item">
+            <h4>Expert Team</h4>
+            <ul>
+                <li><i class="fas fa-user-check"></i> <b>Qualified Specialist Guide</b></li>
+                <li><i class="fas fa-language"></i> <b>Professional Translator</b></li>
+                <li><i class="fas fa-shield-alt"></i> Safety & Security Support</li>
+            </ul>
+        </div>
+        <div class="incl-item">
+            <h4>Stay & Food</h4>
+            <ul>
+                <li><i class="fas fa-hotel"></i> Premium Hotels & Luxury Yurts</li>
+                <li><i class="fas fa-utensils"></i> 3 High-quality Traditional Meals</li>
+                <li><i class="fas fa-map-pin"></i> All Local Area Permits</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="price-banner">
+    <h2>EXPEDITION PRICING</h2>
+    <div class="price-grid">
+        <div class="price-box"><h4>Solo Explorer</h4><span>$500</span></div>
+        <div class="price-box" style="background:rgba(197, 160, 89, 0.1)"><h4>Group (2+)</h4><span>$4500</span></div>
+        <div class="price-box"><h4>Nauryz Tour</h4><span>$4000</span></div>
+    </div>
+    <a href="https://wa.me/97688460210" class="btn-booking">Book Your Journey Now</a>
+</div>
+
+<footer><p>© 2026 TURAN ALTAY TRAVEL | SPIRIT OF FREEDOM</p></footer>
+
+</body>
+</html>
