@@ -26,14 +26,6 @@
             min-height: 75px;
         }
 
-        .header-ornament {
-            position: absolute; top: 0; left: 0;
-            width: 85px; height: 85px;
-            background-image: url('ornament.png');
-            background-size: contain; background-repeat: no-repeat;
-            z-index: 1; pointer-events: none;
-        }
-
         .logo-box { display: flex; align-items: center; z-index: 5; margin-left: 25px; }
         .logo-img { height: 45px; width: auto; margin-right: 12px; }
         
@@ -53,10 +45,7 @@
             background-size: cover; 
             background-position: center; 
             background-attachment: fixed;
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            text-align: center;
+            display: flex; justify-content: center; align-items: center; text-align: center;
         }
         .hero-inner { border: 1px solid var(--gold); padding: 40px; background: rgba(10,46,31,0.3); backdrop-filter: blur(5px); }
         .hero-inner h2 { color: var(--gold); font-size: 3rem; text-transform: uppercase; letter-spacing: 4px; margin: 0; }
@@ -72,24 +61,14 @@
         .text-container h3 { font-size: 2.2rem; color: var(--deep-green); text-transform: uppercase; margin-bottom: 15px; letter-spacing: 2px; }
         .text-container p { font-size: 1.15rem; line-height: 1.8; color: #444; }
 
-        /* INCLUSIONS */
-        .inclusions-section { padding: 80px 10%; background-color: white; text-align: center; }
-        .inclusions-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 40px; }
-        .incl-item { width: 300px; text-align: left; background: #fbfbfb; padding: 25px; border-left: 4px solid var(--gold); }
-        .incl-item h4 { color: var(--deep-green); margin-bottom: 15px; text-transform: uppercase; }
-        .incl-item ul { list-style: none; padding: 0; }
-        .incl-item li { padding: 8px 0; font-size: 1rem; color: #444; border-bottom: 1px dashed #eee; }
-        .incl-item i { color: var(--gold); margin-right: 12px; }
-
-        /* NAURYZ SPECIAL */
-        .nauryz-highlight { background: linear-gradient(rgba(197, 160, 89, 0.12), rgba(10, 46, 31, 0.05)) !important; border-top: 4px solid var(--gold); border-bottom: 4px solid var(--gold); }
-        .nauryz-badge { background: var(--gold); color: var(--deep-green); padding: 7px 25px; font-weight: bold; margin-bottom: 20px; display: inline-block; }
+        .discount-badge { background: #e74c3c; color: white; padding: 5px 15px; border-radius: 5px; font-size: 0.9rem; font-weight: bold; margin-bottom: 10px; display: inline-block; }
 
         /* PRICE BANNER */
         .price-banner { background: var(--deep-green); color: var(--gold); padding: 90px 5%; text-align: center; }
         .price-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 45px; }
-        .price-box { border: 1px solid var(--gold); padding: 35px; width: 260px; }
+        .price-box { border: 1px solid var(--gold); padding: 35px; width: 280px; position: relative; }
         .price-box span { display: block; font-size: 2.6rem; font-weight: bold; margin-top: 15px; }
+        .price-box p { font-size: 0.85rem; color: var(--white); opacity: 0.8; margin-top: 10px; }
 
         .btn-booking { display: inline-block; padding: 20px 60px; margin-top: 50px; background: var(--gold); color: var(--deep-green); text-decoration: none; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
         .btn-booking:hover { background: var(--white); transform: translateY(-3px); }
@@ -101,7 +80,6 @@
 <body>
 
 <header>
-    <div class="header-ornament"></div>
     <div class="logo-box">
         <img src="logo.JPG" alt="Logo" class="logo-img">
         <div class="logo-text"><h1>Turan Altay</h1><span>Travel</span></div>
@@ -129,16 +107,27 @@
 
 <div class="tour-section">
     <div class="image-container"><img src="eagle..jpg" alt="Eagle"></div>
-    <div class="text-container"><h3>Master of the Skies</h3><p>Witness the timeless bond between the nomad and the Golden Eagle, a symbol of pride and majesty.</p></div>
+    <div class="text-container">
+        <h3>Masters of the Skies: The Eagle Hunters</h3>
+        <p>Witness a legacy that spans over a millennium. This is not just hunting; it is a sacred dialogue between man and the Golden Eagle. Feel the pride and bravery of the nomadic warriors as they carry on this noble tradition in the heart of the Altai.</p>
+    </div>
 </div>
 
-<div class="tour-section nauryz-highlight">
-    <div class="nauryz-badge">March 21-23 Exclusive</div>
+<div class="tour-section">
+    <div class="image-container"><img src="stones..JPG" alt="Stones"></div>
+    <div class="text-container">
+        <h3>Ancient Whispers: The Path of Ancestors</h3>
+        <p>Touch the history carved in stone. Sacred balbals and mysterious petroglyphs stand as silent guardians of the Great Steppe’s secrets. Standing here, you connect with the souls of our ancestors and the timeless continuity of life.</p>
+    </div>
+</div>
+
+<div class="tour-section" style="background: #fdf8ef;">
     <div class="image-container"><img src="nauryz.JPG" alt="Nauryz"></div>
     <div class="text-container">
-        <h3 style="color: #b38b4d;">The Great Nauryz Festival</h3>
-        <p>Celebrate the renewal of nature and the Great Steppe’s New Year with horse games, archery, and nomadic hospitality.</p>
-        <div style="font-size: 2.2rem; color: var(--deep-green); font-weight: bold; margin-top: 15px;">$5000</div>
+        <div class="discount-badge">Festival Offer</div>
+        <h3 style="color: #b38b4d;">The Great Nauryz: Renewal of the Soul</h3>
+        <p>When nature awakens, the Nomadic New Year arrives. Join a celebration of harmony and abundance with traditional horse games and boundless hospitality. A spiritual rebirth in the cradle of civilization.</p>
+        <div style="font-size: 2.2rem; color: var(--deep-green); font-weight: bold; margin-top: 15px;">$4000</div>
     </div>
 </div>
 
@@ -146,50 +135,40 @@
     <div class="image-container"><img src="yurt..JPG" alt="Yurt"></div>
     <div class="text-container">
         <h3>The Sacred Kazakh Yurt</h3>
-        <p>Experience life in an authentic Kazakh ethno-home. The yurt is a masterpiece of nomadic architecture—a cozy, ecological, and spiritual dwelling. Surrounded by the tranquility of the mountains, you will sleep under a canopy of stars, feeling the warmth of true nomadic culture.</p>
+        <p>Experience life in an authentic Kazakh ethno-home—a masterpiece of nomadic architecture. Ecological, cozy, and spiritual, the yurt offers a unique stay where you can sleep under a canopy of stars, wrapped in the warmth of ancient culture.</p>
     </div>
 </div>
 
-<div class="tour-section"><div class="image-container"><img src="stones..JPG" alt="Stones"></div><div class="text-container"><h3>Ancient Whispers</h3><p>Sacred balbals and petroglyphs—silent witnesses of history.</p></div></div>
-<div class="tour-section"><div class="image-container"><img src="lake..JPG" alt="Lake"></div><div class="text-container"><h3>Turquoise Mirrors</h3><p>Pristine alpine lakes reflecting the eternal glaciers.</p></div></div>
-
-<section class="inclusions-section">
-    <h3 style="font-size: 2.5rem; color: var(--deep-green); text-transform: uppercase;">Full Service Package</h3>
-    <div class="inclusions-grid">
-        <div class="incl-item">
-            <h4>Tickets & Transport</h4>
-            <ul>
-                <li><i class="fas fa-plane"></i> <b>Ulaanbaatar ↔ Olgii</b> Flight Tickets</li>
-                <li><i class="fas fa-car-side"></i> Professional 4x4 Off-road Vehicles</li>
-                <li><i class="fas fa-shuttle-van"></i> Airport Pick-up & Drop-off</li>
-            </ul>
-        </div>
-        <div class="incl-item">
-            <h4>Expert Team</h4>
-            <ul>
-                <li><i class="fas fa-user-check"></i> <b>Qualified Specialist Guide</b></li>
-                <li><i class="fas fa-language"></i> <b>Professional Translator</b></li>
-                <li><i class="fas fa-shield-alt"></i> Safety & Security Support</li>
-            </ul>
-        </div>
-        <div class="incl-item">
-            <h4>Stay & Food</h4>
-            <ul>
-                <li><i class="fas fa-hotel"></i> Premium Hotels & Luxury Yurts</li>
-                <li><i class="fas fa-utensils"></i> 3 High-quality Traditional Meals</li>
-                <li><i class="fas fa-map-pin"></i> All Local Area Permits</li>
-            </ul>
-        </div>
+<div class="tour-section">
+    <div class="image-container"><img src="lake..JPG" alt="Lake"></div>
+    <div class="text-container">
+        <h3>Turquoise Mirrors of the Soul</h3>
+        <p>Gaze into the crystal-clear alpine lakes reflecting the eternal glaciers. These sacred waters offer a moment of absolute silence and spiritual reflection, far from the noise of the modern world.</p>
     </div>
-</section>
+</div>
 
 <div class="price-banner">
     <h2>EXPEDITION PRICING</h2>
     <div class="price-grid">
-        <div class="price-box"><h4>Solo Explorer</h4><span>$5000</span></div>
-        <div class="price-box" style="background:rgba(197, 160, 89, 0.1)"><h4>Group (2+)</h4><span>$4500</span></div>
+        <div class="price-box">
+            <h4>Solo Explorer</h4>
+            <span>$5000</span>
+            <p>Full-service premium expedition</p>
+        </div>
+        <div class="price-box" style="background:rgba(197, 160, 89, 0.1)">
+            <div class="discount-badge" style="position:absolute; top:-15px; left:50%; transform:translateX(-50%);">5% OFF</div>
+            <h4>Groups (5+ people)</h4>
+            <span>$4750</span>
+            <p>Per person for larger groups</p>
+        </div>
+        <div class="price-box">
+            <h4>Nauryz Special</h4>
+            <span>$4000</span>
+            <p>Exclusive March 20-25 Tour</p>
+        </div>
     </div>
     <a href="https://wa.me/97688460210" class="btn-booking">Book Your Journey Now</a>
+    <p style="margin-top: 25px; font-style: italic; color: var(--gold); font-size: 0.9rem;">* All packages include 5-star service, professional guides, and all local permits.</p>
 </div>
 
 <footer><p>© 2026 TURAN ALTAY TRAVEL | SPIRIT OF FREEDOM</p></footer>
@@ -197,4 +176,4 @@
 </body>
 </html>
 
-        
+            
