@@ -45,18 +45,13 @@
         .contacts a { color: white; text-decoration: none; display: block; font-size: 0.8rem; margin-bottom: 2px; }
         .contacts i { color: var(--gold); margin-right: 5px; }
 
-        /* HERO SECTION - МІНЕ, ОСЫ ЖЕРДЕ ТҮЗЕТІЛДІ */
+        /* HERO SECTION */
         .hero { 
             height: 100vh; 
             background: linear-gradient(rgba(10,46,31,0.5), rgba(10,46,31,0.5)), 
-                        url('Hero.JPG'); /* СІЗДІҢ ФАЙЛЫҢЫЗДЫҢ АТЫ */
-            background-size: cover; 
-            background-position: center; 
-            background-attachment: fixed;
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            text-align: center;
+                        url('hero..JPG'); 
+            background-size: cover; background-position: center; background-attachment: fixed;
+            display: flex; justify-content: center; align-items: center; text-align: center;
         }
         .hero-inner { border: 1px solid var(--gold); padding: 40px; background: rgba(10,46,31,0.3); backdrop-filter: blur(5px); }
         .hero-inner h2 { color: var(--gold); font-size: 3rem; text-transform: uppercase; letter-spacing: 4px; margin: 0; }
@@ -65,10 +60,11 @@
         /* TOUR SECTIONS */
         .tour-section { padding: 80px 10%; display: flex; flex-direction: column; align-items: center; border-bottom: 1px solid #eee; }
         .tour-section:nth-child(even) { background-color: #f9f9f9; }
-        .image-container { width: 100%; max-width: 900px; height: 500px; overflow: hidden; border: 1px solid var(--gold); }
-        .image-container img { width: 100%; height: 100%; object-fit: cover; }
+        .image-container { width: 100%; max-width: 900px; height: 500px; overflow: hidden; border: 1px solid var(--gold); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .image-container img { width: 100%; height: 100%; object-fit: cover; transition: 1.2s ease; }
+        .image-container:hover img { transform: scale(1.06); }
         .text-container { max-width: 750px; text-align: center; margin-top: 35px; }
-        .text-container h3 { font-size: 2.2rem; color: var(--deep-green); text-transform: uppercase; margin-bottom: 15px; }
+        .text-container h3 { font-size: 2.2rem; color: var(--deep-green); text-transform: uppercase; margin-bottom: 15px; letter-spacing: 2px; }
 
         /* INCLUSIONS */
         .inclusions-section { padding: 80px 10%; background-color: white; text-align: center; }
@@ -119,7 +115,17 @@
 
 <div class="tour-section">
     <div class="image-container"><img src="altay.JPG" alt="Altay"></div>
-    <div class="text-container"><h3>The Majestic Altay</h3><p>Explore the heart of the nomadic world.</p></div>
+    <div class="text-container"><h3>The Majestic Altay</h3><p>Explore the cradle of nomadic civilization where nature meets the sky.</p></div>
+</div>
+
+<div class="tour-section">
+    <div class="image-container"><img src="eagle..jpg" alt="Eagle"></div>
+    <div class="text-container"><h3>Master of the Skies</h3><p>Experience the thousand-year-old tradition of golden eagle hunting.</p></div>
+</div>
+
+<div class="tour-section">
+    <div class="image-container"><img src="stones..JPG" alt="Stones"></div>
+    <div class="text-container"><h3>Ancient Whispers</h3><p>Sacred balbals and petroglyphs—silent witnesses of history.</p></div>
 </div>
 
 <div class="tour-section nauryz-highlight">
@@ -127,9 +133,24 @@
     <div class="image-container"><img src="nauryz.JPG" alt="Nauryz"></div>
     <div class="text-container">
         <h3 style="color: #b38b4d;">The Great Nauryz Festival</h3>
-        <p>Celebrate the nomadic New Year.</p>
+        <p>Celebrate the nomadic New Year with traditional games and festivities.</p>
         <div style="font-size: 2.2rem; color: var(--deep-green); font-weight: bold; margin-top: 15px;">$4000</div>
     </div>
+</div>
+
+<div class="tour-section">
+    <div class="image-container"><img src="lake..JPG" alt="Lake"></div>
+    <div class="text-container"><h3>Turquoise Mirrors</h3><p>Pristine alpine lakes reflecting the eternal glaciers.</p></div>
+</div>
+
+<div class="tour-section">
+    <div class="image-container"><img src="camel..JPG" alt="Camel"></div>
+    <div class="text-container"><h3>Nomadic Caravan</h3><p>Journey through the vast steppe on a traditional camel trek.</p></div>
+</div>
+
+<div class="tour-section">
+    <div class="image-container"><img src="yurt..JPG" alt="Yurt"></div>
+    <div class="text-container"><h3>The White Home</h3><p>Authentic luxury yurt stays under a thousand stars.</p></div>
 </div>
 
 <section class="inclusions-section">
@@ -140,6 +161,7 @@
             <ul>
                 <li><i class="fas fa-plane"></i> <b>Ulaanbaatar ↔ Olgii</b> Flight Tickets</li>
                 <li><i class="fas fa-car-side"></i> Professional 4x4 Off-road Vehicles</li>
+                <li><i class="fas fa-shuttle-van"></i> Airport Pick-up & Drop-off</li>
             </ul>
         </div>
         <div class="incl-item">
@@ -147,6 +169,7 @@
             <ul>
                 <li><i class="fas fa-user-check"></i> <b>Qualified Specialist Guide</b></li>
                 <li><i class="fas fa-language"></i> <b>Professional Translator</b></li>
+                <li><i class="fas fa-shield-alt"></i> Safety & Security Support</li>
             </ul>
         </div>
         <div class="incl-item">
@@ -154,6 +177,7 @@
             <ul>
                 <li><i class="fas fa-hotel"></i> Premium Hotels & Luxury Yurts</li>
                 <li><i class="fas fa-utensils"></i> 3 High-quality Traditional Meals</li>
+                <li><i class="fas fa-map-pin"></i> All Local Area Permits</li>
             </ul>
         </div>
     </div>
@@ -164,13 +188,13 @@
     <div class="price-grid">
         <div class="price-box"><h4>Solo Explorer</h4><span>$500</span></div>
         <div class="price-box" style="background:rgba(197, 160, 89, 0.1)"><h4>Group (2+)</h4><span>$4500</span></div>
+        <div class="price-box"><h4>Nauryz Tour</h4><span>$4000</span></div>
     </div>
-    <a href="https://wa.me/97688460210" class="btn-booking">Book Now</a>
+    <a href="https://wa.me/97688460210" class="btn-booking">Book Your Journey Now</a>
 </div>
 
-<footer><p>© 2026 TURAN ALTAY TRAVEL</p></footer>
+<footer><p>© 2026 TURAN ALTAY TRAVEL | SPIRIT OF FREEDOM</p></footer>
 
 </body>
 </html>
 
-        
