@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { 
-            --deep-green: #041a0f; 
+            --deep-; 
             --gold: #d4a373; 
             --white: #ffffff;
         }
@@ -21,7 +21,7 @@
             scroll-behavior: smooth;
         }
 
-        /* 1. HERO SECTION (PHOTO BG + SPIRITUAL TEXT) */
+        /* 1. HERO SECTION */
         .hero {
             position: relative; height: 100vh; width: 100%;
             background: url('eagle..JPG') no-repeat center center/cover;
@@ -36,7 +36,7 @@
         .hero h1 { font-size: clamp(3.5rem, 10vw, 6.5rem); margin: 0; line-height: 0.9; }
         .hero-sub { color: var(--gold); letter-spacing: 12px; text-transform: uppercase; font-size: 1rem; margin-bottom: 25px; font-weight: bold; }
         
-        /* 2. TOUR SECTIONS (IMAGE THEN TEXT BELOW) */
+        /* 2. TOUR SECTIONS */
         .tour-container { padding: 80px 10%; }
         .tour-item { margin-bottom: 100px; text-align: center; }
         .image-box { 
@@ -63,12 +63,33 @@
         .service-card:hover { border-color: var(--gold); background: rgba(212,163,115,0.05); }
         .service-card i { color: var(--gold); font-size: 2rem; margin-bottom: 20px; }
 
-        .price-banner { padding: 80px 20px; border-top: 1px solid var(--gold); margin-top: 60px; }
+        /* PRICING BLOCK */
+        .price-banner { 
+            padding: 60px 20px; 
+            border: 1px solid var(--gold); 
+            margin-top: 60px;
+            background: rgba(212, 163, 115, 0.03);
+            border-radius: 15px;
+        }
+        .offer-tag {
+            background: linear-gradient(135deg, #d4a373 0%, #b8860b 100%);
+            color: #041a0f;
+            padding: 10px 25px;
+            display: inline-block;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 20px 0;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
         .btn-gold { 
             background: var(--gold); color: var(--deep-green); 
-            padding: 22px 60px; text-decoration: none; font-weight: bold; 
+            padding: 20px 50px; text-decoration: none; font-weight: bold; 
             display: inline-block; letter-spacing: 2px; text-transform: uppercase;
+            transition: 0.3s;
         }
+        .btn-gold:hover { background: #fff; }
 
         /* 4. FORM SECTION */
         .form-section { padding: 100px 10%; text-align: center; background: var(--deep-green); }
@@ -78,7 +99,7 @@
             margin-bottom: 30px; outline: none; font-size: 1.1rem;
         }
 
-        /* 5. BIG FOOTER */
+        /* 5. FOOTER */
         footer { background: #020d08; padding: 120px 20px; text-align: center; border-top: 2px solid var(--gold); }
         .footer-logo { height: 90px; filter: drop-shadow(0 0 15px var(--gold)); margin-bottom: 30px; }
         .footer-btn { 
@@ -100,8 +121,8 @@
             <p style="letter-spacing: 15px; color: var(--gold); text-transform: uppercase; margin-top: 10px;">Travel</p>
             <div style="width: 100px; height: 2px; background: var(--gold); margin: 40px auto;"></div>
             <p style="font-size: 1.6rem; line-height: 1.8; font-style: italic; font-family: 'Georgia', serif;">
-                "<b>Бес Боғда</b> — төзім мен биіктіктің символы, ал <b>бүркіт</b> — Алтайдың асқақ рухы. <br>
-                Біз сізге тек тауларды көрсетпейміз, біз сізге нағыз эмоция сыйлаймыз."
+                "<b>Bes Bogda</b> is a symbol of resilience and majesty, while the <b>eagle</b> embodies the untamed spirit of Altai. <br>
+                We don't just show you the mountains; we offer you an authentic emotional journey."
             </p>
             <a href="#tours" style="display: inline-block; margin-top: 40px; color: white; text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 5px; letter-spacing: 3px;">EXPLORE JOURNEY</a>
         </div>
@@ -112,32 +133,33 @@
         <div class="tour-item">
             <div class="image-box"><img src="altay.JPG" alt="Altay"></div>
             <h3>The Majestic Altay</h3>
-            <p>Көк түріктің киесі қонған Бес Боғданың шыңы — асқақтық пен төзімнің символы.</p>
+            <p>The sacred peaks of Bes Bogda, where the ancient spirit of the nomads resides—a symbol of majesty and endurance.</p>
         </div>
 
         <div class="tour-item">
             <div class="image-box"><img src="eagle..JPG" alt="Eagle"></div>
             <h3>Master of the Skies</h3>
-            <p>Көк жүзінде еркін самғаған бүркіттің қанатынан азаттықтың лебін сезініңіз.</p>
+            <p>Feel the breath of freedom under the wings of the golden eagle, soaring high above the eternal Altai mountains.</p>
         </div>
 
         <div class="tour-item nauryz-box">
             <span style="background: var(--gold); color: var(--deep-green); padding: 8px 25px; font-weight: bold; margin-bottom: 20px; display: inline-block;">MARCH 21-23 EXCLUSIVE</span>
             <div class="image-box"><img src="nauryz.JPG" alt="Nauryz"></div>
             <h3>Great Nauryz Festival</h3>
-            <p>Celebrate the nomadic New Year with traditional games, eagle festivals, and authentic festivities.</p>
+            <p>Celebrate the nomadic New Year with traditional games, eagle festivals, and authentic festivities in the heart of the steppe.</p>
+            <p style="color: var(--gold); font-weight: bold; font-size: 1.5rem; margin-top: 15px;">Price: $4,000</p>
         </div>
 
         <div class="tour-item">
             <div class="image-box"><img src="stones..JPG" alt="Stones"></div>
             <h3>Ancient Whispers</h3>
-            <p>Sacred balbals and petroglyphs—silent witnesses of history and nomadic spirit.</p>
+            <p>Sacred balbals and petroglyphs—silent witnesses of history and the undying nomadic spirit across the ages.</p>
         </div>
 
         <div class="tour-item">
             <div class="image-box"><img src="camel..JPG" alt="Camel"></div>
             <h3>Nomadic Caravan</h3>
-            <p>Journey through the vast golden steppes on a traditional camel trek under the eternal sky.</p>
+            <p>Journey through the vast golden steppes on a traditional camel trek under the eternal blue sky of Mongolia.</p>
         </div>
 
     </div>
@@ -148,23 +170,31 @@
             <div class="service-card">
                 <i class="fas fa-shuttle-van"></i>
                 <h4>Logistics</h4>
-                <p>Ulaanbaatar-Olgii flights, professional 4x4 off-road vehicles, and expert drivers.</p>
+                <p>Ulaanbaatar-Olgii flights, professional 4x4 off-road vehicles, and expert mountain drivers.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-map-marked-alt"></i>
                 <h4>Expert Guides</h4>
-                <p>Qualified local specialist guides and professional English/Kazakh translators.</p>
+                <p>Qualified local specialist guides and professional English/Kazakh speaking translators.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-h-square"></i>
                 <h4>Accommodation</h4>
-                <p>Luxury yurt stays and premium hotels with traditional high-quality meals.</p>
+                <p>Luxury yurt stays and premium hotels with traditional high-quality nomadic meals.</p>
             </div>
         </div>
 
         <div class="price-banner">
-            <h3 style="letter-spacing: 5px;">PRICING</h3>
-            <p style="font-size: 1.5rem; opacity: 0.8;">Solo: $5000 | Group (2+): $4500 | Nauryz Special: $4000</p>
+            <h2 style="letter-spacing: 5px; color: var(--gold);">PRICING & OFFERS</h2>
+            
+            <div class="offer-tag">🔥 Special Offer: 5% Discount for groups of 5+ people!</div>
+            
+            <div style="margin: 30px 0; font-size: 1.4rem;">
+                <p><b>Solo Expedition:</b> $5,000</p>
+                <p><b>Group (2-4 People):</b> $4,500 <small>/per person</small></p>
+                <p><b>Nauryz Special:</b> $4,000 <small>/per person</small></p>
+            </div>
+            
             <a href="https://wa.me/97688460210" class="btn-gold">Book Your Journey Now</a>
         </div>
     </section>
@@ -184,7 +214,7 @@
         <img src="logo.JPG" alt="Turan Altay" class="footer-logo">
         <h2 style="color: var(--gold); letter-spacing: 8px; font-size: 2rem;">TURAN ALTAY TRAVEL</h2>
         <p style="font-style: italic; opacity: 0.6; max-width: 600px; margin: 20px auto 40px auto;">
-            "Бізбен бірге өткізген әрбір сәт — жүрегіңізде мәңгі қалатын еркіндік пен таңданыс эмоциясы."
+            "Every moment spent with us is an experience of freedom and wonder that will stay in your heart forever."
         </p>
         <div style="margin-bottom: 50px;">
             <a href="https://wa.me/97688460210" class="footer-btn btn-filled">WHATSAPP</a>
@@ -196,7 +226,3 @@
 
 </body>
 </html>
-
-
-            
-    
