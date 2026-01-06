@@ -12,18 +12,8 @@
             --gold: #d4a373; 
             --white: #ffffff;
             --soft-bg: #fdfdfd;
-        }
-        
-        body { margin: 0; font-family: 'Georgia', serif; background-color: var(--soft-bg); color: #333; scroll-behavior: smooth; }
-        <section style="text-align: center; padding: 60px 20px; background-color: #1a472a;">
-    <h1 style="color: #d4a373; font-family: 'Playfair Display', serif; font-size: 3rem;">Welcome to Turan Altay</h1>
-    <p style="color: #ffffff; font-style: italic; font-size: 1.2rem; max-width: 700px; margin: 20px auto;">
-        "In the silence of the Altai peaks, you don't just find a destination—you find your soul. Join us for a spiritual journey beyond the ordinary."
-    </p>
-</section>
-
-    </p>
-</section>
+             {
+         body{
         /* HEADER */
         header { 
             background-color: var(--deep-green); 
@@ -98,31 +88,37 @@
         .btn-booking:hover { background: var(--white); transform: translateY(-3px); }
 
         footer { background: #051a11; color: #777; text-align: center; padding: 50px; }
-        @media (max-width: 768px) { .image-container { height: 320px; } header { flex-direction: column; gap: 15px; } }
-    </style>
+        @media (max-width: 768px) { .image-container { height: 320px; } header { flex-direction: column; gap: 15px; } } 
+</style>
 </head>
-<body>
-<section style="text-align: center; padding: 40px 20px; background-color: #0a2a1b; border-bottom: 2px solid #d4a373;">
-    <h2 style="color: #d4a373; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 0;">THE SPIRIT OF ALTAI</h2>
-    <p style="color: #ffffff; font-style: italic; font-size: 1.1rem; max-width: 600px; margin: 15px auto;">
-        "Altai invites you to the land of snow-capped peaks and the masters of the sky — the eagles. This journey will give you endless emotions and unforgettable moments. Soar as high as an eagle and feel the true sense of freedom!."
-    </p>
-</section>
+<body style="margin: 0; padding: 0; background-color: #041a0f;">
 
-<header>
-    <div class="header-ornament"></div>
-    <div class="logo-box">
-        <img src="logo.JPG" alt="Logo" class="logo-img">
-        <div class="logo-text"><h1>Turan Altay</h1><span>Travel</span></div>
-    </div>
-    <div class="contacts">
-        <a href="https://wa.me/97688460210"><i class="fab fa-whatsapp"></i> +976 88460210</a>
-        <a href="mailto:turanaltaytravel@gmail.com"><i class="fas fa-envelope"></i> turanaltaytravel@gmail.com</a>
-    </div>
-</header>
-    </div
-</section>
+    <section style="text-align: center; padding: 80px 20px; background-color: #041a0f; border-bottom: 4px solid #d4a373;">
+        
+        <div style="margin-bottom: 25px;">
+            <img src="logo.JPG" alt="Turan Altay Logo" 
+                 style="height: 140px; width: auto; filter: drop-shadow(0 0 15px #d4a373);">
+        </div>
 
+        <h1 style="color: #d4a373; font-family: 'Playfair Display', serif; font-size: 3rem; text-transform: uppercase; letter-spacing: 10px; margin: 10px 0;">
+            TURAN ALTAY
+        </h1>
+        <div style="color: #d4a373; font-size: 1.1rem; letter-spacing: 12px; text-transform: uppercase; opacity: 0.9; margin-bottom: 30px;">
+            TRAVEL
+        </div>
+
+        <div style="width: 100px; height: 1px; background-color: #d4a373; margin: 0 auto; opacity: 0.5;"></div>
+    </section>
+
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background-color: #041a0f; border-bottom: 1px solid rgba(212, 163, 115, 0.3);">
+        <div style="display: flex; align-items: center;">
+            <img src="logo.JPG" alt="Logo" style="height: 45px; margin-right: 12px;">
+            <span style="color: #d4a373; font-weight: bold; letter-spacing: 2px; font-size: 0.9rem;">TURAN ALTAY</span>
+        </div>
+        <a href="https://wa.me/97688460210" style="color: #d4a373; text-decoration: none; font-weight: bold; border: 1px solid #d4a373; padding: 8px 16px; border-radius: 4px; font-size: 0.8rem;">
+            WhatsApp
+        </a>
+    </header>
 <div class="tour-section">
     <div class="image-container"><img src="altay.JPG" alt="Altay"></div>
     <div class="text-container"><h3>The Majestic Altay</h3><p>Explore the cradle of nomadic civilization where nature meets the sky.</p></div>
