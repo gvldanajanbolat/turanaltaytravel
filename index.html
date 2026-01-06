@@ -18,178 +18,182 @@
             background-color: var(--deep-green);
             color: white;
             font-family: 'Playfair Display', serif;
+            scroll-behavior: smooth;
         }
 
-        /* WELCOME SECTION */
-        .welcome-section {
-            text-align: center;
-            padding: 100px 20px;
-            border-bottom: 5px solid var(--gold);
+        /* 1. HERO SECTION (PHOTO BG + SPIRITUAL TEXT) */
+        .hero {
+            position: relative; height: 100vh; width: 100%;
+            background: url('altay.JPG') no-repeat center center/cover;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; overflow: hidden;
         }
-        .welcome-logo {
-            height: 150px;
-            filter: drop-shadow(0 0 20px var(--gold));
-            margin-bottom: 30px;
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(4,26,15,0.7), rgba(4,26,15,0.4), rgba(4,26,15,0.8));
         }
-        .welcome-section h1 {
-            color: var(--gold);
-            font-size: 3.5rem;
-            text-transform: uppercase;
-            letter-spacing: 12px;
-            margin: 0;
-        }
-
-        /* TOUR SECTIONS (IMAGE THEN TEXT BELOW) */
-        .tour-container { padding: 50px 10%; }
-        .tour-item { margin-bottom: 80px; text-align: center; }
+        .hero-content { position: relative; z-index: 2; padding: 0 20px; max-width: 1000px; }
+        .hero h1 { font-size: clamp(3.5rem, 10vw, 6.5rem); margin: 0; line-height: 0.9; }
+        .hero-sub { color: var(--gold); letter-spacing: 12px; text-transform: uppercase; font-size: 1rem; margin-bottom: 25px; font-weight: bold; }
+        
+        /* 2. TOUR SECTIONS (IMAGE THEN TEXT BELOW) */
+        .tour-container { padding: 80px 10%; }
+        .tour-item { margin-bottom: 100px; text-align: center; }
         .image-box { 
-            width: 100%; max-width: 900px; height: 500px; 
-            margin: 0 auto 25px auto; overflow: hidden; 
+            width: 100%; max-width: 950px; height: 550px; 
+            margin: 0 auto 30px auto; overflow: hidden; 
             border: 1px solid var(--gold); 
         }
-        .image-box img { width: 100%; height: 100%; object-fit: cover; }
-        .tour-item h3 { color: var(--gold); font-size: 2.2rem; text-transform: uppercase; margin-bottom: 15px; }
-        .tour-item p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; line-height: 1.6; opacity: 0.9; }
+        .image-box img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s; }
+        .image-box:hover img { transform: scale(1.05); }
+        .tour-item h3 { color: var(--gold); font-size: 2.5rem; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 3px; }
+        .tour-item p { font-size: 1.3rem; max-width: 800px; margin: 0 auto; line-height: 1.8; opacity: 0.9; font-family: 'Georgia', serif; }
 
-        /* NAURYZ SPECIAL (HEREKSE BELGILENU) */
-        .nauryz-special {
-            background-color: rgba(212, 163, 115, 0.1);
-            padding: 60px 20px;
-            border: 2px solid var(--gold);
-            margin: 40px 0;
-        }
-        .nauryz-badge {
-            background: var(--gold);
-            color: var(--deep-green);
-            padding: 10px 30px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 20px;
+        /* NAURYZ HIGHLIGHT */
+        .nauryz-box { 
+            background: rgba(212, 163, 115, 0.08); 
+            padding: 70px 30px; border: 2px solid var(--gold); 
+            margin: 50px 0; 
         }
 
-        /* SERVICES & PRICE */
-        .service-section { padding: 80px 10%; background: #05150d; text-align: center; }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
-        .service-card { border: 1px solid var(--gold); padding: 30px; text-align: left; }
-        .service-card i { color: var(--gold); font-size: 1.5rem; margin-bottom: 15px; }
+        /* 3. SERVICES & PRICING */
+        .services { padding: 100px 10%; background: #03130b; text-align: center; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 50px; }
+        .service-card { border: 1px solid rgba(212,163,115,0.3); padding: 40px; text-align: left; transition: 0.3s; }
+        .service-card:hover { border-color: var(--gold); background: rgba(212,163,115,0.05); }
+        .service-card i { color: var(--gold); font-size: 2rem; margin-bottom: 20px; }
 
-        .price-box { margin-top: 50px; padding: 40px; border-top: 1px solid var(--gold); }
+        .price-banner { padding: 80px 20px; border-top: 1px solid var(--gold); margin-top: 60px; }
         .btn-gold { 
             background: var(--gold); color: var(--deep-green); 
-            padding: 20px 50px; text-decoration: none; font-weight: bold; 
-            display: inline-block; margin-top: 30px;
+            padding: 22px 60px; text-decoration: none; font-weight: bold; 
+            display: inline-block; letter-spacing: 2px; text-transform: uppercase;
         }
 
-        /* INQUIRY FORM */
-        .form-section { padding: 80px 10%; text-align: center; }
+        /* 4. FORM SECTION */
+        .form-section { padding: 100px 10%; text-align: center; background: var(--deep-green); }
         .form-section input, .form-section textarea {
-            width: 100%; max-width: 500px; background: transparent; 
-            border: none; border-bottom: 1px solid var(--gold);
-            padding: 15px; color: white; margin-bottom: 20px; outline: none;
+            width: 100%; max-width: 600px; background: transparent; border: none; 
+            border-bottom: 1px solid var(--gold); padding: 20px; color: white; 
+            margin-bottom: 30px; outline: none; font-size: 1.1rem;
         }
 
-        footer { padding: 60px; text-align: center; background: #020d08; border-top: 1px solid var(--gold); }
+        /* 5. BIG FOOTER */
+        footer { background: #020d08; padding: 120px 20px; text-align: center; border-top: 2px solid var(--gold); }
+        .footer-logo { height: 90px; filter: drop-shadow(0 0 15px var(--gold)); margin-bottom: 30px; }
         .footer-btn { 
-            margin: 10px; padding: 10px 25px; border: 1px solid var(--gold); 
-            color: var(--gold); text-decoration: none; display: inline-block;
+            margin: 15px; padding: 15px 40px; border: 1px solid var(--gold); 
+            color: var(--gold); text-decoration: none; display: inline-block; font-weight: bold;
         }
-        
-        @media (max-width: 768px) { .image-box { height: 300px; } .welcome-section h1 { font-size: 2rem; } }
+        .btn-filled { background: var(--gold); color: var(--deep-green); }
+
+        @media (max-width: 768px) { .image-box { height: 350px; } .hero h1 { font-size: 3.5rem; } }
     </style>
 </head>
 <body>
 
-    <section class="welcome-section">
-        <img src="logo.JPG" alt="Pegasus" class="welcome-logo">
-        <h1>TURAN ALTAY</h1>
-        <p style="letter-spacing: 15px; color: var(--gold);">TRAVEL</p>
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-sub">Western Mongolia Expeditions</p>
+            <h1>Turan <span style="color: var(--gold);">Altay</span></h1>
+            <p style="letter-spacing: 15px; color: var(--gold); text-transform: uppercase; margin-top: 10px;">Travel</p>
+            <div style="width: 100px; height: 2px; background: var(--gold); margin: 40px auto;"></div>
+            <p style="font-size: 1.6rem; line-height: 1.8; font-style: italic; font-family: 'Georgia', serif;">
+                "<b>Altay</b> — is a symbol of resilience and majesty, while the <b>Eagle</b> — embodies the untamed spirit of Altai. <br>
+                We don't just show you the mountains; we offer you an authentic emotional journey."
+            </p>
+            <a href="#tours" style="display: inline-block; margin-top: 40px; color: white; text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 5px; letter-spacing: 3px;">EXPLORE JOURNEY</a>
+        </div>
     </section>
 
-    <div class="tour-container">
+    <div id="tours" class="tour-container">
+        
         <div class="tour-item">
             <div class="image-box"><img src="altay.JPG" alt="Altay"></div>
             <h3>The Majestic Altay</h3>
-            <p>Explore the cradle of nomadic civilization where nature meets the sky.</p>
+            <p>The sacred peaks of Altay, where the ancient spirit of the nomads resides—a symbol of majesty and endurance.</p>
         </div>
 
         <div class="tour-item">
             <div class="image-box"><img src="eagle..jpg" alt="Eagle"></div>
             <h3>Master of the Skies</h3>
-            <p>Experience the thousand-year-old tradition of golden eagle hunting.</p>
+            <p>Feel the breath of freedom under the wings of the golden eagle, soaring high above the eternal Altai mountains.</p>
+        </div>
+
+        <div class="tour-item nauryz-box">
+            <span style="background: var(--gold); color: var(--deep-green); padding: 8px 25px; font-weight: bold; margin-bottom: 20px; display: inline-block;">MARCH 21-23 EXCLUSIVE</span>
+            <div class="image-box"><img src="nauryz.JPG" alt="Nauryz"></div>
+            <h3>Great Nauryz Festival</h3>
+            <p>Celebrate the nomadic New Year with traditional games, eagle festivals, and authentic festivities.</p>
         </div>
 
         <div class="tour-item">
             <div class="image-box"><img src="stones..JPG" alt="Stones"></div>
             <h3>Ancient Whispers</h3>
-            <p>Sacred balbals and petroglyphs—silent witnesses of history.</p>
-        </div>
-
-        <div class="tour-item nauryz-special">
-            <span class="nauryz-badge">EXCLUSIVE FESTIVAL</span>
-            <div class="image-box"><img src="nauryz.JPG" alt="Nauryz"></div>
-            <h3 style="color: var(--gold);">The Great Nauryz Festival</h3>
-            <p>Celebrate the nomadic New Year with traditional games and festivities. March 21-23 Special Tour.</p>
-        </div>
-
-        <div class="tour-item">
-            <div class="image-box"><img src="lake..JPG" alt="Lake"></div>
-            <h3>Turquoise Mirrors</h3>
-            <p>Pristine alpine lakes reflecting the eternal glaciers.</p>
+            <p>Sacred balbals and petroglyphs—silent witnesses of history and nomadic spirit.</p>
         </div>
 
         <div class="tour-item">
             <div class="image-box"><img src="camel..JPG" alt="Camel"></div>
             <h3>Nomadic Caravan</h3>
-            <p>Journey through the vast steppe on a traditional camel trek.</p>
+            <p>Journey through the vast golden steppes on a traditional camel trek under the eternal sky.</p>
         </div>
+
     </div>
 
-    <section class="service-section">
-        <h3>Full Service Package</h3>
+    <section class="services">
+        <h2 style="font-size: 3rem; color: var(--gold);">FULL SERVICE EXPEDITION</h2>
         <div class="service-grid">
             <div class="service-card">
-                <i class="fas fa-plane"></i>
-                <h4>Transport</h4>
-                <p>Flight tickets (UB-Olgii) and professional 4x4 vehicles.</p>
+                <i class="fas fa-shuttle-van"></i>
+                <h4>Logistics</h4>
+                <p>Ulaanbaatar-Olgii flights, professional 4x4 off-road vehicles, and expert drivers.</p>
             </div>
             <div class="service-card">
-                <i class="fas fa-user-shield"></i>
-                <h4>Expert Team</h4>
-                <p>Qualified specialist guides and professional translators.</p>
+                <i class="fas fa-map-marked-alt"></i>
+                <h4>Expert Guides</h4>
+                <p>Qualified local specialist guides and professional English/Kazakh translators.</p>
             </div>
             <div class="service-card">
-                <i class="fas fa-campground"></i>
-                <h4>Stay</h4>
-                <p>Premium hotels and authentic luxury yurt stays.</p>
+                <i class="fas fa-h-square"></i>
+                <h4>Accommodation</h4>
+                <p>Luxury yurt stays and premium hotels with traditional high-quality meals.</p>
             </div>
         </div>
 
-        <div class="price-box">
-            <h2>Expedition Pricing</h2>
-            <p>Solo Explorer: $5000 | Group (2+): $4500 | Nauryz: $4000</p>
-            <a href="https://wa.me/97688460210" class="btn-gold">BOOK YOUR JOURNEY NOW</a>
+        <div class="price-banner">
+            <h3 style="letter-spacing: 5px;">PRICING</h3>
+            <p style="font-size: 1.5rem; opacity: 0.8;">Solo: $5000 | Group (2+): $4500 | Nauryz Special: $4000</p>
+            <a href="https://wa.me/97688460210" class="btn-gold">Book Your Journey Now</a>
         </div>
     </section>
 
     <section class="form-section">
-        <h3>Start Your Journey</h3>
+        <h2 style="font-size: 2.5rem; color: var(--gold); margin-bottom: 50px;">START YOUR JOURNEY</h2>
         <form>
-            <input type="text" placeholder="Full Name">
-            <input type="email" placeholder="Email Address">
-            <textarea rows="4" placeholder="Tell us about your group size and dates..."></textarea>
-            <button type="submit" class="btn-gold" style="width: 100%; max-width: 500px; cursor: pointer; border: none;">SEND INQUIRY</button>
+            <input type="text" placeholder="Your Full Name" required>
+            <input type="email" placeholder="Your Email Address" required>
+            <textarea rows="4" placeholder="Dates, Group Size and Special Requests..."></textarea>
+            <br>
+            <button type="submit" class="btn-gold" style="border: none; cursor: pointer; width: 100%; max-width: 600px;">Send Inquiry</button>
         </form>
     </section>
 
     <footer>
-        <img src="logo.JPG" alt="Logo" style="height: 50px; margin-bottom: 20px;">
-        <h2 style="color: var(--gold); letter-spacing: 5px;">TURAN ALTAY TRAVEL</h2>
-        <div style="margin: 30px 0;">
-            <a href="https://wa.me/97688460210" class="footer-btn">WHATSAPP</a>
+        <img src="logo.JPG" alt="Turan Altay" class="footer-logo">
+        <h2 style="color: var(--gold); letter-spacing: 8px; font-size: 2rem;">TURAN ALTAY TRAVEL</h2>
+        <p style="font-style: italic; opacity: 0.6; max-width: 600px; margin: 20px auto 40px auto;">
+            "Every moment spent with us is an experience of freedom and wonder that will stay in your heart forever."
+        </p>
+        <div style="margin-bottom: 50px;">
+            <a href="https://wa.me/97688460210" class="footer-btn btn-filled">WHATSAPP</a>
             <a href="https://instagram.com/turan.altay.travel" class="footer-btn">INSTAGRAM</a>
         </div>
-        <p style="opacity: 0.4; font-size: 0.8rem;">© 2026 TURAN ALTAY TRAVEL | SPIRIT OF FREEDOM</p>
+        <div style="width: 60px; height: 1px; background: var(--gold); margin: 0 auto 30px auto; opacity: 0.3;"></div>
+        <p style="opacity: 0.4; font-size: 0.8rem; letter-spacing: 3px;">© 2026 TURAN ALTAY TRAVEL | SPIRIT OF FREEDOM</p>
     </footer>
 
 </body>
 </html>
+
