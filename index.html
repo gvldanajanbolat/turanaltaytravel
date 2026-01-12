@@ -12,7 +12,7 @@
         :root { 
             --deep-green: #051a10; 
             --lux-gold: #d4a373; 
-            --bright-gold: #fccb6e; /* Жарқыраған алтын */
+            --bright-gold: #fccb6e;
             --white-gold: #f4ebd9;
             --accent-red: #b32d2e;
         }
@@ -28,18 +28,18 @@
             overflow-x: hidden;
         }
 
+        /* NAVIGATION */
         .top-nav {
             position: absolute; top: 30px; width: 100%;
             display: flex; justify-content: space-between;
             padding: 0 5%; z-index: 100; align-items: center;
         }
-
         .nav-logo img { height: 60px; filter: drop-shadow(0 0 10px var(--lux-gold)); }
-
         .top-corner-icons { display: flex; gap: 25px; }
         .top-corner-icons a { color: var(--lux-gold); font-size: 1.5rem; text-decoration: none; transition: 0.4s; }
         .top-corner-icons a:hover { color: #fff; transform: scale(1.2); }
 
+        /* HERO */
         .hero {
             position: relative; height: 100vh; width: 100%;
             background: url('eagle..JPG') no-repeat center center/cover;
@@ -65,23 +65,14 @@
         .section-title { font-size: clamp(2rem, 5vw, 3.5rem); color: var(--lux-gold); text-transform: uppercase; letter-spacing: 5px; margin-bottom: 40px; }
         .description-text { max-width: 1000px; margin: 0 auto; font-size: 1.2rem; line-height: 1.8; text-align: justify; opacity: 0.95; }
 
-        /* ЖАРҚЫРАҒАН АЛТЫН НАУРЫЗ БӨЛІМІ */
+        /* NAURYZ BLOCK */
         .nauryz-special-section {
-            background: rgba(0, 0, 0, 0.4);
-            border: 3px solid var(--bright-gold); 
-            padding: 60px; 
-            margin: 80px 0; 
-            border-radius: 20px;
-            box-shadow: 0 0 50px rgba(252, 203, 110, 0.3);
-            text-align: center;
-        }
-        .nauryz-gold-line {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--bright-gold), transparent);
-            margin: 20px auto;
-            width: 80%;
+            background: rgba(0, 0, 0, 0.4); border: 3px solid var(--bright-gold); 
+            padding: 80px 5%; margin: 80px 0; border-radius: 20px;
+            box-shadow: 0 0 50px rgba(252, 203, 110, 0.3); text-align: center;
         }
 
+        /* HERITAGE GRID */
         .heritage-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px; margin-top: 60px;
@@ -89,19 +80,58 @@
         .heritage-card { border: 1px solid rgba(212,163,115,0.3); background: rgba(0,0,0,0.3); }
         .heritage-card img { width: 100%; height: 280px; object-fit: cover; }
         .heritage-card-content { padding: 30px; text-align: left; }
-        .heritage-card h4 { color: var(--lux-gold); margin-top: 0; font-size: 1.6rem; text-transform: uppercase; border-bottom: 1px solid var(--lux-gold); padding-bottom: 10px; margin-bottom: 15px; }
+        .heritage-card h4 { color: var(--lux-gold); font-size: 1.6rem; text-transform: uppercase; border-bottom: 1px solid var(--lux-gold); padding-bottom: 10px; margin-bottom: 15px; }
 
-        .services-wrap { padding: 100px 5%; background: #010805; border-top: 1px solid var(--lux-gold); text-align: center; }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .service-card { border: 1px solid rgba(212,163,115,0.2); padding: 50px; }
-        .service-card i { color: var(--lux-gold); font-size: 3rem; margin-bottom: 25px; }
+        /* ЖАҢАРТЫЛҒАН СЕРВИС БӨЛІМІ (КЕҢ ЖӘНЕ ТОЛЫҚ) */
+        .services-wrap { 
+            padding: 120px 5%; background: #010805; border-top: 1px solid var(--lux-gold); text-align: center;
+        }
+        .service-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 40px; margin-top: 60px; max-width: 1200px; margin-left: auto; margin-right: auto;
+        }
+        .service-card { 
+            border: 1px solid rgba(212,163,115,0.2); padding: 60px 40px; 
+            background: rgba(252, 203, 110, 0.02); transition: 0.4s;
+        }
+        .service-card:hover { border-color: var(--bright-gold); transform: translateY(-10px); }
+        .service-card i { color: var(--lux-gold); font-size: 3.5rem; margin-bottom: 30px; }
+        .service-card h4 { font-size: 1.8rem; color: var(--lux-gold); margin-bottom: 20px; text-transform: uppercase; }
+        .service-card p { font-size: 1.1rem; line-height: 1.7; opacity: 0.9; }
 
+        /* PRICING */
         .pricing-section { padding: 100px 5%; text-align: center; background: rgba(212,163,115,0.03); border-top: 1px solid var(--lux-gold); }
         .p-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 50px; }
         .p-card { border: 1px solid var(--lux-gold); padding: 50px; width: 350px; background: rgba(0,0,0,0.5); }
-        .p-card .amount { font-size: 3rem; font-weight: bold; margin: 20px 0; display: block; }
+        .p-card .amount { font-size: 3.5rem; font-weight: bold; margin: 20px 0; display: block; }
 
-        .btn-xl { background: var(--lux-gold); color: #051a10; padding: 25px 60px; font-weight: bold; text-transform: uppercase; cursor: pointer; border: none; width: 100%; font-size: 1.2rem; }
+        /* ЖАҢАРТЫЛҒАН ТІРКЕЛУ БӨЛІМІ (ҰЗЫН, КЕҢ ЖӘНЕ ЖАСЫЛ) */
+        .registration-section { 
+            padding: 150px 5%; 
+            background: linear-gradient(to bottom, var(--deep-green), #0a2516); 
+            text-align: center; border-top: 1px solid var(--lux-gold);
+        }
+        .reg-container {
+            max-width: 1100px; margin: 0 auto;
+        }
+        .reg-form { 
+            display: grid; grid-template-columns: 1fr 1fr; gap: 30px; 
+            margin-top: 60px; text-align: left; 
+        }
+        .reg-form input, .reg-form select, .reg-form textarea {
+            width: 100%; background: rgba(0,0,0,0.3); border: 1px solid var(--lux-gold);
+            padding: 20px; color: white; outline: none; font-size: 1.2rem; font-family: inherit;
+        }
+        .reg-form textarea { grid-column: span 2; height: 200px; }
+        .reg-full-width { grid-column: span 2; }
+
+        .btn-xl { 
+            background: var(--lux-gold); color: #051a10; padding: 25px; 
+            font-weight: bold; text-transform: uppercase; cursor: pointer; border: none; 
+            width: 100%; font-size: 1.5rem; transition: 0.3s; margin-top: 20px;
+        }
+        .btn-xl:hover { background: var(--bright-gold); letter-spacing: 2px; }
+
         footer { padding: 80px 20px; text-align: center; background: #000; border-top: 1px solid var(--lux-gold); }
     </style>
 </head>
@@ -144,63 +174,25 @@
         </div>
 
         <section class="nauryz-special-section">
-            <h2 class="section-title" style="color: var(--bright-gold); margin-bottom: 10px;">Nauryz Festival Special 2026</h2>
-            <div class="nauryz-gold-line"></div>
-            <div class="image-box" style="border-color: var(--bright-gold);"><img src="nauryz.JPG" alt="Nauryz Celebration"></div>
-            <p style="font-size: 1.8rem; margin: 20px 0; font-weight: bold; color: var(--bright-gold);">March 21 - March 22</p>
+            <h2 class="section-title" style="color: var(--bright-gold); margin-bottom: 30px;">Nauryz Festival Special 2026</h2>
+            <div class="image-box" style="border-color: var(--bright-gold);"><img src="nauryz.JPG"></div>
+            <p style="font-size: 2rem; margin: 25px 0; font-weight: bold; color: var(--bright-gold);">March 21 - March 22</p>
             <div class="description-text" style="text-align: center;">
                 Experience the rebirth of nature. From traditional "Nauryz Kozhe" feasts to the adrenaline of "Kokpar" horse games. Join the local families in Olgii for the most authentic nomadic New Year celebration on Earth.
                 <br><br>
                 <strong style="font-size: 2.5rem; color: var(--bright-gold);">$4,000 All-Inclusive</strong>
             </div>
-            <div class="nauryz-gold-line"></div>
         </section>
 
         <div class="feature-item">
             <h2 class="section-title">Ancient Chronicles & Heritage</h2>
             <div class="heritage-grid">
-                <div class="heritage-card">
-                    <img src="petroglyphs.jpg.JPG">
-                    <div class="heritage-card-content">
-                        <h4>UNESCO Petroglyphs</h4>
-                        <p>12,000-year-old rock carvings depicting the first nomadic chariots and sun-gods of the high steppes.</p>
-                    </div>
-                </div>
-                <div class="heritage-card">
-                    <img src="deer_stones.JPG">
-                    <div class="heritage-card-content">
-                        <h4>Mystical Deer Stones</h4>
-                        <p>Bronze Age monoliths with "flying deer" carvings, designed to guide souls to the eternal sky.</p>
-                    </div>
-                </div>
-                <div class="heritage-card">
-                    <img src="pazyryk.jpg.JPG">
-                    <div class="heritage-card-content">
-                        <h4>Scythian Secrets</h4>
-                        <p>Frozen tombs of the Pazyryk culture, preserving the world's oldest carpets and nomadic tattoos.</p>
-                    </div>
-                </div>
-                <div class="heritage-card">
-                    <img src="turkic.jpg.">
-                    div class="heritage-card-content">
-                        <h4>Turkic Balbals</h4>
-                        <p>Ancient stone guardians placed by the first Khaganates to honor the spirits of legendary warriors.</p>
-                    </div>
-                </div>
-                <div class="heritage-card">
-                    <img src="khirigsuur.jpg.WEBP">
-                    <div class="heritage-card-content">
-                        <h4>Royal Khirigsuurs</h4>
-                        <p>Vast stone burial complexes built to align with the stars, honoring elite prehistoric nomadic kings.</p>
-                    </div>
-                </div>
-                <div class="heritage-card">
-                    <img src="yurt..JPG">
-                    <div class="heritage-card-content">
-                        <h4>The Kazakh White Yurt</h4>
-                        <p>The masterpiece of nomadic architecture. A portable universe where every wooden spar and felt layer tells a story of cosmic balance and family heritage.</p>
-                    </div>
-                </div>
+                <div class="heritage-card"><img src="petroglyphs.jpg."><div class="heritage-card-content"><h4>UNESCO Petroglyphs</h4><p>12,000-year-old rock carvings depicting the first nomadic chariots and sun-gods.</p></div></div>
+                <div class="heritage-card"><img src="deer_stones.JPG"><div class="heritage-card-content"><h4>Mystical Deer Stones</h4><p>Bronze Age monoliths with "flying deer" carvings, designed to guide souls to the sky.</p></div></div>
+                <div class="heritage-card"><img src="pazyryk.jpg.JPG"><div class="heritage-card-content"><h4>Scythian Secrets</h4><p>Frozen tombs of the Pazyryk culture, preserving the world's oldest carpets.</p></div></div>
+                <div class="heritage-card"><img src="turkic.jpg."><div class="heritage-card-content"><h4>Turkic Balbals</h4><p>Ancient stone guardians placed by the first Khaganates to honor legendary warriors.</p></div></div>
+                <div class="heritage-card"><img src="khirigsuur.jpg.WEBP"><div class="heritage-card-content"><h4>Royal Khirigsuurs</h4><p>Vast stone burial complexes built to align with the stars for ancient kings.</p></div></div>
+                <div class="heritage-card"><img src="yurt..JPG"><div class="heritage-card-content"><h4>The Kazakh White Yurt</h4><p>A portable universe where every wooden spar tells a story of cosmic balance.</p></div></div>
             </div>
         </div>
 
@@ -208,45 +200,63 @@
             <h2 class="section-title">The Bactrian Camel Caravan</h2>
             <div class="image-box"><img src="camel..JPG"></div>
             <div class="description-text">
-                Experience the rhythmic pace of the ancient Silk Road. Our Bactrian camels are the true "ships of the desert," carrying our luxury expeditions into the deep, untouched wilderness where no engine can go.
+                Experience the rhythmic pace of the ancient Silk Road. Our Bactrian camels are the true "ships of the desert," carrying our luxury expeditions into the deep, untouched wilderness.
             </div>
         </div>
 
     </div>
 
     <section class="services-wrap">
-        <h2 class="section-title">Premium Services</h2>
+        <h2 class="section-title">Premium All-Inclusive Services</h2>
         <div class="service-grid">
-            <div class="service-card"><i class="fas fa-plane"></i><h4>VIP Logistics</h4><p>Domestic flights and 4x4 transport included.</p></div>
-            <div class="service-card"><i class="fas fa-utensils"></i><h4>Private Chef</h4><p>Organic nomadic gourmet meals in the wild.</p></div>
-            <div class="service-card"><i class="fas fa-landmark"></i><h4>Expert Guides</h4><p>Historians and local hunters lead the way.</p></div>
+            <div class="service-card">
+                <i class="fas fa-plane"></i>
+                <h4>VIP Air Logistics</h4>
+                <p>Private support for domestic flights (Ulaanbaatar-Olgii-Ulaanbaatar) and high-performance 4x4 ground transport with professional drivers.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-utensils"></i>
+                <h4>Nomadic Gourmet</h4>
+                <p>Our private chefs prepare 3 high-quality organic meals daily, combining traditional Altai recipes with modern culinary luxury.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-landmark"></i>
+                <h4>Expert Guiding</h4>
+                <p>Professional historians and local eagle hunters lead every expedition to ensure deep cultural and historical immersion at every step.</p>
+            </div>
         </div>
     </section>
 
     <section class="pricing-section">
-        <h2 class="section-title">Packages 2026</h2>
+        <h2 class="section-title">Expedition Pricing 2026</h2>
         <div class="p-grid">
-            <div class="p-card"><h3>Solo</h3><span class="amount">$5,000</span><p>Private VIP</p></div>
-            <div class="p-card" style="border-width: 3px; border-color: var(--bright-gold);"><h3>Duo</h3><span class="amount">$4,500</span><p>Per person</p></div>
+            <div class="p-card"><h3>Solo Traveler</h3><span class="amount">$5,000</span><p>Private VIP Expedition</p></div>
+            <div class="p-card" style="border: 2px solid var(--bright-gold);"><h3>Team Duo</h3><span class="amount">$4,500</span><p>Per Person (Total $9,000)</p></div>
         </div>
-        <p style="margin-top: 30px; color: var(--accent-red); font-weight: bold;">* GROUPS OF 5+: 5% DISCOUNT</p>
+        <p style="margin-top: 40px; color: var(--accent-red); font-weight: bold; font-size: 1.3rem;">* GROUPS OF 5+ PEOPLE: 5% ADDITIONAL DISCOUNT</p>
     </section>
 
     <section id="booking" class="registration-section">
-        <h2 class="section-title">Secure Your Dates</h2>
-        <div class="reg-form">
-            <form>
+        <div class="reg-container">
+            <h2 class="section-title" style="color: var(--bright-gold);">Secure Your Dates</h2>
+            <p style="font-size: 1.4rem; color: var(--white-gold); opacity: 0.8;">Register via Gmail to receive your full itinerary and personal expedition contract.</p>
+            
+            <form class="reg-form">
                 <input type="text" placeholder="Full Name" required>
                 <input type="email" placeholder="Gmail Address" required>
-                <input type="text" placeholder="Tour Choice">
-                <textarea rows="4" placeholder="Message..."></textarea>
-                <button type="submit" class="btn-xl">Register Now</button>
+                <input type="text" placeholder="Country of Residence" class="reg-full-width">
+                <input type="text" placeholder="Tour Choice (Standard / Nauryz Special)">
+                <input type="number" placeholder="Expected Group Size">
+                <textarea placeholder="Message: Tell us about your travel experience or special requirements..."></textarea>
+                <div class="reg-full-width">
+                    <button type="submit" class="btn-xl">REGISTER NOW</button>
+                </div>
             </form>
         </div>
     </section>
 
     <footer>
-        <img src="logo.JPG" style="height: 60px; margin-bottom: 20px;">
+        <img src="logo.JPG" style="height: 70px; margin-bottom: 25px;">
         <p>© 2026 | TURAN ALTAY TRAVEL | turanaltaytravel@gmail.com</p>
     </footer>
 
