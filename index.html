@@ -52,50 +52,57 @@
         .hero h1 { font-size: clamp(2.5rem, 8vw, 6.5rem); margin: 0; letter-spacing: 5px; text-transform: uppercase; line-height: 1.1; }
         .hero-sub { color: var(--lux-gold); letter-spacing: 15px; text-transform: uppercase; font-size: 1rem; margin-top: 20px; font-weight: bold; }
         
-        .main-container { padding: 60px 5%; width: 100%; }
-        .feature-item { margin-bottom: 100px; text-align: center; width: 100%; }
+        .main-container { padding: 80px 5%; width: 100%; }
+        .feature-item { margin-bottom: 120px; text-align: center; width: 100%; }
         
         .image-box { 
             width: 100%; max-width: 1000px; height: clamp(300px, 60vh, 600px); 
-            margin: 0 auto 30px auto; border: 1px solid var(--lux-gold);
+            margin: 0 auto 30px auto; border: 1px solid var(--lux-gold); box-shadow: 0 0 30px rgba(0,0,0,0.5);
         }
         .image-box img { width: 100%; height: 100%; object-fit: cover; }
 
-        .section-title { font-size: clamp(1.8rem, 4vw, 3rem); color: var(--lux-gold); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 40px; }
+        .section-title { font-size: clamp(2rem, 5vw, 3.5rem); color: var(--lux-gold); text-transform: uppercase; letter-spacing: 5px; margin-bottom: 40px; }
         
+        .description-text { max-width: 1000px; margin: 0 auto; font-size: 1.2rem; line-height: 1.8; text-align: justify; opacity: 0.95; }
+
         .heritage-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px; margin-top: 40px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px; margin-top: 60px;
         }
-        .heritage-card { border: 1px solid rgba(212,163,115,0.3); background: rgba(0,0,0,0.3); text-align: left; }
-        .heritage-card img { width: 100%; height: 250px; object-fit: cover; }
-        .heritage-card-content { padding: 25px; }
-        .heritage-card h4 { color: var(--lux-gold); margin-top: 0; font-size: 1.4rem; border-bottom: 1px solid var(--lux-gold); padding-bottom: 10px; }
-        .heritage-card p { line-height: 1.7; font-size: 1rem; opacity: 0.9; }
+        .heritage-card { border: 1px solid rgba(212,163,115,0.3); background: rgba(0,0,0,0.3); transition: 0.3s; }
+        .heritage-card:hover { border-color: var(--lux-gold); }
+        .heritage-card img { width: 100%; height: 280px; object-fit: cover; }
+        .heritage-card-content { padding: 30px; text-align: left; }
+        .heritage-card h4 { color: var(--lux-gold); margin-top: 0; font-size: 1.6rem; text-transform: uppercase; border-bottom: 1px solid var(--lux-gold); padding-bottom: 10px; margin-bottom: 15px; }
+        .heritage-card p { font-size: 1.05rem; line-height: 1.7; }
+
+        .nauryz-special-section {
+            background: linear-gradient(45deg, #4b0d0d, #051a10);
+            border: 2px solid var(--accent-red); padding: 60px; margin: 80px 0; border-radius: 5px;
+        }
 
         .services-wrap { padding: 100px 5%; background: #010805; border-top: 1px solid var(--lux-gold); text-align: center; }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
-        .service-card { border: 1px solid rgba(212,163,115,0.2); padding: 40px; }
-        .service-card i { color: var(--lux-gold); font-size: 2.5rem; margin-bottom: 20px; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .service-card { border: 1px solid rgba(212,163,115,0.2); padding: 50px; }
+        .service-card i { color: var(--lux-gold); font-size: 3rem; margin-bottom: 25px; }
 
-        .pricing-section { padding: 80px 5%; text-align: center; background: rgba(212,163,115,0.03); border-top: 1px solid var(--lux-gold); }
-        .p-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 40px; }
-        .p-card { border: 1px solid var(--lux-gold); padding: 40px; width: 320px; background: rgba(0,0,0,0.4); }
-        .p-card.special { border-color: var(--accent-red); background: rgba(179, 45, 46, 0.08); }
-        .p-card .amount { font-size: 2.8rem; font-weight: bold; margin: 15px 0; display: block; }
+        .pricing-section { padding: 100px 5%; text-align: center; background: rgba(212,163,115,0.03); border-top: 1px solid var(--lux-gold); }
+        .p-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 50px; }
+        .p-card { border: 1px solid var(--lux-gold); padding: 50px; width: 350px; background: rgba(0,0,0,0.5); position: relative; }
+        .p-card .amount { font-size: 3rem; font-weight: bold; margin: 20px 0; display: block; color: var(--white-gold); }
 
         .registration-section { padding: 100px 5%; text-align: center; border-top: 1px solid var(--lux-gold); }
-        .reg-form { max-width: 600px; margin: 50px auto; text-align: left; }
+        .reg-form { max-width: 700px; margin: 50px auto; text-align: left; }
         .reg-form input, .reg-form textarea {
             width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--lux-gold);
-            padding: 15px; color: white; margin-bottom: 30px; outline: none; font-size: 1.1rem;
+            padding: 15px; color: white; margin-bottom: 35px; outline: none; font-size: 1.2rem;
         }
 
         .btn-xl { 
-            background: var(--lux-gold); color: #051a10; padding: 20px 50px; 
-            text-decoration: none; font-weight: bold; text-transform: uppercase; cursor: pointer; border: none; width: 100%;
+            background: var(--lux-gold); color: #051a10; padding: 25px 60px; 
+            text-decoration: none; font-weight: bold; text-transform: uppercase; cursor: pointer; border: none; width: 100%; font-size: 1.2rem;
         }
-        footer { padding: 60px 20px; text-align: center; background: #000; border-top: 1px solid var(--lux-gold); }
+        footer { padding: 80px 20px; text-align: center; background: #000; border-top: 1px solid var(--lux-gold); }
     </style>
 </head>
 <body>
@@ -119,110 +126,141 @@
     </section>
 
     <div class="main-container">
+
         <div class="feature-item">
-            <h2 class="section-title">The Soul of the Wind: Golden Eagle</h2>
-            <div class="image-box"><img src="eagle..JPG"></div>
-            <p style="max-width: 900px; margin: 0 auto; font-size: 1.2rem; line-height: 1.8;">
-                Step into a world where time stands still. Hunting with Golden Eagles is a spiritual dialogue that has lasted for 4,000 years. Our expeditions take you deep into the Altai peaks to live alongside the legendary eagle hunters.
-            </p>
+            <h2 class="section-title">The Sacred Altai & Tavan Bogd</h2>
+            <div class="image-box"><img src="Altai_peaks.jpg" alt="Altai Mountains"></div>
+            <div class="description-text">
+                The Altai Mountains are not just a range; they are the "Golden Pillars" of the world. Standing at the junction of Mongolia, Kazakhstan, Russia, and China, the Altai represents the rawest form of Earth's majesty. Our expeditions focus on the <strong>Tavan Bogd (Five Holy Peaks)</strong>, home to the highest points in Mongolia. The most prominent is Khuiten Peak, reaching 4,374 meters. This region houses the massive Potanin Glacier, a sprawling river of ice that has shaped the nomadic spirit for eons. To stand here is to stand at the roof of the Central Asian world, where the air is pure and the silence is eternal.
+            </div>
         </div>
 
         <div class="feature-item">
-            <h2 class="section-title">Ancient Chronicles of Altai</h2>
+            <h2 class="section-title">Master of the Skies: Golden Eagle</h2>
+            <div class="image-box"><img src="eagle..JPG"></div>
+            <div class="description-text">
+                In the high valleys of Altai, the bond between man and bird is a sacred pact. Hunting with Golden Eagles is an ancient art form that has survived for over 4,000 years. We offer you exclusive access to the 'Burkitshi' (Eagle Hunters). You will not just watch; you will live in their yurts, learn the call of the bird, and witness the incredible synchronization as the eagle dives from the mountain peaks at speeds exceeding 240 km/h. It is a spiritual dialogue between the nomad and the king of birds.
+            </div>
+        </div>
+
+        <section class="nauryz-special-section">
+            <h2 class="section-title" style="color: white; border-bottom: 2px solid var(--lux-gold); display: inline-block; padding-bottom: 10px;">Nauryz Festival Tour 2026</h2>
+            <p style="font-size: 1.5rem; margin: 20px 0; font-weight: bold; color: var(--lux-gold);">Date: March 21 - March 22</p>
+            <div class="description-text" style="text-align: center; color: #fff;">
+                Nauryz is the "Great Day of the Nation," the nomadic New Year and Spring Equinox. This is a separate, exclusive tour that offers a deep dive into the rebirth of nature. Experience the traditional "Nauryz Kozhe" feast, witness the horse-mounted games of "Kokpar" and "Kumis Alu," and join the local families in Olgii as they open their homes for celebrations. It is a time of forgiveness, abundance, and ancient music.
+                <br><br>
+                <strong style="font-size: 1.8rem; color: var(--lux-gold);">$4,000 All-Inclusive</strong>
+            </div>
+        </section>
+
+        <div class="feature-item">
+            <h2 class="section-title">The 5 Great Chronicles of Altai</h2>
             <div class="heritage-grid">
                 <div class="heritage-card">
-                    <img src="petroglyphs.jpg">
+                    <img src="petroglyphs.jpg.JPG">
                     <div class="heritage-card-content">
-                        <h4>UNESCO Petroglyphs</h4>
-                        <p>12,000-year-old rock carvings depicting ancient sun-gods and the very first nomadic chariots ever recorded in human history.</p>
+                        <h4>UNESCO World Heritage: Petroglyphs</h4>
+                        <p>Dating back 12,000 years, the rock art complexes of the Mongolian Altai provide the most complete record of human development in Central Asia. These carvings depict the transition from hunting to herding and contain the earliest known representations of nomadic chariots and sun-headed deities, carved with precision into the dark desert varnish of the stones.</p>
                     </div>
                 </div>
                 <div class="heritage-card">
                     <img src="deer_stones.JPG">
                     <div class="heritage-card-content">
                         <h4>Mystical Deer Stones</h4>
-                        <p>Bronze Age megaliths featuring 'Flying Deer', believed to carry the souls of fallen warriors to the Great Sky.</p>
+                        <p>Rising like monoliths from the steppe, these Bronze Age stones are masterpieces of early art. They are carved with stylized "flying deer" with antlers reaching toward the sky. Scholars believe these stones represent great warriors transformed into celestial deer, serving as conduits between the earthly world and the divine heavens.</p>
                     </div>
                 </div>
                 <div class="heritage-card">
                     <img src="pazyryk.jpg.JPG">
                     <div class="heritage-card-content">
-                        <h4>The Pazyryk Secret</h4>
-                        <p>Traces of the Scythian Empire. Frozen tombs preserved in ice for millennia, hiding the world's oldest nomadic treasures.</p>
+                        <h4>Scythian Pazyryk Secrets</h4>
+                        <p>The Iron Age Scythians were the undisputed masters of the steppe. The Altai permafrost has miraculously preserved their tombs, revealing incredible treasures: the world's oldest knotted wool carpet, sophisticated gold jewelry, and even tattooed remains. Our tour explores the sacred burial grounds where the "Ice Maiden" once rested.</p>
                     </div>
                 </div>
                 <div class="heritage-card">
-                    <img src="turkic.jpg">
+                    <img src="turkic.jpg.JPG">
                     <div class="heritage-card-content">
-                        <h4>Turkic Guardians</h4>
-                        <p>The 'Balbals'. Ancient stone statues placed by Turkic Khaganates to honor and protect the spirits of great heroes.</p>
+                        <h4>The Guardians: Turkic Balbals</h4>
+                        <p>The Altai is the cradle of the Turkic Khaganates. Scattered across the valleys are 'Balbals'—stone statues carved in the likeness of honored heroes. Each statue holds a ritual cup, symbolizing their eternal presence at the great feast of the ancestors. They stand as silent guardians of the borders and the history of our people.</p>
                     </div>
                 </div>
                 <div class="heritage-card">
-                    <img src="khirigsuur.jpg.WEBP>
+                    <img src="khirigsuur.jpg.JPG">
                     <div class="heritage-card-content">
-                        <h4>Royal Khirigsuurs</h4>
-                        <p>Vast stone burial complexes built to bridge the gap between Earth and Heaven for elite prehistoric nomadic kings.</p>
-                    </div>
-                </div>
-                <div class="heritage-card">
-                    <img src="camel..JPG">
-                    <div class="heritage-card-content">
-                        <h4>Bactrian Caravans</h4>
-                        <p>Experience the ultimate nomadic transport. Trekking with a camel caravan connects you with the ancient Silk Road spirit.</p>
+                        <h4>Royal Khirigsuur Mounds</h4>
+                        <p>These massive stone burial mounds, often surrounded by satellite stone circles, are the pyramids of the Altai. Built for elite leaders, they align with astronomical events. The sheer scale of the stone-work reflects a highly organized society that revered their leaders as gods who commanded the winds and the stars.</p>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="feature-item">
+            <h2 class="section-title">The Bactrian Camel Caravan</h2>
+            <div class="image-box"><img src="camel..JPG"></div>
+            <div class="description-text">
+                The two-humped Bactrian camel is the true "Ship of the Altai Desert." These majestic creatures are essential for navigating the high-altitude passes. Our camel trekking modules allow you to experience the rhythmic pace of the ancient Silk Road. Each camel can carry up to 250kg of equipment, allowing us to venture into the "No-Man's Land" where vehicles cannot reach. It is the most authentic way to connect with the landscape.
+            </div>
+        </div>
+
     </div>
 
     <section class="services-wrap">
         <h2 class="section-title">Premium All-Inclusive Services</h2>
         <div class="service-grid">
-            <div class="service-card"><i class="fas fa-plane"></i><h4>Air Logistics</h4><p>Domestic flights (UB-Olgii-UB) and VIP ground transport included.</p></div>
-            <div class="service-card"><i class="fas fa-utensils"></i><h4>Gourmet Dining</h4><p>Private chefs providing 3 organic nomadic meals daily in the wild.</p></div>
-            <div class="service-card"><i class="fas fa-campground"></i><h4>Elite Comfort</h4><p>Heated luxury yurts and premium boutique hotels in remote areas.</p></div>
+            <div class="service-card">
+                <i class="fas fa-plane"></i>
+                <h4>VIP Air Logistics</h4>
+                <p>Private support for domestic flights (Ulaanbaatar-Olgii-Ulaanbaatar) and high-performance 4x4 ground transport.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-utensils"></i>
+                <h4>Nomadic Gourmet</h4>
+                <p>Our private chefs prepare 3 high-quality organic meals daily, combining traditional Altai recipes with modern culinary standards.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-landmark"></i>
+                <h4>Expert Guiding</h4>
+                <p>Professional historians and local eagle hunters lead every expedition to ensure deep cultural and historical immersion.</p>
+            </div>
         </div>
     </section>
 
     <section class="pricing-section">
-        <h2 class="section-title">Expedition Packages 2026</h2>
+        <h2 class="section-title">Standard Expedition Packages 2026</h2>
         <div class="p-grid">
             <div class="p-card">
-                <h3>Solo Expedition</h3>
+                <h3>Solo Traveler</h3>
                 <span class="amount">$5,000</span>
-                <p>Private Luxury Tour</p>
+                <p>Private VIP Expedition</p>
             </div>
-            <div class="p-card" style="box-shadow: 0 0 20px var(--lux-gold);">
+            <div class="p-card" style="border-width: 3px; box-shadow: 0 0 25px var(--lux-gold);">
                 <h3>Team Duo</h3>
                 <span class="amount">$4,500</span>
-                <p>Per person (2 people team)</p>
-            </div>
-            <div class="p-card special">
-                <h3 style="color: white;">Nauryz Festival</h3>
-                <span class="amount" style="color: white;">$4,000</span>
-                <p style="color: white;">Spring Special Offer</p>
+                <p>Per Person (Total $9,000)</p>
             </div>
         </div>
-        <p style="margin-top: 30px; color: var(--accent-red); font-weight: bold;">* Group of 5+ people: Additional 5% Discount</p>
+        <p style="margin-top: 40px; color: var(--accent-red); font-weight: bold; font-size: 1.2rem;">
+            * GROUPS OF 5+ PEOPLE RECEIVE AN ADDITIONAL 5% DISCOUNT
+        </p>
     </section>
 
     <section id="booking" class="registration-section">
-        <h2 class="section-title">Register via Gmail</h2>
-        <p>Complete your registration to secure your Altai expedition dates.</p>
+        <h2 class="section-title">Secure Your Dates</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 30px;">Register via Gmail to receive your full itinerary and contract.</p>
         <div class="reg-form">
             <form>
                 <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Your Gmail Address" required>
-                <input type="text" placeholder="Selected Package (Nauryz / Solo / Duo)">
-                <textarea rows="4" placeholder="Special requirements or travel dates..."></textarea>
-                <button type="submit" class="btn-xl">Confirm Registration</button>
+                <input type="email" placeholder="Gmail Address" required>
+                <input type="text" placeholder="Interested Tour (Standard / Nauryz Special)">
+                <input type="number" placeholder="Group Size">
+                <textarea rows="5" placeholder="Tell us about your travel experience or special needs..."></textarea>
+                <button type="submit" class="btn-xl">Send Inquiry & Register</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <img src="logo.JPG" style="height: 60px; margin-bottom: 20px;">
+        <img src="logo.JPG" style="height: 80px; margin-bottom: 30px;">
         <p>© 2026 | TURAN ALTAY TRAVEL | turanaltaytravel@gmail.com</p>
     </footer>
 
