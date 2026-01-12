@@ -67,11 +67,7 @@
         .image-box img { width: 100%; height: 100%; object-fit: cover; }
 
         .section-title { font-size: clamp(2rem, 5vw, 3.5rem); color: var(--lux-gold); text-transform: uppercase; letter-spacing: 5px; margin-bottom: 30px; }
-        .long-text { 
-            font-size: 1.2rem; line-height: 1.8; max-width: 900px; 
-            margin: 0 auto; text-align: justify; word-wrap: break-word;
-        }
-
+        
         .heritage-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px; margin-top: 60px; width: 100%;
@@ -84,25 +80,34 @@
         .heritage-card img { width: 100%; height: 250px; object-fit: cover; border-bottom: 1px solid var(--lux-gold); }
         .heritage-card-content { padding: 25px; }
         .heritage-card h4 { color: var(--lux-gold); font-size: 1.5rem; margin-top: 0; text-transform: uppercase; }
-        .heritage-card p { font-size: 1rem; line-height: 1.6; opacity: 0.9; text-align: justify; }
 
-        .nauryz-section { 
+        .pricing-section {
             background: rgba(212, 163, 115, 0.04);
-            padding: 80px 5%; border: 1px solid var(--lux-gold); margin: 80px 0;
+            padding: 80px 5%; border: 1px solid var(--lux-gold); margin: 80px 0; text-align: center;
         }
+        .price-card-container {
+            display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 40px;
+        }
+        .price-card {
+            border: 1px solid var(--lux-gold); padding: 40px; width: 300px;
+            background: rgba(0,0,0,0.3); transition: 0.4s;
+        }
+        .price-card:hover { transform: translateY(-10px); background: rgba(212, 163, 115, 0.1); }
+        .price-card h3 { color: var(--lux-gold); margin-bottom: 20px; }
+        .price-card .amount { font-size: 2.5rem; font-weight: bold; }
 
-        .price-box {
-            border: 2px solid var(--lux-gold); padding: 50px 30px; 
-            background: rgba(212, 163, 115, 0.05); margin-top: 50px; text-align: center;
+        /* Nauryz Style */
+        .nauryz-box {
+            border: 2px solid #b32d2e;
+            padding: 40px;
+            margin-top: 30px;
+            background: rgba(179, 45, 46, 0.1);
         }
 
         .services-wrap { padding: 100px 5%; background: #010805; border-top: 1px solid var(--lux-gold); }
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .service-card { border: 1px solid rgba(212,163,115,0.2); padding: 40px; transition: 0.4s; background: rgba(5,26,16,0.3); }
-        .service-card:hover { border-color: var(--lux-gold); background: rgba(212, 163, 115, 0.05); }
+        .service-card { border: 1px solid rgba(212,163,115,0.2); padding: 40px; transition: 0.4s; }
         .service-card i { color: var(--lux-gold); font-size: 2.5rem; margin-bottom: 20px; }
-        .service-card h4 { color: var(--lux-gold); font-size: 1.4rem; text-transform: uppercase; margin-bottom: 15px; }
-        .service-card p { font-size: 1rem; line-height: 1.7; opacity: 0.85; }
 
         .registration-section { padding: 100px 5%; text-align: center; }
         .reg-form { max-width: 700px; margin: 50px auto; text-align: left; width: 100%; }
@@ -116,8 +121,6 @@
             text-decoration: none; font-weight: bold; text-transform: uppercase; 
             letter-spacing: 3px; display: inline-block; transition: 0.3s; border: none; width: 100%; cursor: pointer;
         }
-        .btn-xl:hover { background: #fff; box-shadow: 0 0 30px var(--lux-gold); }
-
         footer { padding: 80px 20px; text-align: center; border-top: 1px solid var(--lux-gold); background: #000; }
     </style>
 </head>
@@ -139,9 +142,7 @@
             <h1>Turan <span style="color: var(--lux-gold);">Altay</span></h1>
             <p style="letter-spacing: 15px; color: var(--lux-gold); text-transform: uppercase;">Luxury Travel</p>
             <div class="hero-spirit-text">
-                "Experience the legendary Altai Mountains and the majesty of the Golden Eagle. 
-                We invite you to a sacred journey where ancient traditions meet high-end service. 
-                Turan Altay Travel — your most reliable partner in the heart of the wild."
+                "Experience the legendary Altai Mountains and the majesty of the Golden Eagle."
             </div>
         </div>
     </section>
@@ -150,136 +151,86 @@
         <div class="feature-item">
             <h2 class="section-title">The Soul of the Wind: Golden Eagle</h2>
             <div class="image-box"><img src="eagle..JPG"></div>
-            <p class="long-text">
-                Hunting with Golden Eagles is a 4,000-year-old heritage. At Turan Altay, we provide an exclusive encounter with the 'Burkitshi'. Witness the incredible bond between man and bird, feel the power of the eagle's wings, and immerse yourself in a tradition that defines the nomadic spirit of freedom.
-            </p>
         </div>
 
         <div class="feature-item">
-            <h2 class="section-title">Altai Tavan Bogd Expeditions</h2>
-            <div class="image-box"><img src="altay.JPG"></div>
-            <p class="long-text">
-                The Holy Five Peaks of Altai are waiting for you. From the massive Potanin Glacier to the turquoise lakes of the high valleys, our professional team ensures a safe and deeply spiritual journey to the roof of Mongolia. This is where your soul finds peace among the giants.
-            </p>
-        </div>
-
-        <div class="feature-item">
-            <h2 class="section-title">Ancient Whispers: The Altai Heritage</h2>
+            <h2 class="section-title">The Altai Heritage</h2>
             <div class="heritage-grid">
-                <div class="heritage-card">
-                    <img src="petroglyphs.jpg.JPG" alt="Petroglyphs">
-                    <div class="heritage-card-content">
-                        <h4>UNESCO Petroglyphs</h4>
-                        <p>Dating back 12,000 years, these prehistoric rock carvings illustrate the early hunting and domestic life of ancient tribes.</p>
-                    </div>
-                </div>
-                <div class="heritage-card">
-                    <img src="deer_stones.JPG" alt="Deer Stones">
-                    <div class="heritage-card-content">
-                        <h4>Mystical Deer Stones</h4>
-                        <p>Magnificent Bronze Age megaliths featuring flying deer carvings, representing the spiritual transition between earth and sky.</p>
-                    </div>
-                </div>
-                <div class="heritage-card">
-                    <img src="pazyryk.jpg.JPG" alt="Pazyryk">
-                    <div class="heritage-card-content">
-                        <h4>Pazyryk Culture</h4>
-                        <p>Discover the secrets of the Iron Age Scythian nomads, world-famous for their intricate tattoos and royal carpets.</p>
-                    </div>
-                </div>
-                <div class="heritage-card">
-                    <img src="turkic.jpg.JPG" alt="Turkic Era">
-                    <div class="heritage-card-content">
-                        <h4>The Turkic Era</h4>
-                        <p>Explore the 'Balbal' stone statues—guardians of the ancient graves that have stood firm for over 1,500 years.</p>
-                    </div>
-                </div>
-                <div class="heritage-card">
-                    <img src="khirigsuur.jpg.JPG" alt="Khirigsuur">
-                    <div class="heritage-card-content">
-                        <h4>Ancient Khirigsuurs</h4>
-                        <p>Enormous stone burial mounds and ritual complexes that mark the resting places of elite prehistoric nomadic leaders.</p>
-                    </div>
-                </div>
-                <div class="heritage-card">
-                    <img src="camel..JPG" alt="Camels">
-                    <div class="heritage-card-content">
-                        <h4>Nomadic Caravan</h4>
-                        <p>Experience traditional camel treks through the golden steppes, the ultimate transport of the nomadic ancestors.</p>
-                    </div>
-                </div>
+                <div class="heritage-card"><img src="petroglyphs.jpg.JPG"> <div class="heritage-card-content"><h4>Petroglyphs</h4><p>UNESCO Heritage rock art.</p></div></div>
+                <div class="heritage-card"><img src="deer_stones.JPG"> <div class="heritage-card-content"><h4>Deer Stones</h4><p>Sacred Bronze Age megaliths.</p></div></div>
+                <div class="heritage-card"><img src="pazyryk.jpg.JPG"> <div class="heritage-card-content"><h4>Pazyryk Culture</h4><p>Iron Age Scythian secrets.</p></div></div>
+                <div class="heritage-card"><img src="turkic.jpg.JPG"> <div class="heritage-card-content"><h4>Turkic Era</h4><p>The legendary Balbal stones.</p></div></div>
+                <div class="heritage-card"><img src="khirigsuur.jpg.JPG"> <div class="heritage-card-content"><h4>Khirigsuurs</h4><p>Ancient ceremonial mounds.</p></div></div>
+                <div class="heritage-card"><img src="camel..JPG"> <div class="heritage-card-content"><h4>Caravan</h4><p>Traditional camel treks.</p></div></div>
             </div>
         </div>
 
-        <div class="nauryz-section">
-            <h2 class="section-title">Nauryz Festival 2026</h2>
-            <div class="image-box" style="height: 400px;"><img src="nauryz.JPG"></div>
-            <p class="long-text" style="text-align: center;">Celebrate the Nomadic New Year with us. Experience horse games, eagle festivals, and traditional hospitality during the spring equinox.</p>
+        <div class="pricing-section">
+            <h2 class="section-title">Expedition Packages 2026</h2>
+            <p>All-inclusive professional tours through the heart of the Altai Mountains.</p>
             
-            <div class="price-box">
-                <h3 style="color: var(--lux-gold); text-transform: uppercase; margin-bottom: 25px;">Expedition Pricing</h3>
-                <p style="font-size: 1.8rem; margin: 15px 0;">Individual Package: <b style="color: #fff;">$4,000</b></p>
-                <p style="color: #b32d2e; font-weight: bold; border: 1px solid #b32d2e; display: inline-block; padding: 10px 25px; margin: 20px 0;">
-                    GROUP BONUS: 5+ PEOPLE = 5% INSTANT DISCOUNT
-                </p>
-                <p style="font-style: italic; opacity: 0.8; margin-top: 15px;">*Full-board premium package including all internal flights and logistics.</p>
+            <div class="price-card-container">
+                <div class="price-card">
+                    <h3>Solo Traveler</h3>
+                    <div class="amount">$5,000</div>
+                    <p>Per Person</p>
+                </div>
+                <div class="price-card" style="border-width: 3px; box-shadow: 0 0 20px var(--lux-gold);">
+                    <h3>Team Duo</h3>
+                    <div class="amount">$4,500</div>
+                    <p>Per Person (Total $9,000)</p>
+                </div>
+            </div>
+
+            <div class="nauryz-box">
+                <h3 style="color: #fff; text-transform: uppercase;">Nauryz Festival Special</h3>
+                <div style="font-size: 2.5rem; font-weight: bold; margin: 15px 0;">$4,000</div>
+                <p>Exclusive Spring Equinox Celebration Tour</p>
+            </div>
+            
+            <div style="margin-top: 40px; color: #b32d2e; font-weight: bold; letter-spacing: 2px;">
+                SPECIAL OFFER: GROUPS OF 5+ PEOPLE RECEIVE AN ADDITIONAL 5% DISCOUNT
             </div>
         </div>
     </div>
 
     <section class="services-wrap">
-        <h2 class="section-title" style="text-align: center;">All-Inclusive Premium Services</h2>
+        <h2 class="section-title" style="text-align: center;">What's Included?</h2>
         <div class="service-grid">
             <div class="service-card">
-                <i class="fas fa-plane-departure"></i>
-                <h4>Flight & Logistics</h4>
-                <p>We handle all domestic flight tickets between Ulaanbaatar and Olgii. Includes VIP airport transfers and 24/7 logistical coordination for a seamless transition to the mountains.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-truck-monster"></i>
-                <h4>Luxury 4x4 Transport</h4>
-                <p>Traverse the rugged Altai terrain in high-end Land Cruisers, driven by professional mountain drivers with decades of experience in off-road nomadic routes.</p>
+                <i class="fas fa-plane"></i>
+                <h4>Premium Logistics</h4>
+                <p>Full support including domestic flights (UB-Olgii-UB) and expert ground transportation.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-utensils"></i>
-                <h4>Gourmet Nomadic Dining</h4>
-                <p>Enjoy three high-quality meals per day. Our private chefs blend authentic Kazakh and Mongolian flavors with international standards, using fresh, organic local ingredients.</p>
+                <h4>Gourmet Full-Board</h4>
+                <p>Private chefs providing 3 high-quality meals daily, blending nomadic and modern cuisine.</p>
             </div>
             <div class="service-card">
-                <i class="fas fa-campground"></i>
-                <h4>Elite Accommodations</h4>
-                <p>Experience the wilderness without sacrificing comfort. We provide luxury heated yurts with premium bedding and stays at the most reputable local hotels available.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-language"></i>
-                <h4>Expert Staff</h4>
-                <p>Our team consists of highly qualified English and Kazakh speaking translators and local historians who provide deep insights into the sacred Altai culture.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-shield-alt"></i>
-                <h4>Safety & Reliability</h4>
-                <p>Your safety is our priority. We provide satellite communication, comprehensive first-aid kits, and a support team that is 100% dedicated to your well-being.</p>
+                <i class="fas fa-landmark"></i>
+                <h4>Cultural Immersion</h4>
+                <p>Access to eagle hunters, historic sites, and exclusive traditional festivals with professional guides.</p>
             </div>
         </div>
     </section>
 
     <section id="booking" class="registration-section">
-        <h2 class="section-title">Secure Your Expedition</h2>
+        <h2 class="section-title">Book Your Adventure</h2>
         <div class="reg-form">
             <form>
                 <input type="text" placeholder="Full Name" required>
                 <input type="email" placeholder="Gmail Address" required>
-                <input type="text" placeholder="Group Size (Write 5+ for 5% discount)">
-                <textarea rows="4" placeholder="Share your dream dates and any special requests..."></textarea>
+                <input type="text" placeholder="Package (Nauryz / Solo / Duo / 5+)">
+                <textarea rows="4" placeholder="Message..."></textarea>
                 <button type="submit" class="btn-xl">Send Inquiry</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <img src="logo.JPG" style="height: 80px; filter: drop-shadow(0 0 10px var(--lux-gold)); margin-bottom: 20px;">
-        <h2 style="color: var(--lux-gold); letter-spacing: 5px;">TURAN ALTAY TRAVEL</h2>
-        <p>© 2026 | Professional Nomadic Expeditions | turanaltaytravel@gmail.com</p>
+        <img src="logo.JPG" style="height: 80px; margin-bottom: 20px;">
+        <p>© 2026 | TURAN ALTAY TRAVEL | turanaltaytravel@gmail.com</p>
     </footer>
 
 </body>
