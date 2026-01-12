@@ -91,10 +91,18 @@
             padding: 80px 5%; border: 1px solid var(--lux-gold); margin: 80px 0;
         }
 
+        .price-box {
+            border: 2px solid var(--lux-gold); padding: 50px 30px; 
+            background: rgba(212, 163, 115, 0.05); margin-top: 50px; text-align: center;
+        }
+
         .services-wrap { padding: 100px 5%; background: #010805; border-top: 1px solid var(--lux-gold); }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
-        .service-card { border: 1px solid rgba(212,163,115,0.2); padding: 40px; transition: 0.4s; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .service-card { border: 1px solid rgba(212,163,115,0.2); padding: 40px; transition: 0.4s; background: rgba(5,26,16,0.3); }
+        .service-card:hover { border-color: var(--lux-gold); background: rgba(212, 163, 115, 0.05); }
         .service-card i { color: var(--lux-gold); font-size: 2.5rem; margin-bottom: 20px; }
+        .service-card h4 { color: var(--lux-gold); font-size: 1.4rem; text-transform: uppercase; margin-bottom: 15px; }
+        .service-card p { font-size: 1rem; line-height: 1.7; opacity: 0.85; }
 
         .registration-section { padding: 100px 5%; text-align: center; }
         .reg-form { max-width: 700px; margin: 50px auto; text-align: left; width: 100%; }
@@ -187,7 +195,7 @@
                     </div>
                 </div>
                 <div class="heritage-card">
-                    <img src="khirigsuur.jpg.WEBP" alt="Khirigsuur">
+                    <img src="khirigsuur.jpg.JPG" alt="Khirigsuur">
                     <div class="heritage-card-content">
                         <h4>Ancient Khirigsuurs</h4>
                         <p>Enormous stone burial mounds and ritual complexes that mark the resting places of elite prehistoric nomadic leaders.</p>
@@ -206,49 +214,63 @@
         <div class="nauryz-section">
             <h2 class="section-title">Nauryz Festival 2026</h2>
             <div class="image-box" style="height: 400px;"><img src="nauryz.JPG"></div>
-            <p class="long-text" style="text-align: center;">Celebrate the Nomadic New Year with us. Horse games, eagle festivals, and authentic hospitality.</p>
-            <div style="margin-top: 40px; border: 1px solid var(--lux-gold); padding: 30px; text-align: center;">
-                <h3 style="color: var(--lux-gold);">SPECIAL OFFER</h3>
-                <p style="font-size: 1.5rem;">Group of 5+ People: <b style="color: #b32d2e;">5% DISCOUNT</b></p>
-                <p>Standard Price: $4,000 (All-Inclusive Premium Package)</p>
+            <p class="long-text" style="text-align: center;">Celebrate the Nomadic New Year with us. Experience horse games, eagle festivals, and traditional hospitality during the spring equinox.</p>
+            
+            <div class="price-box">
+                <h3 style="color: var(--lux-gold); text-transform: uppercase; margin-bottom: 25px;">Expedition Pricing</h3>
+                <p style="font-size: 1.8rem; margin: 15px 0;">Individual Package: <b style="color: #fff;">$4,000</b></p>
+                <p style="color: #b32d2e; font-weight: bold; border: 1px solid #b32d2e; display: inline-block; padding: 10px 25px; margin: 20px 0;">
+                    GROUP BONUS: 5+ PEOPLE = 5% INSTANT DISCOUNT
+                </p>
+                <p style="font-style: italic; opacity: 0.8; margin-top: 15px;">*Full-board premium package including all internal flights and logistics.</p>
             </div>
         </div>
     </div>
 
     <section class="services-wrap">
-        <h2 class="section-title" style="text-align: center;">Premium Services</h2>
+        <h2 class="section-title" style="text-align: center;">All-Inclusive Premium Services</h2>
         <div class="service-grid">
             <div class="service-card">
-                <i class="fas fa-plane"></i>
+                <i class="fas fa-plane-departure"></i>
                 <h4>Flight & Logistics</h4>
-                <p>Ulaanbaatar-Olgii flight tickets. Full ground transport with 4x4 Land Cruisers and expert drivers.</p>
+                <p>We handle all domestic flight tickets between Ulaanbaatar and Olgii. Includes VIP airport transfers and 24/7 logistical coordination for a seamless transition to the mountains.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-truck-monster"></i>
+                <h4>Luxury 4x4 Transport</h4>
+                <p>Traverse the rugged Altai terrain in high-end Land Cruisers, driven by professional mountain drivers with decades of experience in off-road nomadic routes.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-utensils"></i>
-                <h4>Nomadic Dining</h4>
-                <p>3-course gourmet meals daily. Authentic local cuisine prepared by professional chefs.</p>
+                <h4>Gourmet Nomadic Dining</h4>
+                <p>Enjoy three high-quality meals per day. Our private chefs blend authentic Kazakh and Mongolian flavors with international standards, using fresh, organic local ingredients.</p>
             </div>
             <div class="service-card">
-                <i class="fas fa-home"></i>
-                <h4>Accommodation</h4>
-                <p>Luxury heated yurts and best local hotels. Maximum comfort in the wildest locations.</p>
+                <i class="fas fa-campground"></i>
+                <h4>Elite Accommodations</h4>
+                <p>Experience the wilderness without sacrificing comfort. We provide luxury heated yurts with premium bedding and stays at the most reputable local hotels available.</p>
             </div>
             <div class="service-card">
-                <i class="fas fa-users"></i>
-                <h4>Elite Guides</h4>
-                <p>English and Kazakh speaking professional translators and cultural historians.</p>
+                <i class="fas fa-language"></i>
+                <h4>Expert Staff</h4>
+                <p>Our team consists of highly qualified English and Kazakh speaking translators and local historians who provide deep insights into the sacred Altai culture.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Safety & Reliability</h4>
+                <p>Your safety is our priority. We provide satellite communication, comprehensive first-aid kits, and a support team that is 100% dedicated to your well-being.</p>
             </div>
         </div>
     </section>
 
     <section id="booking" class="registration-section">
-        <h2 class="section-title">Book Your Adventure</h2>
+        <h2 class="section-title">Secure Your Expedition</h2>
         <div class="reg-form">
             <form>
                 <input type="text" placeholder="Full Name" required>
                 <input type="email" placeholder="Gmail Address" required>
-                <input type="text" placeholder="Group Size (e.g. 5+ for discount)">
-                <textarea rows="4" placeholder="Dates and special requests..."></textarea>
+                <input type="text" placeholder="Group Size (Write 5+ for 5% discount)">
+                <textarea rows="4" placeholder="Share your dream dates and any special requests..."></textarea>
                 <button type="submit" class="btn-xl">Send Inquiry</button>
             </form>
         </div>
