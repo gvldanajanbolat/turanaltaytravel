@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="sOUq1CtPyITuP0ilzz7HKbUmY-G3r_bc84IyZvqSjw4" />
     
-    <title>Turan Altay Travel | Spirit of Freedom</title>
+    <title>Turan Altay Travel | The Ultimate Luxury Nomadic Experience</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -23,167 +23,251 @@
             scroll-behavior: smooth;
         }
 
-        /* ICONS & HERO */
-        .top-corner-icons { position: absolute; top: 25px; right: 25px; z-index: 100; display: flex; gap: 15px; }
-        .top-corner-icons a { color: var(--lux-gold); font-size: 1.2rem; text-decoration: none; transition: 0.3s; }
-        .hero { position: relative; height: 100vh; width: 100%; background: url('eagle..JPG') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(5,26,16,0.8), rgba(5,26,16,0.3), rgba(5,26,16,0.9)); }
-        .hero-content { position: relative; z-index: 2; padding: 0 20px; }
-        .hero h1 { font-size: clamp(3rem, 10vw, 6.5rem); margin: 0; text-shadow: 0 0 25px rgba(212, 163, 115, 0.5); }
-        .hero-sub { color: var(--lux-gold); letter-spacing: 12px; text-transform: uppercase; font-size: 1rem; font-weight: bold; }
+        /* ЖАРҚЫРАҒАН ЛОГОТИП */
+        .mini-logo {
+            position: absolute; top: 20px; left: 50%;
+            transform: translateX(-50%); z-index: 100;
+            height: 70px; filter: drop-shadow(0 0 15px var(--lux-gold));
+            animation: glow-pulse 3s infinite alternate;
+        }
+        @keyframes glow-pulse {
+            from { filter: drop-shadow(0 0 5px var(--lux-gold)); opacity: 0.8; }
+            to { filter: drop-shadow(0 0 25px #fff); opacity: 1; }
+        }
 
-        /* CONTENT BLOCKS */
-        .tour-container { padding: 80px 10%; }
-        .tour-item { margin-bottom: 120px; text-align: center; }
-        .image-box { width: 100%; max-width: 950px; height: 550px; margin: 0 auto 35px auto; overflow: hidden; border: 1px solid var(--lux-gold); box-shadow: 0 15px 45px rgba(0,0,0,0.6); }
-        .image-box img { width: 100%; height: 100%; object-fit: cover; }
-        .tour-item h3 { color: var(--white-gold); font-size: 2.5rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 20px; }
-        .tour-item p { font-size: 1.2rem; line-height: 1.8; font-style: italic; max-width: 850px; margin: 0 auto; opacity: 0.9; }
+        .top-corner-icons {
+            position: absolute; top: 30px; right: 40px;
+            z-index: 100; display: flex; gap: 25px;
+        }
+        .top-corner-icons a {
+            color: var(--lux-gold); font-size: 1.5rem;
+            text-decoration: none; transition: 0.4s;
+        }
+        .top-corner-icons a:hover { color: #fff; transform: scale(1.3); }
 
-        /* NAURYZ */
-        .nauryz-box { background: rgba(212, 163, 115, 0.05); padding: 80px 40px; border: 1px solid var(--lux-gold); margin: 60px 0; }
+        /* HERO SECTION - РУХАНИ ЖАРНАМА */
+        .hero {
+            position: relative; height: 110vh; width: 100%;
+            background: url('eagle..JPG') no-repeat center center/cover;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center;
+        }
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(5,26,16,0.9), rgba(5,26,16,0.3), rgba(5,26,16,1));
+        }
+        .hero-content { position: relative; z-index: 2; padding: 0 20px; max-width: 1200px; }
+        .hero h1 { font-size: clamp(3.5rem, 12vw, 8rem); margin: 0; letter-spacing: 10px; text-transform: uppercase; line-height: 1; }
+        .hero-sub { color: var(--lux-gold); letter-spacing: 20px; text-transform: uppercase; font-size: 1.2rem; margin-top: 20px; font-weight: bold; }
+        
+        .hero-spirit-text {
+            font-size: 1.8rem; font-style: italic; margin-top: 50px; line-height: 1.6;
+            max-width: 900px; margin-left: auto; margin-right: auto;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
 
-        /* HERITAGE LUXURY STYLE */
-        .heritage-section { padding: 80px 0; border-top: 1px solid rgba(212,163,115,0.2); text-align: left; }
-        .heritage-block { display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 80px; align-items: center; }
-        .heritage-text { flex: 1; min-width: 320px; }
-        .heritage-img { flex: 1; min-width: 320px; border: 2px solid var(--lux-gold); padding: 10px; }
-        .heritage-img img { width: 100%; display: block; }
+        /* CONTENT SECTIONS */
+        .main-container { padding: 120px 10%; }
+        .feature-item { margin-bottom: 200px; text-align: center; }
+        
+        .image-box { 
+            width: 100%; max-width: 1200px; height: 700px; 
+            margin: 0 auto 50px auto; overflow: hidden; 
+            border: 1px solid var(--lux-gold); 
+            box-shadow: 0 30px 80px rgba(0,0,0,0.9);
+            position: relative;
+        }
+        .image-box img { width: 100%; height: 100%; object-fit: cover; transition: 2s ease; }
+        .image-box:hover img { transform: scale(1.1); }
 
-        /* SERVICES & PRICING */
-        .services { padding: 80px 10%; background: #020d08; text-align: center; border-top: 1px solid var(--lux-gold); }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin: 50px 0; }
-        .service-card { border: 1px solid rgba(212,163,115,0.2); padding: 30px; transition: 0.3s; }
-        .service-card i { color: var(--lux-gold); font-size: 2rem; margin-bottom: 15px; }
-        .price-banner { padding: 50px; border: 1px solid var(--lux-gold); margin-top: 40px; background: rgba(212,163,115,0.02); }
+        .section-title { font-size: 3.5rem; color: var(--lux-gold); text-transform: uppercase; letter-spacing: 8px; margin-bottom: 40px; }
+        .long-text { font-size: 1.4rem; line-height: 2; max-width: 1000px; margin: 0 auto; text-align: justify; opacity: 0.95; }
+        .gold-quote { font-size: 2rem; color: var(--lux-gold); font-style: italic; margin: 40px 0; display: block; border-left: 3px solid var(--lux-gold); padding-left: 30px; text-align: left; }
 
-        /* FORM */
-        .form-section { padding: 80px 10%; text-align: center; }
-        .form-section input, .form-section textarea { width: 100%; max-width: 600px; background: transparent; border: none; border-bottom: 1px solid var(--lux-gold); padding: 15px; color: white; margin-bottom: 30px; outline: none; }
-        .btn-gold { background: var(--lux-gold); color: #051a10; padding: 18px 50px; text-decoration: none; font-weight: bold; text-transform: uppercase; display: inline-block; cursor: pointer; border: none; }
+        /* NAURYZ & SPECIAL OFFER */
+        .nauryz-section { 
+            background: rgba(212, 163, 115, 0.04);
+            padding: 120px 60px; border: 1px solid var(--lux-gold); 
+            margin: 100px 0; position: relative;
+        }
 
-        footer { padding: 80px 20px; text-align: center; border-top: 1px solid var(--lux-gold); background: #010805; }
+        /* SERVICE GRID */
+        .services-wrap { padding: 120px 10%; background: #010805; border-top: 1px solid var(--lux-gold); }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; margin-top: 80px; }
+        .service-card { border: 1px solid rgba(212,163,115,0.15); padding: 60px; background: rgba(5,26,16,0.5); transition: 0.5s; }
+        .service-card:hover { border-color: var(--lux-gold); background: rgba(212, 163, 115, 0.05); transform: translateY(-10px); }
+        .service-card i { color: var(--lux-gold); font-size: 3rem; margin-bottom: 30px; }
+        .service-card h4 { font-size: 1.8rem; color: var(--lux-gold); margin-bottom: 20px; text-transform: uppercase; }
+
+        /* REGISTRATION FORM */
+        .registration-section { padding: 120px 10%; text-align: center; background: #000; }
+        .reg-form { max-width: 800px; margin: 60px auto 0 auto; text-align: left; }
+        .reg-form input, .reg-form textarea {
+            width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--lux-gold);
+            padding: 25px; color: white; margin-bottom: 40px; outline: none; font-size: 1.2rem;
+        }
+
+        .btn-xl { 
+            background: var(--lux-gold); color: #051a10; padding: 25px 80px; 
+            text-decoration: none; font-weight: bold; text-transform: uppercase; 
+            letter-spacing: 5px; display: inline-block; transition: 0.4s; border: none; cursor: pointer;
+            font-size: 1.2rem;
+        }
+        .btn-xl:hover { background: #fff; box-shadow: 0 0 40px var(--lux-gold); transform: scale(1.05); }
+
+        footer { padding: 120px 20px; text-align: center; border-top: 1px solid var(--lux-gold); background: #000; }
     </style>
 </head>
 <body>
 
+    <img src="logo.JPG" class="mini-logo" alt="Turan Altay Luxury Logo">
+
+    <div class="top-corner-icons">
+        <a href="mailto:turanaltaytravel@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://instagram.com/turanaltaytravel"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/97688460210"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
     <section class="hero">
-        <div class="top-corner-icons">
-            <a href="https://instagram.com/turan.altay.travel"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/97688460210"><i class="fab fa-whatsapp"></i></a>
-        </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <p class="hero-sub">Western Mongolia Expeditions</p>
+            <p class="hero-sub">Welcome to the Land of Eternal Blue Sky</p>
             <h1>Turan <span style="color: var(--lux-gold);">Altay</span></h1>
-            <p style="letter-spacing: 15px; color: var(--lux-gold); text-transform: uppercase;">Travel</p>
-            <p style="font-size: 1.4rem; font-style: italic; margin-top: 30px;">"The spirit of freedom captured in every mile."</p>
+            <p style="letter-spacing: 25px; color: var(--lux-gold); text-transform: uppercase; font-weight: bold;">Travel & Expeditions</p>
+            
+            <div class="hero-spirit-text">
+                "Асқар таулы Алтай мен көкте самғаған Бүркіт — еркіндіктің символы. 
+                Біз сізді бабалар ізі қалған, киелі де қасиетті мекенге, 
+                табиғат пен рухтың үндестігін табуға шақырамыз. 
+                <b>Turan Altay Travel</b> — бұл жай ғана саяхат емес, бұл сіздің жаныңыздың жаңадан түлеуі."
+            </div>
+            
+            <div style="margin-top: 60px;">
+                <a href="#booking" class="btn-xl">Start Your Sacred Journey</a>
+            </div>
         </div>
     </section>
 
-    <div class="tour-container">
-        <div class="tour-item">
-            <div class="image-box"><img src="altay.JPG"></div>
-            <h3>The Majestic Altay</h3>
-            <p>The sacred peaks of Bes Bogda, where the ancient spirit of the nomads resides.</p>
-        </div>
-
-        <div class="tour-item">
+    <div class="main-container">
+        
+        <div class="feature-item">
+            <h2 class="section-title">The Legend of the Golden Eagle</h2>
             <div class="image-box"><img src="eagle..JPG"></div>
-            <h3>Master of the Skies</h3>
-            <p>Feel the breath of freedom under the wings of the golden eagle.</p>
+            <div class="gold-quote">"Бүркіт — аспан патшасы, еркіндік пен батылдықтың бейнесі."</div>
+            <p class="long-text">
+                The ancient art of Eagle Hunting is a legacy that has survived for over 4,000 years in the heart of the Altai Mountains. This is not a mere tourist attraction; it is a profound spiritual connection between a human and a wild predator. At Turan Altay Travel, we offer you an exclusive opportunity to sit beside the legendary 'Burkitshi' (Eagle Hunters), to hear the whispers of the wind as the eagle takes flight from the mountain peak, and to feel the raw power of nature on your own arm. 
+                <br><br>
+                This tradition represents the core of nomadic identity—respect, patience, and absolute trust. You will learn the secrets of how these majestic birds are trained, how they become part of a family, and how they protect the nomadic heritage against the test of time.
+            </p>
         </div>
 
-        <div class="tour-item nauryz-box">
-            <span style="background: var(--lux-gold); color: #051a10; padding: 8px 25px; font-weight: bold; margin-bottom: 20px; display: inline-block;">MARCH 21-23</span>
-            <div class="image-box"><img src="nauryz.JPG"></div>
-            <h3>Great Nauryz Festival</h3>
-            <p>Celebrate the nomadic New Year with traditional eagle festivals.</p>
-            <p style="color: var(--lux-gold); font-weight: bold; font-size: 1.8rem; margin-top: 15px;">Price: $4,000</p>
+        <div class="feature-item">
+            <h2 class="section-title">The Sacred Altai Tavan Bogd</h2>
+            <div class="image-box"><img src="altay.JPG"></div>
+            <div class="gold-quote">"Алтай — адамзаттың бесігі, рухтың мекені."</div>
+            <p class="long-text">
+                Altai Tavan Bogd, the Five Holy Peaks, stand as silent guardians of the Mongolian frontier. This is where the earth meets the heavens. Our expeditions take you to the Potanin Glacier, the longest in the country, and through valleys where the air is so pure it heals the soul. Standing at the peak, looking over the borders of Mongolia, Russia, and China, you realize the true meaning of eternity. 
+                <br><br>
+                Turan Altay Travel ensures that your journey through these rugged terrains is safe, professional, and deeply immersive. We don't just show you the mountains; we tell you the stories of the spirits that reside within them, the legends of the ancient warriors, and the wisdom of the nomads who have called this majestic wilderness home for millennia.
+            </p>
         </div>
 
-        <div class="heritage-section">
-            <h2 style="text-align: center; color: var(--lux-gold); font-size: 2.8rem; letter-spacing: 5px; margin-bottom: 60px;">THE GOLDEN HERITAGE</h2>
+        <div class="nauryz-section">
+            <h2 class="section-title">Great Nauryz Festival 2026</h2>
+            <div class="image-box" style="height: 550px;"><img src="nauryz.JPG"></div>
+            <p class="long-text" style="text-align: center;">
+                Experience the rebirth of the world! Nauryz is the celebration of the spring equinox, a time when the nomadic soul rejoices as the winter fades. Join us for the most spectacular festivities: Golden Eagle competitions, the legendary 'Kokpar' (Horse Polo), archery, and the warm hospitality of Kazakh families sharing the sacred 'Nauryz Koje'.
+            </p>
             
-            <div class="heritage-block">
-                <div class="heritage-text">
-                    <h3 style="color: var(--lux-gold);">1. Ancient Rock Art</h3>
-                    <p>Bayan-Olgii is home to prehistoric rock art dating from the Neolithic to the Bronze Age. Recognized as UNESCO World Heritage, these carvings depict hunting strategies, ancient chariots, and diverse wildlife.</p>
+            <div style="margin-top: 80px; border: 2px solid var(--lux-gold); padding: 50px; background: rgba(212, 163, 115, 0.05);">
+                <h3 style="color: var(--lux-gold); font-size: 2.2rem; text-transform: uppercase;">Exclusive Pricing & Group Offers</h3>
+                <div style="font-size: 1.8rem; margin: 30px 0;">
+                    <p>Standard Individual Expedition: <b style="color: #fff;">$4,000</b> <small>(Full Package)</small></p>
+                    <p style="color: #b32d2e; font-weight: bold; border: 1px solid #b32d2e; display: inline-block; padding: 10px 20px;">
+                        GROUP BONUS: 5+ PEOPLE = 5% INSTANT DISCOUNT
+                    </p>
                 </div>
-                <div class="heritage-img"><img src="petroglyphs.jpg"></div>
+                <p style="font-style: italic;">"Turan Altay Travel — Ең сенімді саяхат серігіңіз. Бізбен бірге сапа мен қауіпсіздікке 100% кепілдік беріледі."</p>
             </div>
-
-            <div class="heritage-block" style="flex-direction: row-reverse;">
-                <div class="heritage-text" style="text-align: right;">
-                    <h3 style="color: var(--lux-gold);">2. Mysterious Deer Stones</h3>
-                    <p>Dating back to 1500–500 BC, these stones feature 'flying deer' motifs. They served as spirit guides for nomadic warriors, marking sacred burial and ritual sites.</p>
-                </div>
-                <div class="heritage-img"><img src="deer_stones.jpg"></div>
-            </div>
-
-            <div class="heritage-block">
-                <div class="heritage-text">
-                    <h3 style="color: var(--lux-gold);">3. Pazyryk Burial Mounds</h3>
-                    <p>Over 362 burial mounds documented. These Iron Age kurgans are world-renowned for preserving organic artifacts and even tattoos in permafrost for 2,000 years.</p>
-                </div>
-                <div class="heritage-img"><img src="pazyryk.jpg"></div>
-            </div>
-
-            <div class="heritage-block" style="flex-direction: row-reverse;">
-                <div class="heritage-text" style="text-align: right;">
-                    <h3 style="color: var(--lux-gold);">4. Turkic Ritual Legacy</h3>
-                    <p>Featuring 255 ritual complexes and 888 ancient graves. The stone 'Balbals' honor ancestors and warriors from the 6th-8th century Turkic Khaganate.</p>
-                </div>
-                <div class="heritage-img"><img src="turkic.jpg"></div>
-            </div>
-
-            <div class="heritage-block">
-                <div class="heritage-text">
-                    <h3 style="color: var(--lux-gold);">5. Khirigsuur Monuments</h3>
-                    <p>Massive stone structures found throughout the province. These Bronze Age monuments represent advanced communal efforts and astronomical alignment.</p>
-                </div>
-                <div class="heritage-img"><img src="khirigsuur.jpg"></div>
-            </div>
-        </div>
-
-        <div class="tour-item">
-            <div class="image-box"><img src="camel..JPG"></div>
-            <h3>Nomadic Caravan</h3>
-            <p>Journey through the vast golden steppes on a traditional camel trek.</p>
         </div>
     </div>
 
-    <section class="services">
-        <h2 style="color: var(--lux-gold); letter-spacing: 5px;">FULL SERVICE EXPEDITION</h2>
+    <section class="services-wrap">
+        <h2 class="section-title" style="text-align: center;">Our Premium All-Inclusive Services</h2>
+        <p style="text-align: center; font-size: 1.3rem; opacity: 0.8; max-width: 800px; margin: 0 auto;">
+            Біз сіздің саяхатыңыздың әрбір секундын ең жоғарғы дәрежеде ұйымдастырамыз. Төмендегі қызметтердің барлығы тур бағасына кіреді:
+        </p>
+        
         <div class="service-grid">
-            <div class="service-card"><i class="fas fa-shuttle-van"></i><h4>Logistics</h4><p>4x4 vehicles and mountain drivers.</p></div>
-            <div class="service-card"><i class="fas fa-map-marked-alt"></i><h4>Guides</h4><p>Professional English speaking guides.</p></div>
-            <div class="service-card"><i class="fas fa-h-square"></i><h4>Stay</h4><p>Luxury yurth stays and nomadic meals.</p></div>
-        </div>
-
-        <div class="price-banner">
-            <h2 style="color: var(--lux-gold);">PRICING</h2>
-            <p>Solo: <b>$5,000</b> | Group: <b>$4,500</b> <small>/per guest</small></p>
-            <br>
-            <a href="https://wa.me/97688460210" class="btn-gold">Book via WhatsApp</a>
+            <div class="service-card">
+                <i class="fas fa-plane"></i>
+                <h4>Premium Flight & Logistics</h4>
+                <p>Round-trip flight tickets from the capital Ulaanbaatar to Olgii city. All airport transfers and ground transportation included.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-truck-monster"></i>
+                <h4>Off-Road Expeditions</h4>
+                <p>Luxury 4x4 Land Cruisers specially equipped for the Altai mountains. Experienced professional mountain drivers with decades of knowledge.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-utensils"></i>
+                <h4>Nomadic Gourmet</h4>
+                <p>Full-boarding service: 3 high-quality meals per day. Authentic nomadic cuisine combined with international premium standards.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-campground"></i>
+                <h4>Elite Accommodation</h4>
+                <p>Stay in the best local hotels and high-end traditional Kazakh yurts with heating and luxury amenities in the middle of the wilderness.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-microphone-alt"></i>
+                <h4>Professional Staff</h4>
+                <p>Highly qualified English and Kazakh speaking translators and expert local guides who are specialists in Altai history and culture.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Safety & Reliability</h4>
+                <p>Satellite communication, first-aid kits, and 24/7 support. Turan Altay — ең сенімді әрі қауіпсіз тур-операторыңыз.</p>
+            </div>
         </div>
     </section>
 
-    <section class="form-section">
-        <h2 style="color: var(--lux-gold);">START YOUR JOURNEY</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea rows="4" placeholder="Message..."></textarea>
-            <br>
-            <button type="submit" class="btn-gold">Send Inquiry</button>
-        </form>
+    <section id="booking" class="registration-section">
+        <h2 class="section-title">Book Your Soul's Journey</h2>
+        <p style="font-size: 1.3rem; opacity: 0.7;">Fill out the form below to start your adventure. Our elite concierge team will contact you personally.</p>
+        
+        <div class="reg-form">
+            <form>
+                <label style="color: var(--lux-gold);">Full Name</label>
+                <input type="text" placeholder="Enter your full name" required>
+                
+                <label style="color: var(--lux-gold);">Gmail Address</label>
+                <input type="email" placeholder="yourname@gmail.com" required>
+                
+                <label style="color: var(--lux-gold);">Group Size</label>
+                <input type="text" placeholder="Number of travelers (Write 5+ for 5% discount)">
+                
+                <label style="color: var(--lux-gold);">Message & Special Requests</label>
+                <textarea rows="6" placeholder="Tell us about your dream trip, preferred dates, and any special needs..."></textarea>
+                
+                <div style="text-align: center;">
+                    <button type="submit" class="btn-xl" style="width: 100%;">Submit Inquiry</button>
+                </div>
+            </form>
+        </div>
+
+        <div style="margin-top: 80px; font-size: 1.5rem;">
+            <p><i class="fas fa-envelope" style="color: var(--lux-gold); margin-right: 15px;"></i> turanaltaytravel@gmail.com</p>
+            <p><i class="fab fa-whatsapp" style="color: var(--lux-gold); margin-right: 15px;"></i> +976 8846 0210</p>
+            <p><i class="fab fa-instagram" style="color: var(--lux-gold); margin-right: 15px;"></i> @turanaltaytravel</p>
+        </div>
     </section>
 
     <footer>
-        <img src="logo.JPG" style="height: 80px; margin-bottom: 20px;">
-        <h2 style="color: var(--lux-gold); letter-spacing: 5px;">TURAN ALTAY TRAVEL</h2>
-        <p>© 2026 | LUXURY EXPEDITIONS</p>
+        <img src="logo.JPG" style="height: 120px; filter: drop-shadow(0 0 15px var(--lux-gold)); margin-bottom: 30px;">
+        <h2 style="color: var(--lux-gold); letter-spacing: 15px;">TURAN ALTAY TRAVEL</h2>
+        <p style="font-size: 1.2rem; font-style: italic; opacity: 0.6;">"The Spirit of Freedom | The Cradle of Nomads"</p>
+        <p style="margin-top: 50px; font-size: 0.8rem; opacity: 0.4;">© 2026 TURAN ALTAY EXPEDITIONS. ALL RIGHTS RESERVED.</p>
     </footer>
 
 </body>
