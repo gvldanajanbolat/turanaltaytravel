@@ -13,6 +13,7 @@
             --deep-green: #051a10; 
             --lux-gold: #d4a373; 
             --white-gold: #f4ebd9;
+            --accent-red: #b32d2e;
         }
 
         * { box-sizing: border-box; } 
@@ -51,66 +52,40 @@
         .hero h1 { font-size: clamp(2.5rem, 8vw, 6.5rem); margin: 0; letter-spacing: 5px; text-transform: uppercase; line-height: 1.1; }
         .hero-sub { color: var(--lux-gold); letter-spacing: 15px; text-transform: uppercase; font-size: 1rem; margin-top: 20px; font-weight: bold; }
         
-        .hero-spirit-text {
-            font-size: clamp(1rem, 3vw, 1.5rem); font-style: italic; margin-top: 40px; line-height: 1.6;
-            padding: 0 5%; border-top: 1px solid var(--lux-gold); padding-top: 20px;
-        }
-
-        .main-container { padding: 80px 5%; width: 100%; }
-        .feature-item { margin-bottom: 120px; text-align: center; width: 100%; }
+        .main-container { padding: 60px 5%; width: 100%; }
+        .feature-item { margin-bottom: 100px; text-align: center; width: 100%; }
         
         .image-box { 
             width: 100%; max-width: 1000px; height: clamp(300px, 60vh, 600px); 
-            margin: 0 auto 40px auto; overflow: hidden; 
-            border: 1px solid var(--lux-gold); box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            margin: 0 auto 30px auto; border: 1px solid var(--lux-gold);
         }
         .image-box img { width: 100%; height: 100%; object-fit: cover; }
 
-        .section-title { font-size: clamp(2rem, 5vw, 3.5rem); color: var(--lux-gold); text-transform: uppercase; letter-spacing: 5px; margin-bottom: 30px; }
+        .section-title { font-size: clamp(1.8rem, 4vw, 3rem); color: var(--lux-gold); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 40px; }
         
         .heritage-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px; margin-top: 60px; width: 100%;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px; margin-top: 40px;
         }
-        .heritage-card { 
-            border: 1px solid rgba(212,163,115,0.3); 
-            padding: 0; background: rgba(0,0,0,0.2);
-            display: flex; flex-direction: column;
-        }
-        .heritage-card img { width: 100%; height: 250px; object-fit: cover; border-bottom: 1px solid var(--lux-gold); }
+        .heritage-card { border: 1px solid rgba(212,163,115,0.3); background: rgba(0,0,0,0.3); text-align: left; }
+        .heritage-card img { width: 100%; height: 250px; object-fit: cover; }
         .heritage-card-content { padding: 25px; }
-        .heritage-card h4 { color: var(--lux-gold); font-size: 1.5rem; margin-top: 0; text-transform: uppercase; }
+        .heritage-card h4 { color: var(--lux-gold); margin-top: 0; font-size: 1.4rem; border-bottom: 1px solid var(--lux-gold); padding-bottom: 10px; }
+        .heritage-card p { line-height: 1.7; font-size: 1rem; opacity: 0.9; }
 
-        .pricing-section {
-            background: rgba(212, 163, 115, 0.04);
-            padding: 80px 5%; border: 1px solid var(--lux-gold); margin: 80px 0; text-align: center;
-        }
-        .price-card-container {
-            display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 40px;
-        }
-        .price-card {
-            border: 1px solid var(--lux-gold); padding: 40px; width: 300px;
-            background: rgba(0,0,0,0.3); transition: 0.4s;
-        }
-        .price-card:hover { transform: translateY(-10px); background: rgba(212, 163, 115, 0.1); }
-        .price-card h3 { color: var(--lux-gold); margin-bottom: 20px; }
-        .price-card .amount { font-size: 2.5rem; font-weight: bold; }
-
-        /* Nauryz Style */
-        .nauryz-box {
-            border: 2px solid #b32d2e;
-            padding: 40px;
-            margin-top: 30px;
-            background: rgba(179, 45, 46, 0.1);
-        }
-
-        .services-wrap { padding: 100px 5%; background: #010805; border-top: 1px solid var(--lux-gold); }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .service-card { border: 1px solid rgba(212,163,115,0.2); padding: 40px; transition: 0.4s; }
+        .services-wrap { padding: 100px 5%; background: #010805; border-top: 1px solid var(--lux-gold); text-align: center; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+        .service-card { border: 1px solid rgba(212,163,115,0.2); padding: 40px; }
         .service-card i { color: var(--lux-gold); font-size: 2.5rem; margin-bottom: 20px; }
 
-        .registration-section { padding: 100px 5%; text-align: center; }
-        .reg-form { max-width: 700px; margin: 50px auto; text-align: left; width: 100%; }
+        .pricing-section { padding: 80px 5%; text-align: center; background: rgba(212,163,115,0.03); border-top: 1px solid var(--lux-gold); }
+        .p-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 40px; }
+        .p-card { border: 1px solid var(--lux-gold); padding: 40px; width: 320px; background: rgba(0,0,0,0.4); }
+        .p-card.special { border-color: var(--accent-red); background: rgba(179, 45, 46, 0.08); }
+        .p-card .amount { font-size: 2.8rem; font-weight: bold; margin: 15px 0; display: block; }
+
+        .registration-section { padding: 100px 5%; text-align: center; border-top: 1px solid var(--lux-gold); }
+        .reg-form { max-width: 600px; margin: 50px auto; text-align: left; }
         .reg-form input, .reg-form textarea {
             width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--lux-gold);
             padding: 15px; color: white; margin-bottom: 30px; outline: none; font-size: 1.1rem;
@@ -118,10 +93,9 @@
 
         .btn-xl { 
             background: var(--lux-gold); color: #051a10; padding: 20px 50px; 
-            text-decoration: none; font-weight: bold; text-transform: uppercase; 
-            letter-spacing: 3px; display: inline-block; transition: 0.3s; border: none; width: 100%; cursor: pointer;
+            text-decoration: none; font-weight: bold; text-transform: uppercase; cursor: pointer; border: none; width: 100%;
         }
-        footer { padding: 80px 20px; text-align: center; border-top: 1px solid var(--lux-gold); background: #000; }
+        footer { padding: 60px 20px; text-align: center; background: #000; border-top: 1px solid var(--lux-gold); }
     </style>
 </head>
 <body>
@@ -141,9 +115,6 @@
             <p class="hero-sub">The Cradle of Nomadic Culture</p>
             <h1>Turan <span style="color: var(--lux-gold);">Altay</span></h1>
             <p style="letter-spacing: 15px; color: var(--lux-gold); text-transform: uppercase;">Luxury Travel</p>
-            <div class="hero-spirit-text">
-                "Experience the legendary Altai Mountains and the majesty of the Golden Eagle."
-            </div>
         </div>
     </section>
 
@@ -151,85 +122,107 @@
         <div class="feature-item">
             <h2 class="section-title">The Soul of the Wind: Golden Eagle</h2>
             <div class="image-box"><img src="eagle..JPG"></div>
+            <p style="max-width: 900px; margin: 0 auto; font-size: 1.2rem; line-height: 1.8;">
+                Step into a world where time stands still. Hunting with Golden Eagles is a spiritual dialogue that has lasted for 4,000 years. Our expeditions take you deep into the Altai peaks to live alongside the legendary eagle hunters.
+            </p>
         </div>
 
         <div class="feature-item">
-            <h2 class="section-title">The Altai Heritage</h2>
+            <h2 class="section-title">Ancient Chronicles of Altai</h2>
             <div class="heritage-grid">
-                <div class="heritage-card"><img src="petroglyphs.jpg.JPG"> <div class="heritage-card-content"><h4>Petroglyphs</h4><p>UNESCO Heritage rock art.</p></div></div>
-                <div class="heritage-card"><img src="deer_stones.JPG"> <div class="heritage-card-content"><h4>Deer Stones</h4><p>Sacred Bronze Age megaliths.</p></div></div>
-                <div class="heritage-card"><img src="pazyryk.jpg.JPG"> <div class="heritage-card-content"><h4>Pazyryk Culture</h4><p>Iron Age Scythian secrets.</p></div></div>
-                <div class="heritage-card"><img src="turkic.jpg.JPG"> <div class="heritage-card-content"><h4>Turkic Era</h4><p>The legendary Balbal stones.</p></div></div>
-                <div class="heritage-card"><img src="khirigsuur.jpg.JPG"> <div class="heritage-card-content"><h4>Khirigsuurs</h4><p>Ancient ceremonial mounds.</p></div></div>
-                <div class="heritage-card"><img src="camel..JPG"> <div class="heritage-card-content"><h4>Caravan</h4><p>Traditional camel treks.</p></div></div>
-            </div>
-        </div>
-
-        <div class="pricing-section">
-            <h2 class="section-title">Expedition Packages 2026</h2>
-            <p>All-inclusive professional tours through the heart of the Altai Mountains.</p>
-            
-            <div class="price-card-container">
-                <div class="price-card">
-                    <h3>Solo Traveler</h3>
-                    <div class="amount">$5,000</div>
-                    <p>Per Person</p>
+                <div class="heritage-card">
+                    <img src="petroglyphs.jpg">
+                    <div class="heritage-card-content">
+                        <h4>UNESCO Petroglyphs</h4>
+                        <p>12,000-year-old rock carvings depicting ancient sun-gods and the very first nomadic chariots ever recorded in human history.</p>
+                    </div>
                 </div>
-                <div class="price-card" style="border-width: 3px; box-shadow: 0 0 20px var(--lux-gold);">
-                    <h3>Team Duo</h3>
-                    <div class="amount">$4,500</div>
-                    <p>Per Person (Total $9,000)</p>
+                <div class="heritage-card">
+                    <img src="deer_stones.JPG">
+                    <div class="heritage-card-content">
+                        <h4>Mystical Deer Stones</h4>
+                        <p>Bronze Age megaliths featuring 'Flying Deer', believed to carry the souls of fallen warriors to the Great Sky.</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="nauryz-box">
-                <h3 style="color: #fff; text-transform: uppercase;">Nauryz Festival Special</h3>
-                <div style="font-size: 2.5rem; font-weight: bold; margin: 15px 0;">$4,000</div>
-                <p>Exclusive Spring Equinox Celebration Tour</p>
-            </div>
-            
-            <div style="margin-top: 40px; color: #b32d2e; font-weight: bold; letter-spacing: 2px;">
-                SPECIAL OFFER: GROUPS OF 5+ PEOPLE RECEIVE AN ADDITIONAL 5% DISCOUNT
+                <div class="heritage-card">
+                    <img src="pazyryk.jpg.JPG">
+                    <div class="heritage-card-content">
+                        <h4>The Pazyryk Secret</h4>
+                        <p>Traces of the Scythian Empire. Frozen tombs preserved in ice for millennia, hiding the world's oldest nomadic treasures.</p>
+                    </div>
+                </div>
+                <div class="heritage-card">
+                    <img src="turkic.jpg">
+                    <div class="heritage-card-content">
+                        <h4>Turkic Guardians</h4>
+                        <p>The 'Balbals'. Ancient stone statues placed by Turkic Khaganates to honor and protect the spirits of great heroes.</p>
+                    </div>
+                </div>
+                <div class="heritage-card">
+                    <img src="khirigsuur.jpg.WEBP>
+                    <div class="heritage-card-content">
+                        <h4>Royal Khirigsuurs</h4>
+                        <p>Vast stone burial complexes built to bridge the gap between Earth and Heaven for elite prehistoric nomadic kings.</p>
+                    </div>
+                </div>
+                <div class="heritage-card">
+                    <img src="camel..JPG">
+                    <div class="heritage-card-content">
+                        <h4>Bactrian Caravans</h4>
+                        <p>Experience the ultimate nomadic transport. Trekking with a camel caravan connects you with the ancient Silk Road spirit.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <section class="services-wrap">
-        <h2 class="section-title" style="text-align: center;">What's Included?</h2>
+        <h2 class="section-title">Premium All-Inclusive Services</h2>
         <div class="service-grid">
-            <div class="service-card">
-                <i class="fas fa-plane"></i>
-                <h4>Premium Logistics</h4>
-                <p>Full support including domestic flights (UB-Olgii-UB) and expert ground transportation.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-utensils"></i>
-                <h4>Gourmet Full-Board</h4>
-                <p>Private chefs providing 3 high-quality meals daily, blending nomadic and modern cuisine.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-landmark"></i>
-                <h4>Cultural Immersion</h4>
-                <p>Access to eagle hunters, historic sites, and exclusive traditional festivals with professional guides.</p>
-            </div>
+            <div class="service-card"><i class="fas fa-plane"></i><h4>Air Logistics</h4><p>Domestic flights (UB-Olgii-UB) and VIP ground transport included.</p></div>
+            <div class="service-card"><i class="fas fa-utensils"></i><h4>Gourmet Dining</h4><p>Private chefs providing 3 organic nomadic meals daily in the wild.</p></div>
+            <div class="service-card"><i class="fas fa-campground"></i><h4>Elite Comfort</h4><p>Heated luxury yurts and premium boutique hotels in remote areas.</p></div>
         </div>
     </section>
 
+    <section class="pricing-section">
+        <h2 class="section-title">Expedition Packages 2026</h2>
+        <div class="p-grid">
+            <div class="p-card">
+                <h3>Solo Expedition</h3>
+                <span class="amount">$5,000</span>
+                <p>Private Luxury Tour</p>
+            </div>
+            <div class="p-card" style="box-shadow: 0 0 20px var(--lux-gold);">
+                <h3>Team Duo</h3>
+                <span class="amount">$4,500</span>
+                <p>Per person (2 people team)</p>
+            </div>
+            <div class="p-card special">
+                <h3 style="color: white;">Nauryz Festival</h3>
+                <span class="amount" style="color: white;">$4,000</span>
+                <p style="color: white;">Spring Special Offer</p>
+            </div>
+        </div>
+        <p style="margin-top: 30px; color: var(--accent-red); font-weight: bold;">* Group of 5+ people: Additional 5% Discount</p>
+    </section>
+
     <section id="booking" class="registration-section">
-        <h2 class="section-title">Book Your Adventure</h2>
+        <h2 class="section-title">Register via Gmail</h2>
+        <p>Complete your registration to secure your Altai expedition dates.</p>
         <div class="reg-form">
             <form>
                 <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Gmail Address" required>
-                <input type="text" placeholder="Package (Nauryz / Solo / Duo / 5+)">
-                <textarea rows="4" placeholder="Message..."></textarea>
-                <button type="submit" class="btn-xl">Send Inquiry</button>
+                <input type="email" placeholder="Your Gmail Address" required>
+                <input type="text" placeholder="Selected Package (Nauryz / Solo / Duo)">
+                <textarea rows="4" placeholder="Special requirements or travel dates..."></textarea>
+                <button type="submit" class="btn-xl">Confirm Registration</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <img src="logo.JPG" style="height: 80px; margin-bottom: 20px;">
+        <img src="logo.JPG" style="height: 60px; margin-bottom: 20px;">
         <p>© 2026 | TURAN ALTAY TRAVEL | turanaltaytravel@gmail.com</p>
     </footer>
 
