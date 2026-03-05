@@ -3,235 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фармакологиянын Алт Далдары - Гулдана & Пуревжаргал</title>
+    <title>Farmakoloji - Guldana & Puje</title>
     <style>
         :root {
-            --luxury-green: #0a2e26;
+            --dark-emerald: #041a16; 
             --gold: #d4af37;
             --bright-gold: #f9e295;
-            --text-white: #ffffff;
-            --soft-shadow: rgba(212, 175, 55, 0.5);
+            --white: #ffffff;
         }
 
         body {
-            background-color: var(--luxury-green);
-            color: var(--text-white);
-            font-family: 'Times New Roman', serif; /* Классикалык стиль */
+            background-color: var(--dark-emerald);
+            color: var(--white);
+            font-family: 'Times New Roman', serif;
             margin: 0;
             padding: 0;
             line-height: 1.8;
-            overflow-x: hidden;
         }
 
-        /* Алтын жаркыраган жээктер */
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 40px;
-            border: 3px solid var(--gold);
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
-            box-shadow: 0 0 30px var(--soft-shadow);
+        .wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
             position: relative;
         }
 
-        /* Логотиптин орду */
+        /* ЛОГОТИП - ОҢ ЖАК ШЕТТЕ */
         .logo-area {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 80px;
-            height: 80px;
-            border: 2px solid var(--gold);
+            top: 25px;
+            right: 25px;
+            width: 110px;
+            height: 110px;
+            border: 4px solid var(--gold);
             border-radius: 50%;
-            padding: 5px;
-            box-shadow: 0 0 15px var(--gold);
+            box-shadow: 0 0 25px var(--gold);
+            z-index: 100;
+            background-color: var(--dark-emerald);
         }
 
-        header {
+        /* БАШКЫ СҮРӨТ ЖАНА ТЕКСТ (ТҮРКЧӨ ТЕМА) */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 550px;
+            border: 6px solid var(--gold);
+            border-radius: 30px;
+            overflow: hidden;
+            margin-top: 50px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(40%);
+        }
+
+        .hero-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-            margin-bottom: 50px;
+            width: 95%;
         }
 
-        h1 {
-            font-size: 2.5em;
+        .hero-title h1 {
+            font-size: 5rem; /* ӨТӨ ЧОҢ ШРИФТ */
             color: var(--gold);
             text-transform: uppercase;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-            border-bottom: 2px double var(--gold);
-            display: inline-block;
-            padding-bottom: 10px;
+            margin: 0;
+            text-shadow: 5px 5px 20px #000;
+            letter-spacing: 3px;
         }
 
-        /* Башкы сүрөт (Intro Image) */
-        .main-img {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border: 2px solid var(--gold);
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 0 20px var(--gold);
+        .hero-title p {
+            font-size: 3rem;
+            color: var(--bright-gold);
+            font-weight: bold;
+            margin-top: 20px;
         }
 
-        /* Видео үчүн стиль */
-        .video-container {
-            text-align: center;
-            margin: 40px 0;
-            border: 2px solid var(--gold);
-            padding: 10px;
-            background: rgba(212, 175, 55, 0.1);
-            border-radius: 15px;
-        }
-
-        video {
-            width: 100%;
-            border-radius: 10px;
-            outline: none;
-        }
-
-        .section {
-            margin-bottom: 50px;
-            padding: 25px;
-            border-left: 5px solid var(--gold);
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 0 15px 15px 0;
+        /* МАЗМУНУ - ЭЧ НЕРСЕ КЫСКАРТЫЛБАДЫ */
+        .content-section {
+            background: rgba(255, 255, 255, 0.04);
+            border-left: 12px solid var(--gold);
+            margin: 50px 0;
+            padding: 50px;
+            border-radius: 0 30px 30px 0;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.4);
         }
 
         h2 {
-            color: var(--bright-gold);
-            border-bottom: 1px solid var(--gold);
-            padding-bottom: 5px;
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--gold);
+            display: inline-block;
         }
 
-        .lang-kg { font-weight: bold; color: #e0e0e0; font-size: 1.1em; }
-        .lang-tr { font-style: italic; color: var(--bright-gold); opacity: 0.9; display: block; margin-top: 8px; }
+        .lang-kg {
+            font-size: 2.2rem; /* АБДАН ЧОҢ */
+            display: block;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #f0f0f0;
+        }
 
-        /* Жаркыраган стрелкалар */
+        .lang-tr {
+            font-size: 2rem;
+            color: var(--bright-gold);
+            font-style: italic;
+            display: block;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
         .arrow {
             text-align: center;
-            font-size: 30px;
+            font-size: 60px;
             color: var(--gold);
-            margin: 20px 0;
-            text-shadow: 0 0 15px var(--gold);
-            animation: pulse 2s infinite;
+            margin: 40px 0;
+            animation: bounce 2s infinite;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.7; }
-            50% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(1); opacity: 0.7; }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(15px); }
         }
 
+        .video-box {
+            width: 100%;
+            border: 5px solid var(--gold);
+            border-radius: 25px;
+            margin: 60px 0;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+
+        video { width: 100%; display: block; }
+
+        ul { list-style: none; padding: 0; }
         li {
-            list-style: none;
-            margin: 15px 0;
-            padding: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 8px;
-            background: rgba(0,0,0,0.2);
+            font-size: 2rem;
+            margin: 25px 0;
+            padding: 25px;
+            background: rgba(212, 175, 55, 0.15);
+            border-right: 5px solid var(--gold);
+            border-radius: 15px;
         }
 
-        .footer {
+        /* ЖЫЙЫНТЫК - ӨЗГӨЧӨ СТИЛЬ */
+        .extraordinary-footer {
             text-align: center;
-            margin-top: 60px;
-            padding: 40px;
-            border-top: 3px double var(--gold);
-            background: rgba(0,0,0,0.4);
-            border-radius: 0 0 20px 20px;
+            padding: 100px 20px;
+            margin-top: 80px;
+            background: linear-gradient(to bottom, var(--dark-emerald), #000);
+            border-top: 6px double var(--gold);
+            border-radius: 60px 60px 0 0;
         }
 
-        .vet-name {
-            font-size: 1.5em;
+        .thanks-text {
+            font-size: 4rem;
             color: var(--gold);
-            margin-top: 20px;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-weight: 900;
+            text-shadow: 0 0 25px var(--gold);
+            margin-bottom: 30px;
         }
 
-        .date-display {
-            margin-top: 15px;
-            font-size: 0.9em;
+        .author-name {
+            font-size: 3.5rem; /* ЛАТЫНША АТТАР */
+            color: var(--white);
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            border: 3px solid var(--gold);
+            display: inline-block;
+            padding: 20px 60px;
+            border-radius: 60px;
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .date-box {
+            margin-top: 40px;
+            font-size: 1.8rem;
             color: var(--bright-gold);
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <img src="logo.png.jpg" alt="Logo" class="logo-area" onerror="this.style.display='none'">
+<div class="wrapper">
+    <img src="logo.png" alt="Logo" class="logo-area" onerror="this.style.display='none'">
 
-    <header>
-        <h1>Farmakolojinin Alt Dalları</h1>
-        <p style="font-size: 1.3em; color: var(--gold);">Guldana & Puje</p>
-    </header>
-
-    <img src="main..jpg" alt="Veterinary Pharmacology" class="main-img" onerror="this.src='https://via.placeholder.com/1000x400/0a2e26/d4af37?text=Veterinary+Pharmacology'">
-
-    <hr style="border: 0; border-top: 2px solid var(--gold); margin: 30px 0;">
-
-    <div class="section">
-        <h2>Кириш / Giriş</h2>
-        <p class="lang-kg">Фармакология – бул дары-дармектерди жана алардын тирүү организмге тийгизген таасирин изилдеген илим. Ветеринария тармагында фармакология жаныбарлардын ооруларын дарылоодо жана алардын ден соолугун сактоодо чоң мааниге ээ.</p>
-        <p class="lang-tr">Farmakoloji, ilaçların ve ilaç maddelerinin canlı organizma üzerindeki etkilerini inceleyen bilim dalıdır. Veterinerlik alanında farmakoloji, hayvanların hastalıklarını tedavi etmede ve sağlıklarını korumada büyük önem taşır.</p>
-        
-        <div class="arrow">▼</div>
-        
-        <p class="lang-kg">Жаныбарларга берилген дары организмге киргенден кийин ар кандай процесстерден өтөт: ал канга сиңет, организм боюнча тарайт, айрым органдарда химиялык же биохимиялык өзгөрүүлөргө учурайт жана акырында организмден чыгарылат.</p>
-        <p class="lang-tr">Hayvanlara verilen ilaç, organizmada farklı süreçlerden geçer: kana karışır, vücutta dağılır, bazı organlarda kimyasal veya biyokimyasal değişikliklere uğrar ve sonunda vücuttan atılır.</p>
-        
-        <div class="arrow">▼</div>
-
-        <p class="lang-kg">Ошол процесстерди жана дарынын организмге тийгизген таасирин изилдеген фармакология бир нече тармактарга бөлүнөт. Бул тармактар ар бир жаныбарга ылайык дарынын эффективдүүлүгүн жана коопсуздугун камсыздоого жардам берет.</p>
-        <p class="lang-tr">Bu süreçleri ve ilacın organizmaya etkilerini inceleyen farmakoloji, birkaç alt dala ayrılır. Bu dallar, her hayvana uygun doz ve etkinliği belirleyerek güvenli kullanım sağlar.</p>
-
-        <p class="lang-kg">Мисалы, итке бериле турган антибиотик менен уйга бериле турган антибиотиктин дозасы жана таасири ар башка болушу мүмкүн. Бул фармакологияны ветеринарияда үйрөнүүнү абдан маанилүү кылат.</p>
-        <p class="lang-tr">Örneğin, bir köpeğe verilen antibiyotiğin dozu ve etkisi ile bir ineğe verilen antibiyotiğin dozu farklı olabilir. Bu nedenle veterinerlikte farmakolojiyi öğrenmek çok önemlidir.</p>
+    <div class="hero">
+        <img src="main.jpg" alt="Background" class="hero-img" onerror="this.src='https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=1600'">
+        <div class="hero-title">
+            <h1>Farmakoloji</h1>
+            <p>Guldana & Puje</p>
+        </div>
     </div>
 
-    <div class="video-container">
-        <h3 style="color: var(--gold);">Тематикалык Видео / Tanıtım Videosu</h3>
+    <div class="content-section">
+        <h2>Кириш / Giriş</h2>
+        <span class="lang-kg">Фармакология – бул дары-дармектерди жана алардын тирүү организмге тийгизген таасирин изилдеген илим. Ветеринария тармагында фармакология жаныбарлардын ооруларын дарылоодо жана алардын ден соолугун сактоодо чоң мааниге ээ.</span>
+        <span class="lang-tr">Farmakoloji, ilaçların ve ilaç maddelerinin canlı organizma üzerindeki etkilerini inceleyen bilim dalıdır. Veterinerlik alanında farmakoloji, hayvanların hastalıklarını tedavi etmede ve sağlıklarını korumada büyük önem taşır.</span>
+        
+        <div class="arrow">▼</div>
+        
+        <span class="lang-kg">Жаныбарларга берилген дары организмге киргенден кийин ар кандай процесстерден өтөт: ал канга сиңет, организм боюнча тарайт, айрым органдарда химиялык же биохимиялык өзгөрүүлөргө учурайт жана акырында организмден чыгарылат.</span>
+        <span class="lang-tr">Hayvanlara verilen ilaç, organizmada farklı süreçlerden geçer: kana karışır, vücutta dağılır, bazı organlarda kimyasal veya biyokimyasal değişikliklere uğrar ve sonunda vücuttan atılır.</span>
+        
+        <div class="arrow">▼</div>
+
+        <span class="lang-kg">Ошол процесстерди жана дарынын организмге тийгизген таасирин изилдеген фармакология бир нече тармактарга бөлүнөт. Бул тармактар ар бир жаныбарга ылайык дарынын эффективдүүлүгүн жана коопсуздугун камсыздоого жардам берет.</span>
+        <span class="lang-tr">Bu süreçleri ve ilacın organizmaya etkilerini inceleyen farmakoloji, birkaç alt dala ayrılır. Bu dallar, her hayvana uygun doz ve etkinliği belirleyerek güvenli kullanım sağlar.</span>
+
+        <span class="lang-kg">Мисалы, итке бериле турган антибиотик менен уйга бериле турган антибиотиктин дозасы жана таасири ар башка болушу мүмкүн. Бул фармакологияны ветеринарияда үйрөнүүнү абдан маанилүү кылат.</span>
+        <span class="lang-tr">Örneğin, bir köpeğe verilen antibiyotiğin dozu ve etkisi ile bir ineğe verilen antibiyotiğin dozu farklı olabilir. Bu nedenle veterinerlikte farmakolojiyi öğrenmek çok önemlidir.</span>
+    </div>
+
+    <div class="video-box">
         <video controls>
             <source src="video.mp4" type="video/mp4">
-            Сиздин браузериңиз видеону колдобойт.
+            Видео жүктөлгөн жок.
         </video>
     </div>
 
-    <div class="section">
-        <h2>Farmakodinamika / Farmakodinamik</h2>
-        <p class="lang-kg">Фармакодинамика – дары каражаттарынын организмге кандай таасир тийгизерин изилдеген тармак. Башкача айтканда, дары жаныбар организминде кандай физиологиялык же биохимиялык өзгөрүүлөрдү жаратат деген суроого жооп берет.</p>
-        <p class="lang-tr">Farmakodinamik, ilaçların organizma üzerindeki etkilerini inceleyen dalıdır. Yani, ilacın hayvan vücudunda hangi fizyolojik veya biyokimyasal değişikliklere yol açtığını açıklar.</p>
+    <div class="content-section">
+        <h2>Farmakodinamik</h2>
+        <span class="lang-kg">Фармакодинамика – дары каражаттарынын организмге кандай таасир тийгизерин изилдеген тармак. Башкача айтканда, дары жаныбар организминде кандай физиологиялык же биохимиялык өзгөрүүлөрдү жаратат деген суроого жооп берет.</span>
+        <span class="lang-tr">Farmakodinamik, ilaçların organizma üzerindeki etkilerini inceleyen dalıdır. Yani, ilacın hayvan vücudunda hangi fizyolojik veya biyokimyasal değişikliklere yol açtığını açıklar.</span>
         
         <div class="arrow">➥</div>
         
-        <p class="lang-kg">Дары организмге киргенде клеткалардагы атайын түзүлүштөр – рецепторлор менен байланышат. Ошол байланыштын натыйжасында организмде ар кандай өзгөрүүлөр пайда болот.</p>
-        <p class="lang-tr">İlaç, organizmaya girdikten sonra hücrelerdeki özel yapılara – reseptörlere – bağlanır ve bu bağlanma sonucunda vücutta değişiklikler meydana gelir.</p>
+        <span class="lang-kg">Дары организмге киргенде клеткалардагы атайын түзүлүштөр – рецепторлор менен байланышат. Ошол байланыштын натыйжасында организмде ар кандай өзгөрүүлөр пайда болот.</span>
+        <span class="lang-tr">İlaç, organizmaya girdikten sonra hücrelerdeki özel yapılara – reseptörlere – bağlanır ve bu bağlanma sonucunda vücutta değişiklikler meydana gelir.</span>
 
-        <h4 style="color: var(--gold);">Ветеринарияда мисалдар / Veterinerlikte örnekler:</h4>
+        <h3 style="color: var(--gold); font-size: 2.5rem; margin-top: 30px;">Мисалдар / Örnekler:</h3>
         <ul>
-            <li>
-                <span class="lang-kg">Ооруну басаңдатуучу препараттар (аналгетиктер) нерв системасына таасир берип, ооруну азайтат.</span>
-                <span class="lang-tr">Ağrı kesici ilaçlar (analjezikler) sinir sistemine etki ederek ağrıyı azaltır.</span>
-            </li>
-            <li>
-                <span class="lang-kg">Антибиотиктер бактерияларды жок кылып инфекцияны айыктырууга жардам берет.</span>
-                <span class="lang-tr">Antibiyotikler bakterileri yok ederek enfeksiyonun iyileşmesine yardımcı olur.</span>
-            </li>
-            <li>
-                <span class="lang-kg">Жүрөк ооруларына каршы препараттар жүрөктүн ритмин жөнгө салып, кан айланууну жакшыртат.</span>
-                <span class="lang-tr">Kalp hastalıkları için kullanılan ilaçlar, kalp ritmini düzenler ve kan dolaşımını iyileştirir.</span>
-            </li>
+            <li>✔ <span class="lang-kg">Ооруну басаңдатуучу препараттар (аналгетиктер) нерв системасына таасир берип, ооруну азайтат.</span></li>
+            <li>✔ <span class="lang-kg">Антибиотиктер бактерияларды жок кылып инфекцияны айыктырууга жардам берет.</span></li>
+            <li>✔ <span class="lang-kg">Жүрөк ооруларына каршы препараттар жүрөктүн ритмин жөнгө салып, кан айланууну жакшыртат.</span></li>
         </ul>
     </div>
 
-    <div class="section">
-        <h2>Farmakokinetika / Farmakokinetik</h2>
-        <p class="lang-kg">Фармакокинетика дары организмге киргенден кийин анын организм ичинде кандай жол менен жүрөрүн изилдейт. Башкача айтканда, организм дары менен эмне кылат деген суроого жооп берет.</p>
-        <p class="lang-tr">Farmakokinetik, ilacın vücuda girdikten sonra organizmada nasıl hareket ettiğini inceler. Yani, organizmanın ilaçla ne yaptığı sorusunu cevaplar.</p>
+    <div class="content-section">
+        <h2>Farmakokinetik</h2>
+        <span class="lang-kg">Фармакокинетика дары организмге киргенден кийин анын организм ичинде кандай жол менен жүрөрүн изилдеп, организм дары менен эмне кылат деген суроого жооп берет.</span>
+        <span class="lang-tr">Farmakokinetik, ilacın vücuda girdikten sonra organizmada nasıl hareket ettiğini жана organizmanın ilaçla ne yaptığını inceler.</span>
         
-        <div class="arrow">➤</div>
-
-        <ul>
+        <ul style="border-top: 2px solid var(--gold); padding-top: 20px;">
             <li><strong>1. Сиңүү (Absorbsiya / Emilim):</strong> <span class="lang-kg">Дары организмге киргенден кийин канга сиңет.</span></li>
             <li><strong>2. Таралуусу (Distribusiya / Dağılım):</strong> <span class="lang-kg">Кан аркылуу дары организмдин ар кандай органдарына жетет.</span></li>
             <li><strong>3. Метаболизм / Metabolizma:</strong> <span class="lang-kg">Дары боордо ферменттер аркылуу химиялык өзгөрүүгө учурайт.</span></li>
@@ -239,23 +263,18 @@
         </ul>
     </div>
 
-    <div class="footer">
-        <h2 style="border: none; margin-bottom: 5px;">Көңүл бурганыңызга чоң рахмат!</h2>
-        <h3 style="color: var(--bright-gold); border: none; font-style: italic;">İlginiz için çok teşekkür ederiz!</h3>
-        
-        <div class="vet-name">
-            Вет. врач: Гулдана & Пуревжаргал
-        </div>
-        
-        <div class="date-display" id="currentDate"></div>
+    <div class="extraordinary-footer">
+        <div class="thanks-text">Көңүл бурганыңызга чоң рахмат!</div>
+        <div class="thanks-text" style="font-style: italic; font-size: 2.8rem; opacity: 0.8;">İlginiz için çok teşekkür ederiz!</div>
+        <br><br>
+        <div class="author-name">Guldana & Puje</div>
+        <div class="date-box" id="currentDate"></div>
     </div>
 </div>
 
 <script>
-    // Бүгүнкү күндү форматтоо
     const d = new Date();
-    const dateStr = d.getDate() + "." + (d.getMonth() + 1) + "." + d.getFullYear();
-    document.getElementById('currentDate').innerHTML = "Дата: " + dateStr;
+    document.getElementById('currentDate').innerHTML = "Date: " + d.getDate() + "." + (d.getMonth() + 1) + "." + d.getFullYear();
 </script>
 
 </body>
