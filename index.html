@@ -1,264 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ky">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="sOUq1CtPyITuP0ilzz7HKbUmY-G3r_bc84IyZvqSjw4" />
-    
-    <title>Turan Altay Travel | Professional Luxury Expeditions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <title>Фармакологиянын Алт Далдары - Гулдана & Пуревжаргал</title>
     <style>
-        :root { 
-            --deep-green: #051a10; 
-            --lux-gold: #d4a373; 
-            --bright-gold: #fccb6e;
-            --white-gold: #f4ebd9;
-            --accent-red: #b32d2e;
+        :root {
+            --luxury-green: #0a2e26;
+            --gold: #d4af37;
+            --bright-gold: #f9e295;
+            --text-white: #ffffff;
+            --soft-shadow: rgba(212, 175, 55, 0.5);
         }
 
-        * { box-sizing: border-box; } 
-
         body {
-            margin: 0; padding: 0;
-            background-color: var(--deep-green);
-            color: var(--white-gold);
-            font-family: 'Playfair Display', serif;
-            scroll-behavior: smooth;
+            background-color: var(--luxury-green);
+            color: var(--text-white);
+            font-family: 'Times New Roman', serif; /* Классикалык стиль */
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
             overflow-x: hidden;
         }
 
-        /* NAVIGATION */
-        .top-nav {
-            position: absolute; top: 30px; width: 100%;
-            display: flex; justify-content: space-between;
-            padding: 0 5%; z-index: 100; align-items: center;
-        }
-        .nav-logo img { height: 60px; filter: drop-shadow(0 0 10px var(--lux-gold)); }
-        .top-corner-icons { display: flex; gap: 25px; }
-        .top-corner-icons a { color: var(--lux-gold); font-size: 1.5rem; text-decoration: none; transition: 0.4s; }
-        .top-corner-icons a:hover { color: #fff; transform: scale(1.2); }
-
-        /* HERO */
-        .hero {
-            position: relative; height: 100vh; width: 100%;
-            background: url('eagle..JPG') no-repeat center center/cover;
-            display: flex; align-items: center; justify-content: center; text-align: center;
-        }
-        .hero-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, rgba(5,26,16,0.8), rgba(5,26,16,0.3), rgba(5,26,16,0.95));
-        }
-        .hero-content { position: relative; z-index: 2; padding: 0 20px; width: 100%; max-width: 1000px; }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 6.5rem); margin: 0; letter-spacing: 5px; text-transform: uppercase; line-height: 1.1; }
-        .hero-sub { color: var(--lux-gold); letter-spacing: 15px; text-transform: uppercase; font-size: 1rem; margin-top: 20px; font-weight: bold; }
-        
-        .main-container { padding: 80px 5%; width: 100%; }
-        .feature-item { margin-bottom: 120px; text-align: center; width: 100%; }
-        
-        .image-box { 
-            width: 100%; max-width: 1000px; height: clamp(300px, 60vh, 600px); 
-            margin: 0 auto 30px auto; border: 1px solid var(--lux-gold); box-shadow: 0 0 30px rgba(0,0,0,0.5);
-        }
-        .image-box img { width: 100%; height: 100%; object-fit: cover; }
-
-        .section-title { font-size: clamp(2rem, 5vw, 3.5rem); color: var(--lux-gold); text-transform: uppercase; letter-spacing: 5px; margin-bottom: 40px; }
-        .description-text { max-width: 1000px; margin: 0 auto; font-size: 1.2rem; line-height: 1.8; text-align: justify; opacity: 0.95; }
-
-        /* NAURYZ BLOCK */
-        .nauryz-special-section {
-            background: rgba(0, 0, 0, 0.4); border: 3px solid var(--bright-gold); 
-            padding: 80px 5%; margin: 80px 0; border-radius: 20px;
-            box-shadow: 0 0 50px rgba(252, 203, 110, 0.3); text-align: center;
+        /* Алтын жаркыраган жээктер */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 40px;
+            border: 3px solid var(--gold);
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 0 30px var(--soft-shadow);
+            position: relative;
         }
 
-        /* HERITAGE GRID */
-        .heritage-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px; margin-top: 60px;
+        /* Логотиптин орду */
+        .logo-area {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            padding: 5px;
+            box-shadow: 0 0 15px var(--gold);
         }
-        .heritage-card { border: 1px solid rgba(212,163,115,0.3); background: rgba(0,0,0,0.3); }
-        .heritage-card img { width: 100%; height: 280px; object-fit: cover; }
-        .heritage-card-content { padding: 30px; text-align: left; }
-        .heritage-card h4 { color: var(--lux-gold); font-size: 1.6rem; text-transform: uppercase; border-bottom: 1px solid var(--lux-gold); padding-bottom: 10px; margin-bottom: 15px; }
 
-        /* ЖАҢАРТЫЛҒАН СЕРВИС БӨЛІМІ (КЕҢ ЖӘНЕ ТОЛЫҚ) */
-        .services-wrap { 
-            padding: 120px 5%; background: #010805; border-top: 1px solid var(--lux-gold); text-align: center;
+        header {
+            text-align: center;
+            margin-bottom: 50px;
         }
-        .service-grid { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 40px; margin-top: 60px; max-width: 1200px; margin-left: auto; margin-right: auto;
-        }
-        .service-card { 
-            border: 1px solid rgba(212,163,115,0.2); padding: 60px 40px; 
-            background: rgba(252, 203, 110, 0.02); transition: 0.4s;
-        }
-        .service-card:hover { border-color: var(--bright-gold); transform: translateY(-10px); }
-        .service-card i { color: var(--lux-gold); font-size: 3.5rem; margin-bottom: 30px; }
-        .service-card h4 { font-size: 1.8rem; color: var(--lux-gold); margin-bottom: 20px; text-transform: uppercase; }
-        .service-card p { font-size: 1.1rem; line-height: 1.7; opacity: 0.9; }
 
-        /* PRICING */
-        .pricing-section { padding: 100px 5%; text-align: center; background: rgba(212,163,115,0.03); border-top: 1px solid var(--lux-gold); }
-        .p-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 50px; }
-        .p-card { border: 1px solid var(--lux-gold); padding: 50px; width: 350px; background: rgba(0,0,0,0.5); }
-        .p-card .amount { font-size: 3.5rem; font-weight: bold; margin: 20px 0; display: block; }
+        h1 {
+            font-size: 2.5em;
+            color: var(--gold);
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            border-bottom: 2px double var(--gold);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
 
-        /* ЖАҢАРТЫЛҒАН ТІРКЕЛУ БӨЛІМІ (ҰЗЫН, КЕҢ ЖӘНЕ ЖАСЫЛ) */
-        .registration-section { 
-            padding: 150px 5%; 
-            background: linear-gradient(to bottom, var(--deep-green), #0a2516); 
-            text-align: center; border-top: 1px solid var(--lux-gold);
+        /* Башкы сүрөт (Intro Image) */
+        .main-img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border: 2px solid var(--gold);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px var(--gold);
         }
-        .reg-container {
-            max-width: 1100px; margin: 0 auto;
-        }
-        .reg-form { 
-            display: grid; grid-template-columns: 1fr 1fr; gap: 30px; 
-            margin-top: 60px; text-align: left; 
-        }
-        .reg-form input, .reg-form select, .reg-form textarea {
-            width: 100%; background: rgba(0,0,0,0.3); border: 1px solid var(--lux-gold);
-            padding: 20px; color: white; outline: none; font-size: 1.2rem; font-family: inherit;
-        }
-        .reg-form textarea { grid-column: span 2; height: 200px; }
-        .reg-full-width { grid-column: span 2; }
 
-        .btn-xl { 
-            background: var(--lux-gold); color: #051a10; padding: 25px; 
-            font-weight: bold; text-transform: uppercase; cursor: pointer; border: none; 
-            width: 100%; font-size: 1.5rem; transition: 0.3s; margin-top: 20px;
+        /* Видео үчүн стиль */
+        .video-container {
+            text-align: center;
+            margin: 40px 0;
+            border: 2px solid var(--gold);
+            padding: 10px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 15px;
         }
-        .btn-xl:hover { background: var(--bright-gold); letter-spacing: 2px; }
 
-        footer { padding: 80px 20px; text-align: center; background: #000; border-top: 1px solid var(--lux-gold); }
+        video {
+            width: 100%;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            padding: 25px;
+            border-left: 5px solid var(--gold);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 0 15px 15px 0;
+        }
+
+        h2 {
+            color: var(--bright-gold);
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 5px;
+        }
+
+        .lang-kg { font-weight: bold; color: #e0e0e0; font-size: 1.1em; }
+        .lang-tr { font-style: italic; color: var(--bright-gold); opacity: 0.9; display: block; margin-top: 8px; }
+
+        /* Жаркыраган стрелкалар */
+        .arrow {
+            text-align: center;
+            font-size: 30px;
+            color: var(--gold);
+            margin: 20px 0;
+            text-shadow: 0 0 15px var(--gold);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+
+        li {
+            list-style: none;
+            margin: 15px 0;
+            padding: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            border-top: 3px double var(--gold);
+            background: rgba(0,0,0,0.4);
+            border-radius: 0 0 20px 20px;
+        }
+
+        .vet-name {
+            font-size: 1.5em;
+            color: var(--gold);
+            margin-top: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .date-display {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: var(--bright-gold);
+        }
     </style>
 </head>
 <body>
 
-    <div class="top-nav">
-        <div class="nav-logo"><img src="logo.JPG" alt="Logo"></div>
-        <div class="top-corner-icons">
-            <a href="mailto:turanaltaytravel@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://instagram.com/turanaltaytravel"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/97688460210"><i class="fab fa-whatsapp"></i></a>
-        </div>
+<div class="container">
+    <img src="logo.png.jpg" alt="Logo" class="logo-area" onerror="this.style.display='none'">
+
+    <header>
+        <h1>Farmakolojinin Alt Dalları</h1>
+        <p style="font-size: 1.3em; color: var(--gold);">Guldana & Puje</p>
+    </header>
+
+    <img src="main..jpg" alt="Veterinary Pharmacology" class="main-img" onerror="this.src='https://via.placeholder.com/1000x400/0a2e26/d4af37?text=Veterinary+Pharmacology'">
+
+    <hr style="border: 0; border-top: 2px solid var(--gold); margin: 30px 0;">
+
+    <div class="section">
+        <h2>Кириш / Giriş</h2>
+        <p class="lang-kg">Фармакология – бул дары-дармектерди жана алардын тирүү организмге тийгизген таасирин изилдеген илим. Ветеринария тармагында фармакология жаныбарлардын ооруларын дарылоодо жана алардын ден соолугун сактоодо чоң мааниге ээ.</p>
+        <p class="lang-tr">Farmakoloji, ilaçların ve ilaç maddelerinin canlı organizma üzerindeki etkilerini inceleyen bilim dalıdır. Veterinerlik alanında farmakoloji, hayvanların hastalıklarını tedavi etmede ve sağlıklarını korumada büyük önem taşır.</p>
+        
+        <div class="arrow">▼</div>
+        
+        <p class="lang-kg">Жаныбарларга берилген дары организмге киргенден кийин ар кандай процесстерден өтөт: ал канга сиңет, организм боюнча тарайт, айрым органдарда химиялык же биохимиялык өзгөрүүлөргө учурайт жана акырында организмден чыгарылат.</p>
+        <p class="lang-tr">Hayvanlara verilen ilaç, organizmada farklı süreçlerden geçer: kana karışır, vücutta dağılır, bazı organlarda kimyasal veya biyokimyasal değişikliklere uğrar ve sonunda vücuttan atılır.</p>
+        
+        <div class="arrow">▼</div>
+
+        <p class="lang-kg">Ошол процесстерди жана дарынын организмге тийгизген таасирин изилдеген фармакология бир нече тармактарга бөлүнөт. Бул тармактар ар бир жаныбарга ылайык дарынын эффективдүүлүгүн жана коопсуздугун камсыздоого жардам берет.</p>
+        <p class="lang-tr">Bu süreçleri ve ilacın organizmaya etkilerini inceleyen farmakoloji, birkaç alt dala ayrılır. Bu dallar, her hayvana uygun doz ve etkinliği belirleyerek güvenli kullanım sağlar.</p>
+
+        <p class="lang-kg">Мисалы, итке бериле турган антибиотик менен уйга бериле турган антибиотиктин дозасы жана таасири ар башка болушу мүмкүн. Бул фармакологияны ветеринарияда үйрөнүүнү абдан маанилүү кылат.</p>
+        <p class="lang-tr">Örneğin, bir köpeğe verilen antibiyotiğin dozu ve etkisi ile bir ineğe verilen antibiyotiğin dozu farklı olabilir. Bu nedenle veterinerlikte farmakolojiyi öğrenmek çok önemlidir.</p>
     </div>
 
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <p class="hero-sub">The Cradle of Nomadic Culture</p>
-            <h1>Turan <span style="color: var(--lux-gold);">Altay</span></h1>
-            <p style="letter-spacing: 15px; color: var(--lux-gold); text-transform: uppercase;">Luxury Travel</p>
-        </div>
-    </section>
-
-    <div class="main-container">
-
-        <div class="feature-item">
-            <h2 class="section-title">The Sacred Altai & Tavan Bogd</h2>
-            <div class="image-box"><img src="altay.JPG"></div>
-            <div class="description-text">
-                The Altai Mountains are the "Golden Pillars" of the world. Standing at the junction of four nations, the Altai represents Earth's rawest majesty. Our expeditions focus on the <strong>Tavan Bogd (Five Holy Peaks)</strong>, home to Khuiten Peak (4,374m) and the massive Potanin Glacier. It is a land where the Great Spirit still speaks through the ice and the wind.
-            </div>
-        </div>
-
-        <div class="feature-item">
-            <h2 class="section-title">Master of the Skies: Golden Eagle</h2>
-            <div class="image-box"><img src="eagle..JPG"></div>
-            <div class="description-text">
-                Hunting with Golden Eagles is an ancient art that has survived for over 4,000 years. Live with the 'Burkitshi', learn their calls, and witness the incredible bond between the nomad and the king of birds. A spiritual dialogue that defines the Altai soul.
-            </div>
-        </div>
-
-        <section class="nauryz-special-section">
-            <h2 class="section-title" style="color: var(--bright-gold); margin-bottom: 30px;">Nauryz Festival Special 2026</h2>
-            <div class="image-box" style="border-color: var(--bright-gold);"><img src="nauryz.JPG"></div>
-            <p style="font-size: 2rem; margin: 25px 0; font-weight: bold; color: var(--bright-gold);">March 21 - March 22</p>
-            <div class="description-text" style="text-align: center;">
-                Experience the rebirth of nature. From traditional "Nauryz Kozhe" feasts to the adrenaline of "Kokpar" horse games. Join the local families in Olgii for the most authentic nomadic New Year celebration on Earth.
-                <br><br>
-                <strong style="font-size: 2.5rem; color: var(--bright-gold);">$4,000 All-Inclusive</strong>
-            </div>
-        </section>
-
-        <div class="feature-item">
-            <h2 class="section-title">Ancient Chronicles & Heritage</h2>
-            <div class="heritage-grid">
-                <div class="heritage-card"><img src="petroglyphs.jpg"><div class="heritage-card-content"><h4>UNESCO Petroglyphs</h4><p>12,000-year-old rock carvings depicting the first nomadic chariots and sun-gods.</p></div></div>
-                <div class="heritage-card"><img src="deer_stones.JPG"><div class="heritage-card-content"><h4>Mystical Deer Stones</h4><p>Bronze Age monoliths with "flying deer" carvings, designed to guide souls to the sky.</p></div></div>
-                <div class="heritage-card"><img src="pazyryk.jpg.JPG"><div class="heritage-card-content"><h4>Scythian Secrets</h4><p>Frozen tombs of the Pazyryk culture, preserving the world's oldest carpets.</p></div></div>
-                <div class="heritage-card"><img src="turkic.jpg"><div class="heritage-card-content"><h4>Turkic Balbals</h4><p>Ancient stone guardians placed by the first Khaganates to honor legendary warriors.</p></div></div>
-                <div class="heritage-card"><img src="khirigsuur.jpg.WEBP"><div class="heritage-card-content"><h4>Royal Khirigsuurs</h4><p>Vast stone burial complexes built to align with the stars for ancient kings.</p></div></div>
-                <div class="heritage-card"><img src="yurt..JPG"><div class="heritage-card-content"><h4>The Kazakh White Yurt</h4><p>A portable universe where every wooden spar tells a story of cosmic balance.</p></div></div>
-            </div>
-        </div>
-
-        <div class="feature-item">
-            <h2 class="section-title">The Bactrian Camel Caravan</h2>
-            <div class="image-box"><img src="camel..JPG"></div>
-            <div class="description-text">
-                Experience the rhythmic pace of the ancient Silk Road. Our Bactrian camels are the true "ships of the desert," carrying our luxury expeditions into the deep, untouched wilderness.
-            </div>
-        </div>
-
+    <div class="video-container">
+        <h3 style="color: var(--gold);">Тематикалык Видео / Tanıtım Videosu</h3>
+        <video controls>
+            <source src="video.mp4" type="video/mp4">
+            Сиздин браузериңиз видеону колдобойт.
+        </video>
     </div>
 
-    <section class="services-wrap">
-        <h2 class="section-title">Premium All-Inclusive Services</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <i class="fas fa-plane"></i>
-                <h4>VIP Air Logistics</h4>
-                <p>Private support for domestic flights (Ulaanbaatar-Olgii-Ulaanbaatar) and high-performance 4x4 ground transport with professional drivers.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-utensils"></i>
-                <h4>Nomadic Gourmet</h4>
-                <p>Our private chefs prepare 3 high-quality organic meals daily, combining traditional Altai recipes with modern culinary luxury.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-landmark"></i>
-                <h4>Expert Guiding</h4>
-                <p>Professional historians and local eagle hunters lead every expedition to ensure deep cultural and historical immersion at every step.</p>
-            </div>
-        </div>
-    </section>
+    <div class="section">
+        <h2>Farmakodinamika / Farmakodinamik</h2>
+        <p class="lang-kg">Фармакодинамика – дары каражаттарынын организмге кандай таасир тийгизерин изилдеген тармак. Башкача айтканда, дары жаныбар организминде кандай физиологиялык же биохимиялык өзгөрүүлөрдү жаратат деген суроого жооп берет.</p>
+        <p class="lang-tr">Farmakodinamik, ilaçların organizma üzerindeki etkilerini inceleyen dalıdır. Yani, ilacın hayvan vücudunda hangi fizyolojik veya biyokimyasal değişikliklere yol açtığını açıklar.</p>
+        
+        <div class="arrow">➥</div>
+        
+        <p class="lang-kg">Дары организмге киргенде клеткалардагы атайын түзүлүштөр – рецепторлор менен байланышат. Ошол байланыштын натыйжасында организмде ар кандай өзгөрүүлөр пайда болот.</p>
+        <p class="lang-tr">İlaç, organizmaya girdikten sonra hücrelerdeki özel yapılara – reseptörlere – bağlanır ve bu bağlanma sonucunda vücutta değişiklikler meydana gelir.</p>
 
-    <section class="pricing-section">
-        <h2 class="section-title">Expedition Pricing 2026</h2>
-        <div class="p-grid">
-            <div class="p-card"><h3>Solo Traveler</h3><span class="amount">$5,000</span><p>Private VIP Expedition</p></div>
-            <div class="p-card" style="border: 2px solid var(--bright-gold);"><h3>Team Duo</h3><span class="amount">$4,500</span><p>Per Person (Total $9,000)</p></div>
-        </div>
-        <p style="margin-top: 40px; color: var(--accent-red); font-weight: bold; font-size: 1.3rem;">* GROUPS OF 5+ PEOPLE: 5% ADDITIONAL DISCOUNT</p>
-    </section>
+        <h4 style="color: var(--gold);">Ветеринарияда мисалдар / Veterinerlikte örnekler:</h4>
+        <ul>
+            <li>
+                <span class="lang-kg">Ооруну басаңдатуучу препараттар (аналгетиктер) нерв системасына таасир берип, ооруну азайтат.</span>
+                <span class="lang-tr">Ağrı kesici ilaçlar (analjezikler) sinir sistemine etki ederek ağrıyı azaltır.</span>
+            </li>
+            <li>
+                <span class="lang-kg">Антибиотиктер бактерияларды жок кылып инфекцияны айыктырууга жардам берет.</span>
+                <span class="lang-tr">Antibiyotikler bakterileri yok ederek enfeksiyonun iyileşmesine yardımcı olur.</span>
+            </li>
+            <li>
+                <span class="lang-kg">Жүрөк ооруларына каршы препараттар жүрөктүн ритмин жөнгө салып, кан айланууну жакшыртат.</span>
+                <span class="lang-tr">Kalp hastalıkları için kullanılan ilaçlar, kalp ritmini düzenler ve kan dolaşımını iyileştirir.</span>
+            </li>
+        </ul>
+    </div>
 
-    <section id="booking" class="registration-section">
-        <div class="reg-container">
-            <h2 class="section-title" style="color: var(--bright-gold);">Secure Your Dates</h2>
-            <p style="font-size: 1.4rem; color: var(--white-gold); opacity: 0.8;">Register via Gmail to receive your full itinerary and personal expedition contract.</p>
-            
-            <form class="reg-form">
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Gmail Address" required>
-                <input type="text" placeholder="Country of Residence" class="reg-full-width">
-                <input type="text" placeholder="Tour Choice (Standard / Nauryz Special)">
-                <input type="number" placeholder="Expected Group Size">
-                <textarea placeholder="Message: Tell us about your travel experience or special requirements..."></textarea>
-                <div class="reg-full-width">
-                    <button type="submit" class="btn-xl">REGISTER NOW</button>
-                </div>
-            </form>
-        </div>
-    </section>
+    <div class="section">
+        <h2>Farmakokinetika / Farmakokinetik</h2>
+        <p class="lang-kg">Фармакокинетика дары организмге киргенден кийин анын организм ичинде кандай жол менен жүрөрүн изилдейт. Башкача айтканда, организм дары менен эмне кылат деген суроого жооп берет.</p>
+        <p class="lang-tr">Farmakokinetik, ilacın vücuda girdikten sonra organizmada nasıl hareket ettiğini inceler. Yani, organizmanın ilaçla ne yaptığı sorusunu cevaplar.</p>
+        
+        <div class="arrow">➤</div>
 
-    <footer>
-        <img src="logo.JPG" style="height: 70px; margin-bottom: 25px;">
-        <p>© 2026 | TURAN ALTAY TRAVEL | turanaltaytravel@gmail.com</p>
-    </footer>
+        <ul>
+            <li><strong>1. Сиңүү (Absorbsiya / Emilim):</strong> <span class="lang-kg">Дары организмге киргенден кийин канга сиңет.</span></li>
+            <li><strong>2. Таралуусу (Distribusiya / Dağılım):</strong> <span class="lang-kg">Кан аркылуу дары организмдин ар кандай органдарына жетет.</span></li>
+            <li><strong>3. Метаболизм / Metabolizma:</strong> <span class="lang-kg">Дары боордо ферменттер аркылуу химиялык өзгөрүүгө учурайт.</span></li>
+            <li><strong>4. Чыгарылышы (Ekskresiya / Atılım):</strong> <span class="lang-kg">Дары организмден бөйрөк, өт же өпкө аркылуу чыгат.</span></li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <h2 style="border: none; margin-bottom: 5px;">Көңүл бурганыңызга чоң рахмат!</h2>
+        <h3 style="color: var(--bright-gold); border: none; font-style: italic;">İlginiz için çok teşekkür ederiz!</h3>
+        
+        <div class="vet-name">
+            Вет. врач: Гулдана & Пуревжаргал
+        </div>
+        
+        <div class="date-display" id="currentDate"></div>
+    </div>
+</div>
+
+<script>
+    // Бүгүнкү күндү форматтоо
+    const d = new Date();
+    const dateStr = d.getDate() + "." + (d.getMonth() + 1) + "." + d.getFullYear();
+    document.getElementById('currentDate').innerHTML = "Дата: " + dateStr;
+</script>
 
 </body>
 </html>
