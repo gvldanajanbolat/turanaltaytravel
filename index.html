@@ -10,7 +10,7 @@
             --brand-green: #4f5d53; 
             --light-grey: #d1d4d1;
             --white: #ffffff;
-            --logo-gold: #d4af37; /* Логотиптин өз түсү үчүн */
+            --logo-gold: #d4af37;
         }
 
         body, html {
@@ -42,14 +42,12 @@
             font-weight: 600;
         }
 
-        /* ЛОГОТИП - СҮРӨТТӨГҮДӨЙ АЛТЫН ТҮСТӨ ЖАНА ДААНА */
         .brand-logo {
             position: fixed;
             top: 20px;
             left: 90px;
             width: 100px;
             z-index: 1000;
-            /* Сүрөттөгү оригинал түстү сактоо */
             filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.3));
             opacity: 1;
         }
@@ -86,27 +84,38 @@
             color: var(--light-grey);
         }
 
+        /* СТИЛДҮҮ СЫЗЫК - HERO */
         .hero-sub {
             margin-top: 35px;
             font-size: 2rem;
-            border-top: 1px solid var(--white);
+            border-top: 3px solid var(--logo-gold);
             display: inline-block;
             padding-top: 15px;
         }
 
         .content-box { width: 100%; max-width: 1200px; }
 
+        /* СТИЛДҮҮ СЫЗЫК - БӨЛҮМДӨР */
         h2 {
             font-family: 'Playfair Display', serif;
             font-size: 4rem;
             font-style: italic;
             margin-bottom: 30px;
-            border-bottom: 1.5px solid var(--light-grey);
+            position: relative;
             display: inline-block;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
 
-        /* КЫРГЫЗЧАСЫ АЗДАП ЧОҢОЙТУЛДУ */
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(to right, var(--logo-gold), transparent);
+        }
+
         .text-kg {
             font-size: 2.1rem;
             line-height: 1.6;
@@ -115,13 +124,12 @@
             font-weight: 400;
         }
 
-        /* ТҮРКЧӨСҮ БИРАЗ ЧОҢОЙТУЛДУ */
         .text-tr {
             font-size: 1.9rem;
             color: var(--light-grey);
             line-height: 1.6;
             padding: 25px;
-            border-left: 5px solid var(--white);
+            border-left: 5px solid var(--logo-gold);
             background: rgba(255,255,255,0.07);
             font-style: italic;
         }
@@ -132,6 +140,7 @@
             object-fit: cover;
             margin-top: 40px;
             border: 1px solid var(--light-grey);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .slide-num {
@@ -143,10 +152,21 @@
             right: 80px;
         }
 
-        /* РАХМАТ БӨЛҮМҮ - АЙРЫКЧА ЧОҢ ЖАНА ӨЗГӨЧӨ */
+        /* ЖУМШАК "КАЛКЫП" ЧЫГУУ АНИМАЦИЯСЫ */
+        .reveal { 
+            opacity: 0; 
+            transform: translateY(60px); 
+            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+        }
+
+        .reveal.active { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+
         .thanks-main {
             font-family: 'Playfair Display', serif;
-            font-size: 7rem; /* ЭҢ ЧОҢ */
+            font-size: 7rem;
             font-style: italic;
             display: block;
             margin-bottom: 30px;
@@ -156,9 +176,6 @@
             font-size: 3.5rem;
             color: var(--light-grey);
         }
-
-        .reveal { opacity: 0; transform: translateY(40px); transition: 1s all ease; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
 
         .footer-box { text-align: center; width: 100%; }
         .footer-symbol { width: 120px; margin-bottom: 20px; }
@@ -176,7 +193,7 @@
         <div class="content-box">
             <div class="main-topic">Farmakolojinin Alt Dalları</div>
             <h1 class="hero-title">Veteriner<br>Farmalogia</h1>
-            <div class="hero-sub">👩🏻‍⚕️Guldana & 🩺Pvrje | 2026 Presentation</div>
+            <div class="hero-sub">Guldana & Pvrje | 2026 Presentation</div>
         </div>
     </section>
 
@@ -350,7 +367,7 @@
         <div class="footer-box">
             <span class="thanks-main">Көңүл бурганыңыздарга чоң рахмат!</span>
             <div class="thanks-tr">İlginiz için teşekkür ederiz!</div>
-            <p style="margin-top: 50px; font-size: 2.5rem; font-weight: 500;">Guldana &  Pvrje</p>
+            <p style="margin-top: 50px; font-size: 2.5rem; font-weight: 500;">👩🏻‍⚕️ Guldana & 🩺 Pvrje</p>
             <img src="logo.jpg" class="footer-symbol" alt="Symbol">
             <p style="opacity: 0.7; font-size: 1.4rem;">gvldanajanbolat@gmail.com | 2026</p>
         </div>
@@ -362,7 +379,7 @@
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                if (elementTop < windowHeight - 120) {
+                if (elementTop < windowHeight - 100) { 
                     reveals[i].classList.add("active");
                 }
             }
