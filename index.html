@@ -10,7 +10,6 @@
             --brand-green: #4f5d53; 
             --light-grey: #d1d4d1;
             --white: #ffffff;
-            --accent-line: rgba(255, 255, 255, 0.5); /* Эстетикалык ак-боз түс */
         }
 
         body, html {
@@ -19,6 +18,7 @@
             color: var(--white);
             font-family: 'Montserrat', sans-serif;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         /* SIDE BAR */
@@ -40,16 +40,6 @@
             white-space: nowrap;
             text-transform: uppercase;
             font-weight: 600;
-        }
-
-        .brand-logo {
-            position: fixed;
-            top: 20px;
-            left: 90px;
-            width: 100px;
-            z-index: 1000;
-            filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.3));
-            opacity: 1;
         }
 
         section {
@@ -84,18 +74,17 @@
             color: var(--light-grey);
         }
 
-        /* ЭСТЕТИКАЛЫК СЫЗЫК - HERO */
         .hero-sub {
             margin-top: 35px;
             font-size: 2rem;
-            border-top: 2px solid var(--white);
+            border-top: 1px solid var(--white);
             display: inline-block;
             padding-top: 15px;
         }
 
         .content-box { width: 100%; max-width: 1200px; }
 
-        /* ЭСТЕТИКАЛЫК СЫЗЫК - БӨЛҮМДӨР */
+        /* СТРЕЛКА-СЫЗЫК АНИМАЦИЯСЫ */
         h2 {
             font-family: 'Playfair Display', serif;
             font-size: 4rem;
@@ -103,17 +92,21 @@
             margin-bottom: 30px;
             position: relative;
             display: inline-block;
-            padding-bottom: 15px;
         }
 
         h2::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -5px;
             left: 0;
-            width: 60%;
-            height: 3px;
-            background: linear-gradient(to right, var(--light-grey), transparent);
+            width: 0;
+            height: 2px;
+            background-color: var(--light-grey);
+            transition: width 1.5s ease-in-out;
+        }
+
+        .reveal.active h2::after {
+            width: 100%; /* Слайд активдешкенде сызык созулат */
         }
 
         .text-kg {
@@ -140,7 +133,6 @@
             object-fit: cover;
             margin-top: 40px;
             border: 1px solid var(--light-grey);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .slide-num {
@@ -152,16 +144,16 @@
             right: 80px;
         }
 
-        /* ЖУМШАК "КАЛКЫП" ЧЫГУУ АНИМАЦИЯСЫ */
+        /* ЖУМШАК "ZOOM & FADE" АНИМАЦИЯСЫ */
         .reveal { 
             opacity: 0; 
-            transform: translateY(60px); 
-            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            transform: scale(0.95) translateY(30px); 
+            transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1); 
         }
 
         .reveal.active { 
             opacity: 1; 
-            transform: translateY(0); 
+            transform: scale(1) translateY(0); 
         }
 
         .thanks-main {
@@ -178,7 +170,6 @@
         }
 
         .footer-box { text-align: center; width: 100%; }
-        .footer-symbol { width: 120px; margin-bottom: 20px; }
     </style>
 </head>
 <body>
@@ -187,13 +178,11 @@
         <div class="side-text">VETERINARY PHARMACOLOGY • PRESENTATION</div>
     </div>
 
-    <img src="logo2.jpg" class="brand-logo" alt="Logo">
-
     <section class="hero-section">
         <div class="content-box">
             <div class="main-topic">Farmakolojinin Alt Dalları</div>
             <h1 class="hero-title">Veteriner<br>Farmalogia</h1>
-            <div class="hero-sub">👩🏻‍⚕️Guldana & 🩺Pvrje | 2026 Presentation</div>
+            <div class="hero-sub"Guldana & Pvrje | 2026 Presentation</div>
         </div>
     </section>
 
@@ -323,7 +312,7 @@
             <h2>3. Метаболизм (Biotransformasiya)</h2>
             <div class="text-kg">Дары негизинен боордо химиялык өзгөрүүгө учурайт. Боордогу ферменттер дарыны сууда эрүүчү формага айлантып, организмден чыгарууга даярдайт. Бул этапта дарынын уулуулугу азаят.</div>
             <div class="text-tr">İlaç esas olarak karaciğerde kimyasal değişime uğrar. Karaciğer enzimleri ilacı suda çözünür hale getirerek atılıma hazırlar. Bu aşamada ilacın toksisitesi genellikle azalır.</div>
-            <img src="image4.JPG" class="content-img">
+            <img src="image4.JPG" class="content-img"
         </div>
     </section>
 
@@ -367,8 +356,7 @@
         <div class="footer-box">
             <span class="thanks-main">Көңүл бурганыңыздарга чоң рахмат!</span>
             <div class="thanks-tr">İlginiz için teşekkür ederiz!</div>
-            <p style="margin-top: 50px; font-size: 2.5rem; font-weight: 500;"> Guldana & Pvrje</p>
-            <img src="logo2.jpg" class="footer-symbol" alt="Symbol">
+            <p style="margin-top: 50px; font-size: 2.5rem; font-weight: 500;">👩🏻‍⚕️ Guldana & 🩺 Pvrje</p>
             <p style="opacity: 0.7; font-size: 1.4rem;">gvldanajanbolat@gmail.com | 2026</p>
         </div>
     </section>
@@ -379,13 +367,13 @@
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) { 
+                if (elementTop < windowHeight - 150) { 
                     reveals[i].classList.add("active");
                 }
             }
         }
         window.addEventListener("scroll", reveal);
-        reveal();
+        reveal(); // Башында бир жолу текшерүү
     </script>
 
 </body>
