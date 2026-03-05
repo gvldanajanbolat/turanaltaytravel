@@ -10,6 +10,7 @@
             --brand-green: #4f5d53; 
             --light-grey: #d1d4d1;
             --white: #ffffff;
+            --logo-gold: #d4af37; /* Логотиптин өз түсү үчүн */
         }
 
         body, html {
@@ -41,15 +42,16 @@
             font-weight: 600;
         }
 
-        /* LOGO СТИЛИ - ТЕКСТКЕ КЕДЕРГИ БОЛБОЙТ */
+        /* ЛОГОТИП - СҮРӨТТӨГҮДӨЙ АЛТЫН ТҮСТӨ ЖАНА ДААНА */
         .brand-logo {
             position: fixed;
             top: 20px;
             left: 90px;
-            width: 80px;
+            width: 100px;
             z-index: 1000;
-            filter: brightness(0) invert(1);
-            opacity: 0.8;
+            /* Сүрөттөгү оригинал түстү сактоо */
+            filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.3));
+            opacity: 1;
         }
 
         section {
@@ -62,7 +64,6 @@
             position: relative;
         }
 
-        /* HERO SECTION */
         .hero-section {
             background: linear-gradient(rgba(79,93,83,0.6), rgba(79,93,83,0.7)), url('main..jpg');
             background-size: cover;
@@ -93,7 +94,6 @@
             padding-top: 15px;
         }
 
-        /* CONTENT */
         .content-box { width: 100%; max-width: 1200px; }
 
         h2 {
@@ -106,16 +106,18 @@
             padding-bottom: 10px;
         }
 
+        /* КЫРГЫЗЧАСЫ АЗДАП ЧОҢОЙТУЛДУ */
         .text-kg {
-            font-size: 1.9rem;
+            font-size: 2.1rem;
             line-height: 1.6;
             margin-bottom: 35px;
             text-align: justify;
             font-weight: 400;
         }
 
+        /* ТҮРКЧӨСҮ БИРАЗ ЧОҢОЙТУЛДУ */
         .text-tr {
-            font-size: 1.7rem; /* ТҮРКЧӨСҮ БИРАЗ ЧОҢОЙТУЛДУ */
+            font-size: 1.9rem;
             color: var(--light-grey);
             line-height: 1.6;
             padding: 25px;
@@ -141,11 +143,25 @@
             right: 80px;
         }
 
+        /* РАХМАТ БӨЛҮМҮ - АЙРЫКЧА ЧОҢ ЖАНА ӨЗГӨЧӨ */
+        .thanks-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 7rem; /* ЭҢ ЧОҢ */
+            font-style: italic;
+            display: block;
+            margin-bottom: 30px;
+        }
+        
+        .thanks-tr {
+            font-size: 3.5rem;
+            color: var(--light-grey);
+        }
+
         .reveal { opacity: 0; transform: translateY(40px); transition: 1s all ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        .footer-box { text-align: center; }
-        .footer-symbol { width: 60px; filter: brightness(0) invert(1); margin-bottom: 20px; opacity: 0.8; }
+        .footer-box { text-align: center; width: 100%; }
+        .footer-symbol { width: 120px; margin-bottom: 20px; }
     </style>
 </head>
 <body>
@@ -160,7 +176,7 @@
         <div class="content-box">
             <div class="main-topic">Farmakolojinin Alt Dalları</div>
             <h1 class="hero-title">Veteriner<br>Farmalogia</h1>
-            <div class="hero-sub">Guldana & Pvrje | 2026 Presentation</div>
+            <div class="hero-sub">👩🏻‍⚕️Guldana & 🩺Pvrje | 2026 Presentation</div>
         </div>
     </section>
 
@@ -317,7 +333,7 @@
             <div class="slide-num">18</div>
             <h2>Терапиялык Терезе</h2>
             <div class="text-kg">Ар бир дарынын "терапиялык терезеси" болот. Бул – дарынын таасир бере турган эң төмөнкү жана ууландыра турган эң жогорку деңгээлинин ортосундагы коопсуз зона.</div>
-            <div class="text-tr">Her ilacın bir "terapötik penceresi" vardır. Bu, ilacın etkili olduğu en düşük seviye ile toksik olduğu en yüksek seviye arasındaki güvenli bölgedir.</div>
+            <div class="text-tr">Her ilacın bir "terapötik penceresi" vardır. Bu, ilacın etkili olduğu en düşük seviye ile toksic olduğu en yüksek seviye arasındaki güvenli bölgedir.</div>
         </div>
     </section>
 
@@ -332,11 +348,11 @@
 
     <section class="reveal">
         <div class="footer-box">
-            <div class="thanks">Көңүл бурганыңыздарга чоң рахмат!</div>
-            <p style="font-size: 2.8rem; color: var(--light-grey); margin-top: 20px;">İlginiz için teşekkür ederiz!</p>
-            <p style="margin-top: 50px; font-size: 2rem;"> Guldana &  Pvrje</p>
+            <span class="thanks-main">Көңүл бурганыңыздарга чоң рахмат!</span>
+            <div class="thanks-tr">İlginiz için teşekkür ederiz!</div>
+            <p style="margin-top: 50px; font-size: 2.5rem; font-weight: 500;">Guldana &  Pvrje</p>
             <img src="logo.jpg" class="footer-symbol" alt="Symbol">
-            <p style="opacity: 0.7; font-size: 1.2rem;">gvldanajanbolat@gmail.com | 2026</p>
+            <p style="opacity: 0.7; font-size: 1.4rem;">gvldanajanbolat@gmail.com | 2026</p>
         </div>
     </section>
 
