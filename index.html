@@ -10,8 +10,8 @@
             --brand-green: #3a473e; 
             --light-grey: #d1d4d1;  
             --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.08);
-            --border-grey: rgba(209, 212, 209, 0.3);
+            --glass: rgba(255, 255, 255, 0.12);
+            --border-grey: rgba(209, 212, 209, 0.4);
         }
 
         body, html {
@@ -23,17 +23,17 @@
             overflow-x: hidden;
         }
 
-        /* 1. ПАРАЛЛАКС ФОНУ - photo.JPG ЭКРАНГА МЫКТАЛДЫ (FIXED) */
+        /* МЫНА УШУЛ ЖЕР СҮРӨТТҮ КАТЫРЫП КОЙОТ */
         .parallax-bg {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            /* 3. ЖҮМШАК КАРАҢГЫ КАТМАР (GRADIENT) КОШУЛДУ */
-            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), url('photo.JPG');
+            /* Сүрөттүн аты так болушу керек: photo.JPG */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('photo.JPG');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            z-index: -1;
+            z-index: -1; /* Тексттин астында калат */
         }
 
         .side-bar {
@@ -53,65 +53,41 @@
             padding: 80px 10% 80px 160px; box-sizing: border-box; position: relative;
         }
 
-        /* 2. ТЕКСТТЕР СУУДАЙ АГЫП ӨТӨТ (GLASS CARD) */
         .glass-card {
             background: var(--glass); backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px); border: 1px solid var(--border-grey);
-            padding: 40px; border-radius: 5px; width: 100%; position: relative;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1); display: flex;
+            padding: 45px; border-radius: 10px; width: 100%; position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3); display: flex;
             flex-direction: column; justify-content: center;
             animation: floatingBreathe 6s infinite ease-in-out;
         }
 
         @keyframes floatingBreathe {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-15px) scale(1.005); }
         }
 
-        .hero-title { font-family: 'Playfair Display', serif; font-size: 7rem; line-height: 0.9; font-style: italic; margin: 0; }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: 6.5rem; line-height: 0.9; font-style: italic; margin: 0; }
         .main-topic { font-size: 1.8rem; letter-spacing: 10px; text-transform: uppercase; margin-bottom: 25px; color: var(--white); }
 
-        .hero-sub {
-            margin-top: 35px; font-size: 1.8rem; position: relative;
-            display: inline-block; padding-top: 15px;
-        }
-        .hero-sub::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 0; height: 2px;
-            background-color: var(--light-grey); transition: width 1.5s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
-        }
-        .reveal.active .hero-sub::before { width: 100%; }
-
         h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-style: italic; margin-bottom: 25px; position: relative; }
+        h2::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 150px; height: 2px; background-color: var(--white); }
 
-        h2::after {
-            content: ''; position: absolute; bottom: -8px; left: 0; width: 0; height: 2px;
-            background-color: var(--white); transition: width 1.5s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-        .reveal.active h2::after { width: 150px; }
-
-        .text-kg { font-size: 1.9rem; line-height: 1.4; margin-bottom: 25px; text-align: justify; font-weight: 300; color: #f0f0f0; }
-
+        .text-kg { font-size: 1.9rem; line-height: 1.5; margin-bottom: 25px; text-align: justify; font-weight: 500; color: #f8f9fa; }
         .text-tr {
-            font-size: 2.3rem; color: #ffffff; line-height: 1.4; padding: 20px;
-            background: rgba(255,255,255,0.03); font-style: italic; position: relative;
-            border-left: 0px solid var(--white); transition: border-left 0.8s ease-in-out 0.3s;
+            font-size: 2.3rem; color: #ffffff; line-height: 1.4; padding: 25px;
+            background: rgba(255,255,255,0.06); font-style: italic; border-left: 6px solid var(--white);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        .reveal.active .text-tr { border-left: 4px solid var(--white); }
 
         .slide-num { font-size: 10rem; font-family: 'Playfair Display', serif; opacity: 0.1; position: absolute; top: -10px; right: 40px; z-index: 0; pointer-events: none; }
 
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s ease; }
+        .reveal { opacity: 0; transform: translateY(60px); transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        .footer-box { text-align: center; width: 100%; }
-        .thanks-main { font-family: 'Playfair Display', serif; font-size: 6rem; font-style: italic; display: block; margin-bottom: 20px; }
-        .thanks-tr { font-size: 3.5rem; color: var(--light-grey); }
-
-        .sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
-        .sub-item { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 5px; }
-        .sub-item h4 { color: var(--white); margin: 0 0 10px 0; font-size: 1.5rem; border-bottom: 1px solid var(--light-grey); display: inline-block; }
-        .sub-item p { font-size: 1.1rem; color: var(--light-grey); margin: 0; }
-        .sub-item .tr-mini { font-style: italic; color: #ffffff; margin-top: 10px; font-size: 1rem; opacity: 0.9; }
+        .sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; margin-top: 25px; }
+        .sub-item { background: rgba(255,255,255,0.08); padding: 25px; border-radius: 8px; border: 1px solid var(--border-grey); }
+        .sub-item h4 { color: var(--white); margin: 0 0 12px 0; font-size: 1.8rem; border-bottom: 2px solid var(--light-grey); display: inline-block; }
     </style>
 </head>
 <body>
@@ -126,7 +102,7 @@
         <div class="content-box reveal active">
             <div class="main-topic">Farmakolojinin Alt Dalları</div>
             <h1 class="hero-title">Veteriner<br>Farmakologi</h1>
-            <div class="hero-sub">Guldana & Pvrje | 2026 Presentation</div>
+            <div style="font-size: 1.8rem; margin-top: 20px;">Guldana & Pvrje | 2026</div>
         </div>
     </section>
 
@@ -134,8 +110,8 @@
         <div class="glass-card">
             <div class="slide-num">02</div>
             <h2>Фармакология Илим катары</h2>
-            <div class="text-kg">Фармакология – бул дары-дармектерди, алардын химиялык түзүлүшүн жана тирүү организмге тийгизген таасирин комплекстүү изилдеген илим. Ветеринарияда бул жаныбарлардын биологиялык өзгөчөлүктөрүн эске алуу менен дарылоонун негизин түзөт.</div>
-            <div class="text-tr">Farmakoloji, ilaç maddelerini ve bunların canlı organizma üzerindeki etkilerini inceleyen bilim dalıdır. Veteriner hekimlikte, hayvan türlerinin biyolojik farklılıklarını gözeterek tedaviyi şekillendirir.</div>
+            <div class="text-kg">Фармакология – бул дары-дармектерди, алардын химиялык түзүлүшүн жана тирүү организмге тийгизген таасирин комплекстүү изилдеген илим.</div>
+            <div class="text-tr">Farmakoloji, ilaç maddelerini ve bunların canlı organizma üzerindeki etkilerini inceleyen bilim dalıdır.</div>
         </div>
     </section>
 
@@ -143,8 +119,8 @@
         <div class="glass-card">
             <div class="slide-num">03</div>
             <h2>Организмдеги Процесстер</h2>
-            <div class="text-kg">Жаныбарга берилген дары организмге киргенден баштап чыгариланга чейин татаал жолду басып өтөт: ал канга сиңет, ткандарга тарайт, биохимиялык өзгөрүүлөргө учурайт жана денеден тазаланат.</div>
-            <div class="text-tr">Hayvanlara verilen ilaç, organizmada emilimden atılıma kadar karmaşık süreçlerden geçer: kana karışır, dokulara dağılır, biyokimyasal değişikliklere uğrar ve sonunda vücuttan atılır.</div>
+            <div class="text-kg">Жаныбарга берилген дары организмге киргенден баштап чыгариланга чейин татаал жолду басып өтөт: ал канга сиңет, ткандарга тарайт.</div>
+            <div class="text-tr">Hayvanlara verilen ilaç, organizmada emilimden atılıma kadar karmaşık süreçlerden geçer.</div>
         </div>
     </section>
 
@@ -153,26 +129,10 @@
             <div class="slide-num">04</div>
             <h2 style="text-align: center;">Фармакологиянын Тармактарга Бөлүнүшү</h2>
             <div class="sub-grid">
-                <div class="sub-item">
-                    <h4>1. Farmakodinamik</h4>
-                    <p>Дарынын организмге тийгизген биологиялык жана физиологиялык таасирлерин изилдейт.</p>
-                    <p class="tr-mini">İlacın organizma üzerindeki biyolojik ve fizyolojik etkilerini inceler.</p>
-                </div>
-                <div class="sub-item">
-                    <h4>2. Farmakokinetik</h4>
-                    <p>Организмдин дарыга болгон реакциясын (ADME) изилдейт.</p>
-                    <p class="tr-mini">Organizmanın ilaca verdiği tepkiyi ve süreçlerini inceler.</p>
-                </div>
-                <div class="sub-item">
-                    <h4>3. Farmakoterapi</h4>
-                    <p>Ооруларды дарылоодо дарыларды практикалык колдонууну изилдейт.</p>
-                    <p class="tr-mini">İlacın hastalık tedavisinde pratik kullanımını inceler.</p>
-                </div>
-                <div class="sub-item">
-                    <h4>4. Toksikoloji</h4>
-                    <p>Заттардын организмге тийгизген уулуу таасирлерин изилдейт.</p>
-                    <p class="tr-mini">Maddelerin organizma üzerindeki toksik etkilerini inceler.</p>
-                </div>
+                <div class="sub-item"><h4>1. Farmakodinamik</h4><p>Илажын организм үзериндеги таасирин изилдейт.</p></div>
+                <div class="sub-item"><h4>2. Farmakokinetik</h4><p>Организмдин дарыга болгон реакциясын изилдейт.</p></div>
+                <div class="sub-item"><h4>3. Farmakoterapi</h4><p>Дарылоодо колдонууну изилдейт.</p></div>
+                <div class="sub-item"><h4>4. Toksikoloji</h4><p>Уулуу таасирлерин изилдейт.</p></div>
             </div>
         </div>
     </section>
@@ -180,30 +140,143 @@
     <section class="reveal">
         <div class="glass-card">
             <div class="slide-num">05</div>
-            <h2>Ветеринариядагы Дозанын Маанилүүлүгү</h2>
-            <div class="text-kg">Ар бир жаныбардын түрү дарыга ар башкача реакция берет. Мисалы, бир эле антибиотик итке дары болсо, башка жаныбар үчүн уу болуп калышы мүмкүн. Ошондуктан дозалоо өтө кылдаттыкты талап кылат.</div>
-            <div class="text-tr">Her hayvan türü ilaçlara farklı tepki verir. Bir antibiyotik türü bir hayvan için şifa iken diğeri için toksik olabilir. Bu yüzden dozajlama hayati önem taşır.</div>
+            <h2>Дозанын Маанилүүлүгү</h2>
+            <div class="text-kg">Ар бир жаныбардын түрү дарыга ар башкача реакция берет. Дозалоо өтө кылдаттыкты талап кылат.</div>
+            <div class="text-tr">Her hayvan türü ilaçlara farklı tepki verir. Bu yüzden dozajlama hayati önem taşır.</div>
         </div>
     </section>
 
-    <section class="reveal"><div class="glass-card"><div class="slide-num">06</div><h2>Farmakodinamika</h2><div class="text-kg">Фармакодинамика – дарынын организмге болгон таасирин изилдейт. "Дары организмге эмне кылат?" деген суроого жооп берет.</div><div class="text-tr">Farmakodinamik, ilaçların etkilerini ve etki mekanizmalarını inceler.</div></div></section>
-
-    <section class="reveal"><div class="glass-card"><h2>Рецепторлор жана Байланыштар</h2><div class="text-kg">Дары молекулалары клеткадагы рецепторлор менен ачкыч жана кулпу сыяктуу байланышат.</div><div class="text-tr">İlaç molekülleri reseptörlerle etkileşime girer.</div></div></section>
-
-    <section class="reveal"><div class="glass-card"><h2>Антибиотиктердин Ролу</h2><div class="text-kg">Антибиотиктер жаныбардын клеткаларына зыян келтирбестен, бактерияларды жок кылат.</div><div class="text-tr">Antibiyotikler bakterileri yok eder.</div></div></section>
-
-    <section class="reveal"><div class="glass-card"><h2>Farmakokinetika (ADME)</h2><div class="text-kg">Фармакокинетика – бул организмдин дарыга болгон реакциясы: Сиңүү, Таралуу, Метаболизм жана Чыгарылуу.</div><div class="text-tr">Farmakokinetik (ADME): Emilim, Dağılım, Metabolizma ve Atılım.</div></div></section>
-
-    <section class="reveal"><div class="glass-card"><h2>Метаболизм (Боор)</h2><div class="text-kg">Дары негизинен боордо химиялык өзгөрүүгө учурайт жана чыгарууга даярдалат.</div><div class="text-tr">İlaç karaciğerde metabolize edilir.</div></div></section>
-
-    <section class="reveal"><div class="glass-card"><h2>Жыйынтык / Sonuç</h2><div class="text-kg">Фармакологияны терең билүү жаныбарларды гана эмес, тамак-аш коопсуздугу аркылуу адамдарды да коргойт.</div><div class="text-tr">Veteriner farmakolojisi insan sağlığını da dolaylı yoldan korur.</div></div></section>
+    <section class="reveal">
+        <div class="glass-card">
+            <div class="slide-num">06</div>
+            <h2>Farmakodinamika</h2>
+            <div class="text-kg">Дарынын организмге болгон таасирин изилдейт. Клеткалык деңгээлдеги өзгөрүүлөрдү ачып берет.</div>
+            <div class="text-tr">Farmakodinamik, ilaçların etki mekanizmalarını inceler.</div>
+        </div>
+    </section>
 
     <section class="reveal">
-        <div class="footer-box">
-            <span class="thanks-main">Көңүл бурганыңыздарга чоң рахмат!</span>
-            <div class="thanks-tr">İlginiz için teşekkür ederiz!</div>
-            <p style="margin-top: 50px; font-size: 2.5rem; font-weight: 500;"> Guldana &  Pvrje</p>
-            <p style="opacity: 0.7; font-size: 1.4rem;">gvldanajanbolat@gmail.com | 2026</p>
+        <div class="glass-card">
+            <div class="slide-num">07</div>
+            <h2>Рецепторлор</h2>
+            <div class="text-kg">Дары молекулалары клеткадагы атайын "рецепторлор" менен ачкыч жана кулпу сыяктуу байланышат.</div>
+            <div class="text-tr">İlaç molekülleri, hücrelerdeki reseptörlerle anahtar-kilit gibi bağlanır.</div>
+        </div>
+    </section>
+
+    <section class="reveal">
+        <div class="glass-card">
+            <div class="slide-num">08</div>
+            <h2>Аналгетиктердин Таасири</h2>
+            <div class="text-kg">Алар нерв учтарындагы рецепторлорго таасир этип, мээге оору сигналынын жетүүсүн тосуп коюшат.</div>
+            <div class="text-tr">Analjezikler, ağrı sinyalinin beyne ulaşmasını engellerler.</div>
+        </div>
+    </section>
+
+    <section class="reveal">
+        <div class="glass-card">
+            <div class="slide-num">09</div>
+            <h2>Антибиотиктердин Ролу</h2>
+            <div class="text-kg">Бактериялардын гана клеткалык капталын же белок синтезин бузуу аркылуу инфекцияны жок кылат.</div>
+            <div class="text-tr">Antibiyotikler, bakterilerin hücre duvarını bozarak enfeksiyonu yok eder.</div>
+        </div>
+    </section>
+
+    <section class="reveal">
+        <div class="glass-card">
+            <div class="slide-num">10</div>
+            <h2>Жүрөк Препараттары</h2>
+            <div class="text-kg">Бул дарылар жүрөк булчуңунун жыйрылуу күчүн жөнгө салат жана ритмди оңдойт.</div>
+            <div class="text-tr">Bu ilaçlar kalp kasının kasılma gücünü düzenler.</div>
+        </div>
+    </section>
+
+    <section class="reveal">
+        <div class="glass-card">
+            <div class="slide-num">11</div>
+            <h2>Терс Таасирлер</h2>
+            <div class="text-kg">Фармакодинамиканы билүү – дарынын пайдасы менен бирге келе турган терс таасирлерди алдын алууга жардам берет.</div>
+            <div class="text-tr">Farmakodinamiği bilmek, yan etkileri öngörmeye yardımcı olur.</div>
+        </div>
+    </section>
+
+    <section class="reveal">
+        <div class="glass-card">
+            <div class="slide-num">12</div>
+            <h2>Farmakokinetika</h2>
+            <div class="text-kg">Организмдин дарыга болгон реакциясы. Төрт негизги этаптан (ADME) турат.</div>
+            <div class="text-tr">Farmakokinetik, organizmanın ilaca verdiği tepkidir.</div>
+        </div>
+    </section>
+
+    <section class="reveal">
+        <div class="glass-card">
+            <div class="slide-num">13</div>
+            <h2>1. Absorption (Сиңүү)</h2>
+            <div class="text-kg">Венага сайылган дары эң тез таасир берет, анткени сиңүү этабын аттап өтөт.</div>
+            <div class="text-tr">İlacın veriliş yolu kana emilim hızını belirler.</div>
+        </div>
+    </section>
+
+    <section class="reveal">
+        <div class="glass-card">
+            <div class="slide-num">14</div>
+            <h2>2. Distribution (Таралуу)</h2>
+            <div class="text-kg">Дары молекулалары денедеги суюктуктар аркылуу керектүү органдарга ташылат.</div>
+            <div class="text-tr">İlaç molekülleri, proteinler aracılığıyla organlara taşınır.</div>
+        </div>
+    </section>
+
+    <section class="reveal">
+        <div class="glass-card">
+            <div class="slide-num">15</div>
+            <h2>3. Metabolism (Метаболизм)</h2>
+            <div class="text-kg">Дары негизинен боордо химиялык өзгөрүүгө учурайт жана чыгарууга даярдалат.</div>
+            <div class="text-tr">İlaç karaciğerde kimyasal değişime uğrar.</div>
+        </div>
+    </section>
+
+    <section class="reveal">
+        <div class="glass-card">
+            <div class="slide-num">16</div>
+            <h2>4. Excretion (Чыгарылышы)</h2>
+            <div class="text-kg">Дарынын калдыктары бөйрөк, ичеги-карын жана сүт аркылуу чыгарылат.</div>
+            <div class="text-tr">İlaç kalıntıları böbrekler ve süt yoluyla vücuttan atılır.</div>
+        </div>
+    </section>
+
+    <section class="reveal">
+        <div class="glass-card">
+            <div class="slide-num">17</div>
+            <h2>Түрлөр арасындагы Айырма</h2>
+            <div class="text-kg">Мышыктар үчүн аспирин уулуу болушу мүмкүн, анткени боорунда ферменттер жетишсиз.</div>
+            <div class="text-tr">Türler arası farmakokinetik farklar hayati önem taşır.</div>
+        </div>
+    </section>
+
+    <section class="reveal">
+        <div class="glass-card">
+            <div class="slide-num">18</div>
+            <h2>Терапиялык Терезе</h2>
+            <div class="text-kg">Дарынын таасир бере турган коопсуз зонасы. Доза андан ашса уулануу башталат.</div>
+            <div class="text-tr">Terapötik pencere, ilacın etkili olduğu güvenli bölgedir.</div>
+        </div>
+    </section>
+
+    <section class="reveal">
+        <div class="glass-card">
+            <div class="slide-num">19</div>
+            <h2>Жыйынтык</h2>
+            <div class="text-kg">Фармакологияны терең билүү жаныбарларды гана негизги дарылабастан, адамдардын да ден соолугун сактоого шарт түзөт.</div>
+            <div class="text-tr">Veteriner farmakolojisi hayati bir bilim dalıdır.</div>
+        </div>
+    </section>
+
+    <section class="reveal">
+        <div class="footer-box" style="text-align: center; width: 100%;">
+            <h1 class="hero-title">Рахмат!</h1>
+            <div class="text-tr" style="border: none;">İlginiz için teşekkür ederiz!</div>
+            <p style="font-size: 2.5rem; margin-top: 30px; font-weight: 600;"> Guldana &  Pvrje</p>
         </div>
     </section>
 
