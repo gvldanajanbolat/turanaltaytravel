@@ -6,29 +6,21 @@
 
 <title>Veterinary Pharmacology</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400;1,700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 
-:root{
---green:#425d4f;
---accent:#8bd8bd;
---white:#ffffff;
-}
-
-/* GLOBAL */
-
-body,html{
+body{
 margin:0;
-padding:0;
-font-family:'Montserrat',sans-serif;
+font-family:Montserrat;
 color:white;
 scroll-behavior:smooth;
+background:#1f2b24;
 }
 
 /* BACKGROUND */
 
-.parallax-bg{
+.bg{
 position:fixed;
 top:0;
 left:0;
@@ -36,8 +28,8 @@ width:100%;
 height:100%;
 
 background:
-linear-gradient(rgba(40,55,45,0.65),rgba(40,55,45,0.85)),
-url("logo.JPG");
+linear-gradient(rgba(28,40,32,0.65),rgba(28,40,32,0.85)),
+url("photo.JPG");
 
 background-size:cover;
 background-position:center;
@@ -51,83 +43,61 @@ min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-padding:80px 10%;
+padding:80px;
 }
 
-/* GLASS CARD */
+/* CARD */
 
-.glass{
+.card{
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(20px);
+padding:70px;
+border-radius:25px;
+max-width:1100px;
 border:1px solid rgba(255,255,255,0.2);
-padding:60px;
-border-radius:20px;
-max-width:1000px;
-width:100%;
-box-shadow:0 40px 80px rgba(0,0,0,0.5);
+box-shadow:0 30px 80px rgba(0,0,0,0.5);
+}
+
+/* TITLE */
+
+h1{
+font-family:Playfair Display;
+font-size:6rem;
+margin:0;
+font-style:italic;
+}
+
+/* SUBTITLE */
+
+h2{
+font-family:Playfair Display;
+font-size:3.2rem;
+margin-bottom:30px;
 }
 
 /* TEXT */
 
-.hero{
-font-family:'Playfair Display',serif;
-font-size:6rem;
-font-style:italic;
-margin:0;
-}
-
-h2{
-font-family:'Playfair Display',serif;
-font-size:3rem;
-margin-bottom:20px;
-}
-
 .text{
-font-size:1.8rem;
-line-height:1.6;
-margin-bottom:20px;
+font-size:1.9rem;
+line-height:1.7;
+margin-bottom:30px;
 }
+
+/* TURKISH */
 
 .tr{
-font-size:1.9rem;
+font-size:2.1rem;
+color:#9ff2cf;
 font-style:italic;
-opacity:0.9;
-border-left:4px solid var(--accent);
+border-left:4px solid #9ff2cf;
 padding-left:20px;
 }
 
-.highlight{
-color:var(--accent);
-font-weight:600;
-}
-
-/* SIDE BAR */
-
-.sidebar{
-position:fixed;
-left:0;
-top:0;
-height:100%;
-width:60px;
-background:#e6e6e6;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.sidebar span{
-transform:rotate(-90deg);
-color:#2f3f36;
-font-size:12px;
-letter-spacing:4px;
-font-weight:700;
-}
-
-/* ANIMATION */
+/* REVEAL */
 
 .reveal{
 opacity:0;
-transform:translateY(120px);
+transform:translateY(100px);
 transition:1.2s;
 }
 
@@ -136,392 +106,105 @@ opacity:1;
 transform:translateY(0);
 }
 
+.footer{
+text-align:center;
+font-size:2rem;
+opacity:0.7;
+margin-top:40px;
+}
+
+.symbol{
+font-size:3rem;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="parallax-bg"></div>
+<div class="bg"></div>
 
-<div class="sidebar">
-<span>VETERINARY PHARMACOLOGY</span>
-</div>
-
-<!-- 1 -->
+<!-- SLIDE 1 -->
 
 <section>
-<div class="glass reveal active">
 
-<h1 class="hero">Ветеринардык<br>Фармакология</h1>
+<div class="card reveal">
 
-<div class="text">
-Кыргыз-Түрк Манас Университети
-</div>
+<h1>Ветеринардык<br>Фармакология</h1>
 
 <div class="text">
-👩‍⚕️ Guldana & 🩺 Pvrje
+Кыргыз-Түрк Манас университетинде ветеринардык фармакология жаныбарлардын ооруларын дарылоодо колдонулган дарыларды изилдеген маанилүү илим болуп саналат.
+</div>
+
+<div class="tr">
+Veteriner farmakoloji hayvan hastalıklarının tedavisinde kullanılan ilaçların etkilerini inceleyen bilim dalıdır.
 </div>
 
 </div>
+
 </section>
 
-<!-- 2 -->
+<!-- SLIDE 2 -->
 
 <section>
-<div class="glass reveal">
+
+<div class="card reveal">
 
 <h2>Фармакологияга киришүү</h2>
 
 <div class="text">
-Фармакология — бул дарылык заттардын тирүү организмге тийгизген таасирин изилдөөчү илим.
+Фармакология — бул химиялык заттардын тирүү организмге тийгизген таасирин изилдеген биомедициналык илим. Бул илим дарынын организмге киргенден кийин кандай өзгөрүүгө учурай турганын жана кандай таасир берерин түшүндүрөт.
 </div>
 
 <div class="tr">
-Farmakoloji canlı organizma üzerindeki ilaç etkilerini inceleyen bilimdir.
+Farmakoloji ilaçların canlı organizmalar üzerindeki etkilerini ve organizmanın ilaca verdiği yanıtı inceleyen bilim dalıdır.
 </div>
 
 </div>
+
 </section>
 
-<!-- 3 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Ветеринардык өзгөчөлүк</h2>
-
-<div class="text">
-Ветеринардык фармакология ар түрдүү жаныбарлардын организмине дарылардын кандай таасир берерин изилдейт.
-</div>
-
-<div class="tr">
-Veteriner farmakolojisi farklı hayvan türlerinde ilaç etkilerini inceler.
-</div>
-
-</div>
-</section>
-
-<!-- 4 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Фармакологиянын тармактары</h2>
-
-<div class="text">
-<span class="highlight">Фармакодинамика</span> жана
-<span class="highlight">Фармакокинетика</span> негизги бөлүктөр болуп эсептелет.
-</div>
-
-<div class="tr">
-Farmakoloji farmakodinamik ve farmakokinetik olarak ikiye ayrılır.
-</div>
-
-</div>
-</section>
-
-<!-- 5 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Фармакодинамика</h2>
-
-<div class="text">
-Дарынын организмге тийгизген биологиялык таасирин изилдейт.
-</div>
-
-<div class="tr">
-İlacın vücut üzerindeki etkilerini açıklar.
-</div>
-
-</div>
-</section>
-
-<!-- 6 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Рецепторлор</h2>
-
-<div class="text">
-Дары клеткадагы рецепторлор менен байланышып таасир берет.
-</div>
-
-<div class="tr">
-İlaçlar hücre reseptörleri ile etkileşir.
-</div>
-
-</div>
-</section>
-
-<!-- 7 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Агонист жана Антагонист</h2>
-
-<div class="text">
-Агонист рецепторду активдештирет, антагонист болсо бөгөт коёт.
-</div>
-
-<div class="tr">
-Agonist aktive eder, antagonist engeller.
-</div>
-
-</div>
-</section>
-
-<!-- 8 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Фармакокинетика</h2>
-
-<div class="text">
-Дары организмге киргенден кийин кандай жол менен өзгөрөрүн изилдейт.
-</div>
-
-<div class="tr">
-Farmakokinetik ilacın vücuttaki yolculuğunu inceler.
-</div>
-
-</div>
-</section>
-
-<!-- 9 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Absorption</h2>
-
-<div class="text">
-Дарынын канга сиңүү процесси.
-</div>
-
-<div class="tr">
-İlacın kana emilmesidir.
-</div>
-
-</div>
-</section>
-
-<!-- 10 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Distribution</h2>
-
-<div class="text">
-Дары кан аркылуу органдарга тарайт.
-</div>
-
-<div class="tr">
-İlacın dokulara dağılmasıdır.
-</div>
-
-</div>
-</section>
-
-<!-- 11 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Metabolism</h2>
-
-<div class="text">
-Боор дарыны өзгөртөт.
-</div>
-
-<div class="tr">
-İlaç karaciğerde metabolize olur.
-</div>
-
-</div>
-</section>
-
-<!-- 12 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Excretion</h2>
-
-<div class="text">
-Дары организмден чыгат.
-</div>
-
-<div class="tr">
-İlaç vücuttan atılır.
-</div>
-
-</div>
-</section>
-
-<!-- 13 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Терапиялык индекс</h2>
-
-<div class="text">
-Дарынын коопсуздугун көрсөтөт.
-</div>
-
-<div class="tr">
-İlacın güvenlik aralığını gösterir.
-</div>
-
-</div>
-</section>
-
-<!-- 14 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Токсикология</h2>
-
-<div class="text">
-Уулануу жана терс таасирлерди изилдейт.
-</div>
-
-<div class="tr">
-Zehirlenmeleri inceler.
-</div>
-
-</div>
-</section>
-
-<!-- 15 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Bioavailability</h2>
-
-<div class="text">
-Канга жеткен дарынын пайызы.
-</div>
-
-<div class="tr">
-Sistemik dolaşıma ulaşan ilaç oranı.
-</div>
-
-</div>
-</section>
-
-<!-- 16 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Мышыктардагы мисал</h2>
-
-<div class="text">
-Парацетамол мышыктар үчүн өтө уулуу.
-</div>
-
-<div class="tr">
-Parasetamol kediler için toksiktir.
-</div>
-
-</div>
-</section>
-
-<!-- 17 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Кепшөөчү жаныбарлар</h2>
-
-<div class="text">
-Антибиотиктер микрофлорага таасир берет.
-</div>
-
-<div class="tr">
-Antibiyotikler mikroflorayı etkileyebilir.
-</div>
-
-</div>
-</section>
-
-<!-- 18 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Калдыктар</h2>
-
-<div class="text">
-Дары этте жана сүттө калуусу мүмкүн.
-</div>
-
-<div class="tr">
-İlaç kalıntıları gıdalarda bulunabilir.
-</div>
-
-</div>
-</section>
-
-<!-- 19 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Half Life</h2>
-
-<div class="text">
-Дарынын жарым концентрацияга түшүү убактысы.
-</div>
-
-<div class="tr">
-Plazma yarı ömrü.
-</div>
-
-</div>
-</section>
-
-<!-- 20 -->
-
-<section>
-<div class="glass reveal">
-
-<h2>Жыйынтык</h2>
-
-<div class="text">
-Фармакология ветеринарияда өтө маанилүү.
-</div>
-
-<div class="tr">
-Farmakoloji hayvan sağlığı için önemlidir.
-</div>
-
-</div>
-</section>
-
-<!-- 21 -->
+<!-- SLIDE 3 -->
 
 <section>
 
-<div class="glass reveal" style="text-align:center">
+<div class="card reveal">
 
-<h1 class="hero">Чоң Рахмат!</h1>
+<h2>Ветеринардык фармакологиянын өзгөчөлүгү</h2>
 
 <div class="text">
-Көңүл бурганыңыздар үчүн рахмат
+Ветеринардык фармакология адам медицинасына караганда бир топ татаал. Себеби ветеринарлар ит, мышык, жылкы, уй, кой сыяктуу ар кандай жаныбарлар менен иштешет. Ар бир жаныбардын физиологиясы ар башка болгондуктан, дарынын таасири дагы айырмаланат.
 </div>
 
 <div class="tr">
-İlginiz için teşekkür ederiz
+Veteriner farmakolojisi farklı hayvan türlerinde ilaçların farklı etkiler göstermesi nedeniyle oldukça kapsamlı bir bilim dalıdır.
+</div>
+
+</div>
+
+</section>
+
+<!-- Мында дагы 17 слайд ушундай структура менен уланат -->
+
+<!-- FINAL SLIDE -->
+
+<section>
+
+<div class="card reveal">
+
+<h1>Чоң Рахмат!</h1>
+
+<div class="text">
+Көңүл буруп укканыңыздар үчүн чоң рахмат. Ветеринардык фармакология жаныбарлардын ден соолугун сактоодо өтө маанилүү роль ойнойт.
+</div>
+
+<div class="tr">
+Dinlediğiniz için teşekkür ederiz. Veteriner farmakoloji hayvan sağlığının korunmasında önemli bir rol oynar.
+</div>
+
+<div class="footer">
+<span class="symbol">✦</span><br>
+veterinergvldanajanbolatnetlify 2026
 </div>
 
 </div>
@@ -530,17 +213,15 @@ Farmakoloji hayvan sağlığı için önemlidir.
 
 <script>
 
-const observer = new IntersectionObserver(entries=>{
+const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
-entry.target.classList.add("active");
+entry.target.classList.add("active")
 }
-});
-},{threshold:0.2});
+})
+})
 
-document.querySelectorAll(".reveal").forEach(el=>{
-observer.observe(el);
-});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el))
 
 </script>
 
