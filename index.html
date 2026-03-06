@@ -93,7 +93,6 @@
         .thanks-main { font-family: 'Playfair Display', serif; font-size: 6rem; font-style: italic; display: block; margin-bottom: 20px; }
         .thanks-tr { font-size: 3.5rem; color: var(--light-grey); }
 
-        /* СПЕЦИАЛДЫК СТИЛДЕР */
         .border-special { border-left: 0px solid var(--white) !important; transition: border-left 1s ease-in-out 0.4s !important; }
         .reveal.active .border-special { border-left: 10px solid var(--white) !important; }
         .border-top-special { border-top: 0px solid var(--white) !important; transition: border-top 1s ease-in-out 0.4s !important; }
@@ -101,11 +100,11 @@
         .border-right-special { border-right: 0px solid var(--white) !important; transition: border-right 1s ease-in-out 0.4s !important; }
         .reveal.active .border-right-special { border-right: 5px solid var(--white) !important; }
 
-        /* Жаңы таблица стили */
         .sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
         .sub-item { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 5px; }
         .sub-item h4 { color: var(--white); margin: 0 0 10px 0; font-size: 1.5rem; border-bottom: 1px solid var(--light-grey); display: inline-block; }
         .sub-item p { font-size: 1.1rem; color: var(--light-grey); margin: 0; }
+        .sub-item .tr-mini { font-style: italic; color: #ffffff; margin-top: 10px; font-size: 1rem; opacity: 0.9; }
     </style>
 </head>
 <body>
@@ -118,7 +117,7 @@
         <div class="content-box reveal active">
             <div class="main-topic">Farmakolojinin Alt Dalları</div>
             <h1 class="hero-title">Veteriner<br>Farmakologi</h1>
-            <div class="hero-sub">Guldana & Pvrje | 2026 Presentation</div>
+            <div class="hero-sub"Guldana &Pvrje | 2026 Presentation</div>
         </div>
     </section>
 
@@ -145,29 +144,33 @@
         <div class="glass-card">
             <div class="slide-num">04</div>
             <h2 style="text-align: center;">Фармакологиянын Тармактарга Бөлүнүшү</h2>
-            <div class="text-kg" style="text-align: center;">Дарынын таасирин тереңирээк түшүнүү үчүн фармакология бир нече негизги жана спецификалык тармактарга бөлүнөт:</div>
+            <div class="text-kg" style="text-align: center;">Дарынын таасирин тереңирээк түшүнүү үчүн фармакология бир нече негизги тармактарга бөлүнөт:</div>
             
             <div class="sub-grid">
                 <div class="sub-item">
                     <h4>1. Farmakodinamik</h4>
-                    <p>Дарынын организмге тийгизген биологиялык жана физиологиялык таасирлерин, ошондой эле алардын иштөө механизмин (рецепторлор менен байланышын) изилдейт.</p>
+                    <p>Дарынын организмге тийгизген биологиялык жана физиологиялык таасирлерин изилдейт.</p>
+                    <p class="tr-mini">İlacın organizma üzerindeki biyolojik ve fizyolojik etkilerini inceler.</p>
                 </div>
                 <div class="sub-item">
                     <h4>2. Farmakokinetik</h4>
-                    <p>Организмдин дарыга болгон реакциясын: дарынын сиңүүсүн, таралышын, метаболизмин жана организмден бөлүнүп чыгуусун (ADME) изилдейт.</p>
+                    <p>Организмдин дарыга болгон реакциясын (ADME) изилдейт.</p>
+                    <p class="tr-mini">Organizmanın ilaca verdiği tepkiyi ve süreçlerini inceler.</p>
                 </div>
                 <div class="sub-item">
                     <h4>3. Farmakoterapi</h4>
-                    <p>Ооруларды дарылоодо дары-дармектерди практикалык жактан колдонууну жана клиникалык натыйжалуулугун изилдеген бөлүм.</p>
+                    <p>Ооруларды дарылоодо дарыларды практикалык колдонууну изилдейт.</p>
+                    <p class="tr-mini">İlaçların hastalık tedavisinde pratik kullanımını inceler.</p>
                 </div>
                 <div class="sub-item">
                     <h4>4. Toksikoloji</h4>
-                    <p>Дарылардын жана башка химиялык заттардын организмге тийгизген зыяндуу (уулуу) таасирлерин жана алардан коргонуу жолдорун изилдейт.</p>
+                    <p>Заттардын организмге тийгизген уулуу таасирлерин изилдейт.</p>
+                    <p class="tr-mini">Maddelerin organizma üzerindeki toksik etkilerini inceler.</p>
                 </div>
             </div>
 
             <div class="text-tr border-top-special" style="text-align: center; border-left: none; margin-top: 30px;">
-                Farmakoloji; Farmakodinamik, Farmakokinetik, Farmakoterapi ve Toksikoloji gibi temel dallara ayrılarak ilacın her aşamasını inceler.
+                Farmakoloji; Farmakodinamik, Farmakokinetik, Farmakoterapi ve Toksikoloji gibi alt dallara ayrılır.
             </div>
         </div>
     </section>
@@ -222,7 +225,7 @@
 
     <section class="reveal"><div class="glass-card"><h2>2. Таралуу (Distribution)</h2><div class="text-kg">Канга түшкөн дары молекулалары денедеги суюктуктар жана альбумин белоктору аркылуу керектүү органдарга ташылат. Боор жана бөйрөк сыяктуу органдарга тезирээк жетет.</div><div class="text-tr">Kana geçen ilaç molekülleri, vücut sıvıları ve proteinler aracılığıyla organlara taşınır. Karaciğer ve böbrek gibi organlara ilaç daha çabuk ulaşır.</div></div></section>
 
-    <section class="reveal"><div class="glass-card"><h2>3. Метаболизм (Biotransformasiya)</h2><div class="text-kg">Дары негизинен боордо химиялык өзгөрүүгө учурайт. Боордогу ферменттер дарыны сууда эрүүчү формага айлантып, организмден чыгарууга даярдайт. Бул этапта дарынын уулуулугу азаят.</div><div class="text-tr">İlaç esas olarak karaciğerde kimyasal değişime uğrar. Karaciğer enzimleri ilacı suda çözünür hale getirerek atılıma hazırlar.</div><img src="image4.jpg" class="content-img"></div></section>
+    <section class="reveal"><div class="glass-card"><h2>3. Метаболизм (Biotransformasiya)</h2><div class="text-kg">Дары негизинен боордо химиялык өзгөрүүгө учурайт. Боордогу ферменттер дарыны сууда эрүүчү формага айлантып, организмден чыгарууга даярдайт. Бул этапта дарынын уулуулугу азаят.</div><div class="text-tr">İlaç esas olarak karaciğerde kimyasal değişime uğrar. Karaciğer enzimleri ilacı suda çözünür hale getirerek atılıma hazırlar.</div><img src="image4.JPG" class="content-img"></div></section>
 
     <section class="reveal"><div class="glass-card"><h2>4. Чыгарылышы (Excretion)</h2><div class="text-kg">Дарынын калдыктары организмден бөйрөк, ичеги-карын, өпкө жана бездер (сүт, тер) аркылуу чыгарылат. Сүт аркылуу чыккан дарылар айыл чарбасында өзгөчө мааниге ээ.</div><div class="text-tr">İlaç kalıntıları vücuttan böbrekler, dışkı, akciğerler ve bezler (süt, ter) yoluyla atılır. Sütle atılan ilaçlar gıda güvenliği açısından kritik öneme sahiptir.</div></div></section>
 
