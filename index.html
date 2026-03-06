@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400;1,700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --brand-green: #3a473e; /* Сүрөттөгү негизги жашыл фонд */
-            --light-grey: #d1d4d1;  /* Сүрөттөгү ачык боз тилкенин түсү */
+            --brand-green: #3a473e; 
+            --light-grey: #d1d4d1;  
             --white: #ffffff;
             --glass: rgba(255, 255, 255, 0.08);
             --border-grey: rgba(209, 212, 209, 0.3);
@@ -24,172 +24,88 @@
         }
 
         .side-bar {
-            position: fixed;
-            left: 0; top: 0;
-            width: 70px;
-            height: 100vh;
-            background: var(--light-grey); /* Алтын түстүн ордуна боз */
-            z-index: 100;
+            position: fixed; left: 0; top: 0; width: 70px; height: 100vh;
+            background: var(--light-grey); z-index: 100;
             display: flex; align-items: center; justify-content: center;
         }
 
         .side-text {
-            transform: rotate(-90deg);
-            color: var(--brand-green); /* Боздун үстүндө жашыл текст */
-            font-size: 0.8rem;
-            letter-spacing: 5px;
-            white-space: nowrap;
-            text-transform: uppercase;
-            font-weight: 600;
+            transform: rotate(-90deg); color: var(--brand-green);
+            font-size: 0.8rem; letter-spacing: 5px; white-space: nowrap;
+            text-transform: uppercase; font-weight: 600;
         }
 
         section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 80px 10% 80px 160px;
-            box-sizing: border-box;
-            position: relative;
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            padding: 80px 10% 80px 160px; box-sizing: border-box; position: relative;
         }
 
         .glass-card {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--border-grey);
-            padding: 40px;
-            border-radius: 5px; /* Сүрөттөгүдөй түз бурчтуураак */
-            width: 100%;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            background: var(--glass); backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px); border: 1px solid var(--border-grey);
+            padding: 40px; border-radius: 5px; width: 100%; position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1); display: flex;
+            flex-direction: column; justify-content: center;
         }
 
         .hero-section {
             background: linear-gradient(rgba(58, 71, 62, 0.6), rgba(58, 71, 62, 0.9)), url('main..jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-size: cover; background-position: center; background-attachment: fixed;
         }
 
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 7rem;
-            line-height: 0.9;
-            font-style: italic;
-            margin: 0;
-        }
-
-        .main-topic {
-            font-size: 1.8rem;
-            letter-spacing: 10px;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            color: var(--white); /* Алтындын ордуна ак */
-        }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: 7rem; line-height: 0.9; font-style: italic; margin: 0; }
+        .main-topic { font-size: 1.8rem; letter-spacing: 10px; text-transform: uppercase; margin-bottom: 25px; color: var(--white); }
 
         .hero-sub {
-            margin-top: 35px;
-            font-size: 1.8rem;
-            border-top: 2px solid var(--light-grey); /* Алтындын ордуна боз сызык */
-            display: inline-block;
-            padding-top: 15px;
+            margin-top: 35px; font-size: 1.8rem; position: relative;
+            display: inline-block; padding-top: 15px;
         }
-
-        .content-box { width: 100%; max-width: 1200px; display: flex; flex-direction: column; justify-content: center; }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-style: italic;
-            margin-bottom: 25px;
-            position: relative;
+        .hero-sub::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 0; height: 2px;
+            background-color: var(--light-grey); transition: width 1.5s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
         }
+        .reveal.active .hero-sub::before { width: 100%; }
+
+        h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-style: italic; margin-bottom: 25px; position: relative; }
 
         h2::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--white);
-            transition: width 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+            content: ''; position: absolute; bottom: -8px; left: 0; width: 0; height: 2px;
+            background-color: var(--white); transition: width 1.5s cubic-bezier(0.19, 1, 0.22, 1);
         }
-
         .reveal.active h2::after { width: 150px; }
 
-        .text-kg {
-            font-size: 1.9rem;
-            line-height: 1.4;
-            margin-bottom: 25px;
-            text-align: justify;
-            font-weight: 300;
-            color: var(--light-grey); /* Кыргызчасы бир аз бозомук */
-        }
+        .text-kg { font-size: 1.9rem; line-height: 1.4; margin-bottom: 25px; text-align: justify; font-weight: 300; color: var(--light-grey); }
 
         .text-tr {
-            font-size: 2.3rem;
-            color: #ffffff;
-            line-height: 1.4;
-            padding: 20px;
-            border-left: 4px solid var(--white); /* Алтындын ордуна ак сызык */
-            background: rgba(255,255,255,0.03);
-            font-style: italic;
+            font-size: 2.3rem; color: #ffffff; line-height: 1.4; padding: 20px;
+            background: rgba(255,255,255,0.03); font-style: italic; position: relative;
+            border-left: 0px solid var(--white); transition: border-left 0.8s ease-in-out 0.3s;
         }
+        .reveal.active .text-tr { border-left: 4px solid var(--white); }
 
-        .content-img {
-            width: 100%;
-            max-height: 380px;
-            object-fit: cover;
-            margin-top: 25px;
-            border-radius: 2px;
-        }
+        .content-img { width: 100%; max-height: 380px; object-fit: cover; margin-top: 25px; border-radius: 2px; }
+        .slide-num { font-size: 10rem; font-family: 'Playfair Display', serif; opacity: 0.05; position: absolute; top: -10px; right: 40px; z-index: 0; pointer-events: none; }
 
-        .slide-num {
-            font-size: 10rem;
-            font-family: 'Playfair Display', serif;
-            opacity: 0.05;
-            position: absolute;
-            top: -10px;
-            right: 40px;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .reveal { 
-            opacity: 0; 
-            transform: translateY(30px); 
-            transition: all 1.2s ease; 
-        }
-
-        .reveal.active { 
-            opacity: 1; 
-            transform: translateY(0); 
-        }
-
-        .thanks-main {
-            font-family: 'Playfair Display', serif;
-            font-size: 6rem;
-            font-style: italic;
-            display: block;
-            margin-bottom: 20px;
-        }
-        
-        .thanks-tr {
-            font-size: 3.5rem;
-            color: var(--light-grey);
-        }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
         .footer-box { text-align: center; width: 100%; }
-        
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--brand-green); }
-        ::-webkit-scrollbar-thumb { background: var(--light-grey); border-radius: 10px; }
+        .thanks-main { font-family: 'Playfair Display', serif; font-size: 6rem; font-style: italic; display: block; margin-bottom: 20px; }
+        .thanks-tr { font-size: 3.5rem; color: var(--light-grey); }
 
+        /* СПЕЦИАЛДЫК СТИЛДЕР */
+        .border-special { border-left: 0px solid var(--white) !important; transition: border-left 1s ease-in-out 0.4s !important; }
+        .reveal.active .border-special { border-left: 10px solid var(--white) !important; }
+        .border-top-special { border-top: 0px solid var(--white) !important; transition: border-top 1s ease-in-out 0.4s !important; }
+        .reveal.active .border-top-special { border-top: 4px solid var(--white) !important; }
+        .border-right-special { border-right: 0px solid var(--white) !important; transition: border-right 1s ease-in-out 0.4s !important; }
+        .reveal.active .border-right-special { border-right: 5px solid var(--white) !important; }
+
+        /* Жаңы таблица стили */
+        .sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
+        .sub-item { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 5px; }
+        .sub-item h4 { color: var(--white); margin: 0 0 10px 0; font-size: 1.5rem; border-bottom: 1px solid var(--light-grey); display: inline-block; }
+        .sub-item p { font-size: 1.1rem; color: var(--light-grey); margin: 0; }
     </style>
 </head>
 <body>
@@ -229,8 +145,30 @@
         <div class="glass-card">
             <div class="slide-num">04</div>
             <h2 style="text-align: center;">Фармакологиянын Тармактарга Бөлүнүшү</h2>
-            <div class="text-kg" style="text-align: center;">Дарынын таасирин тереңирээк түшүнүү үчүн фармакология бир нече тармактарга бөлүнөт. Негизгилери: Фармакодинамика жана Фармакокинетика. Бул тармактар дарыны коопсуз колдонууну камсыз кылат.</div>
-            <div class="text-tr" style="text-align: center; border-left: none; border-top: 4px solid var(--white);">İlacın etkilerini daha iyi kavramak için farmakoloji; Farmakodinamik ve Farmakokinetik gibi alt dallara ayrılır.</div>
+            <div class="text-kg" style="text-align: center;">Дарынын таасирин тереңирээк түшүнүү үчүн фармакология бир нече негизги жана спецификалык тармактарга бөлүнөт:</div>
+            
+            <div class="sub-grid">
+                <div class="sub-item">
+                    <h4>1. Farmakodinamik</h4>
+                    <p>Дарынын организмге тийгизген биологиялык жана физиологиялык таасирлерин, ошондой эле алардын иштөө механизмин (рецепторлор менен байланышын) изилдейт.</p>
+                </div>
+                <div class="sub-item">
+                    <h4>2. Farmakokinetik</h4>
+                    <p>Организмдин дарыга болгон реакциясын: дарынын сиңүүсүн, таралышын, метаболизмин жана организмден бөлүнүп чыгуусун (ADME) изилдейт.</p>
+                </div>
+                <div class="sub-item">
+                    <h4>3. Farmakoterapi</h4>
+                    <p>Ооруларды дарылоодо дары-дармектерди практикалык жактан колдонууну жана клиникалык натыйжалуулугун изилдеген бөлүм.</p>
+                </div>
+                <div class="sub-item">
+                    <h4>4. Toksikoloji</h4>
+                    <p>Дарылардын жана башка химиялык заттардын организмге тийгизген зыяндуу (уулуу) таасирлерин жана алардан коргонуу жолдорун изилдейт.</p>
+                </div>
+            </div>
+
+            <div class="text-tr border-top-special" style="text-align: center; border-left: none; margin-top: 30px;">
+                Farmakoloji; Farmakodinamik, Farmakokinetik, Farmakoterapi ve Toksikoloji gibi temel dallara ayrılarak ilacın her aşamasını inceler.
+            </div>
         </div>
     </section>
 
@@ -245,7 +183,7 @@
     </section>
 
     <section class="reveal">
-        <div class="glass-card" style="border-left: 10px solid var(--white);">
+        <div class="glass-card border-special">
             <div class="slide-num">06</div>
             <h2>Farmakodinamika: Таасир Этүү Механизми</h2>
             <div class="text-kg">Фармакодинамика – дарынын организмге болгон таасирин изилдейт. Ал "Дары организмге эмне кылат?" деген суроого жооп берип, клеткалык деңгээлдеги өзгөрүүлөрдү ачып берет.</div>
@@ -276,11 +214,11 @@
     
     <section class="reveal"><div class="glass-card"><div class="slide-num">10</div><h2>Жүрөк жана Кан Тамыр Препараттары</h2><div class="text-kg">Бул дарылар жүрөк булчуңунун жыйрылуу күчүн жөнгө салат. Ветеринарияда жүрөк жетишсиздигинде кан тамырларды кеңейтүүчү жана ритмди оңдоочу дарылар кеңири колдонулат.</div><div class="text-tr">Bu ilaçlar kalp kasının kasılma gücünü düzenler. Veteriner hekimlikte kalp yetmezliğinde damar genişletici ve ritim düzenleyici ilaçlar yaygın kullanılır.</div></div></section>
 
-    <section class="reveal"><div class="glass-card" style="border-right: 5px solid var(--white);"><h2>Терс Таасирлердин Алдын Алуу</h2><div class="text-kg">Фармакодинамиканы билүү – дарынын пайдасы менен бирге келе турган терс таасирлерин алдын ала билүүгө жана жаныбардын өмүрүн сактап калууга жардам берет.</div><div class="text-tr">Farmakodinamiği bilmek, ilacın faydasının yanı sıra oluşabilecek yan etkileri öngörmeye ve hayvanın hayatını kurtarmaya yardımcı olur.</div></div></section>
+    <section class="reveal"><div class="glass-card border-right-special"><h2>Терс Таасирлердин Алдын Алуу</h2><div class="text-kg">Фармакодинамиканы билүү – дарынын пайдасы менен бирге келе турган терс таасирлерин алдын ала билүүгө жана жаныбардын өмүрүн сактап калууга жардам берет.</div><div class="text-tr">Farmakodinamiği bilmek, ilacın faydasının yanı sıra oluşabilecek yan etkileri öngörmeye ve hayvanın hayatını kurtarmaya yardımcı olur.</div></div></section>
 
     <section class="reveal"><div class="glass-card"><div class="slide-num">12</div><h2>Farmakokinetika: Организмдин Реакциясы</h2><div class="text-kg">Фармакокинетика – бул организмдин дарыга болгон реакциясы. Ал "Организм дарыга эмне кылат?" деген суроону изилдеп, төрт негизги этаптан (ADME) турат.</div><div class="text-tr">Farmakokinetik, organizmanın ilaca verdiği tepkidir. "Organizma ilaca ne yapar?" sorusunu inceler ve dört temel aşamadan (ADME) oluşur.</div></div></section>
 
-    <section class="reveal"><div class="glass-card"><h2>1. Сиңүү (Absorption)</h2><div class="text-kg">Дарынын берилүү жолу анын канга сиңүү 1лдамдыгын аныктайт. Венага сайылган дары эң тез таасир берет, анткени сиңүү этабын аттап өтөт.</div><div class="text-tr">İlacın veriliş yolu (oral, deri altı, damar içi) kana emilim hızını belirler. Damar içi uygulamalar emilim aşamasını atladığı için en hızlı etkiyi gösterir.</div></div></section>
+    <section class="reveal"><div class="glass-card"><h2>1. Сиңүү (Absorption)</h2><div class="text-kg">Дарынын берилүү жолу анын канга сиңүү ылдамдыгын аныктайт. Венага сайылган дары эң тез таасир берет, анткени сиңүү этабын аттап өтөт.</div><div class="text-tr">İlacın veriliş yolu (oral, deri altı, damar içi) kana emilim hızını belirler. Damar içi uygulamalar emilim aşamasını atladığı için en hızlı etkiyi gösterir.</div></div></section>
 
     <section class="reveal"><div class="glass-card"><h2>2. Таралуу (Distribution)</h2><div class="text-kg">Канга түшкөн дары молекулалары денедеги суюктуктар жана альбумин белоктору аркылуу керектүү органдарга ташылат. Боор жана бөйрөк сыяктуу органдарга тезирээк жетет.</div><div class="text-tr">Kana geçen ilaç molekülleri, vücut sıvıları ve proteinler aracılığıyla organlara taşınır. Karaciğer ve böbrek gibi organlara ilaç daha çabuk ulaşır.</div></div></section>
 
@@ -298,7 +236,7 @@
         <div class="footer-box">
             <span class="thanks-main">Көңүл бурганыңыздарга чоң рахмат!</span>
             <div class="thanks-tr">İlginiz için teşekkür ederiz!</div>
-            <p style="margin-top: 50px; font-size: 2.5rem; font-weight: 500;"> Guldana & Pvrje</p>
+            <p style="margin-top: 50px; font-size: 2.5rem; font-weight: 500;"> Guldana &  Pvrje</p>
             <p style="opacity: 0.7; font-size: 1.4rem;">gvldanajanbolat@gmail.com | 2026</p>
         </div>
     </section>
