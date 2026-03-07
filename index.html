@@ -1,191 +1,236 @@
-body { 
-margin:0; 
-font-family: Montserrat; 
-color:white; 
-scroll-behavior:smooth; 
-background:#0b0f0e;
-}
-
-/* Background image better visible */
-
-.bg{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-
-background:
-linear-gradient(
-rgba(10,15,12,0.55),
-rgba(10,15,12,0.75)
-),
-url("photo.JPG");
-
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-
-filter:brightness(1.15) contrast(1.1);
-
-z-index:-1;
-}
-
-/* slide layout */
-
-section{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:80px;
-}
-
-/* glass water card */
-
-.card{
-
-background:rgba(255,255,255,0.09);
-backdrop-filter:blur(35px);
-
-border-radius:25px;
-
-padding:70px;
-
-max-width:1250px;
-width:92%;
-
-border:1px solid rgba(255,255,255,0.18);
-
-box-shadow:
-0 40px 120px rgba(0,0,0,0.7),
-inset 0 0 20px rgba(255,255,255,0.05);
-
-transition:all .6s;
-}
-
-/* title */
-
-h1{
-
-font-family:Playfair Display;
-
-font-size:6rem;
-
-letter-spacing:3px;
-
-text-align:center;
-
-margin:0;
-}
-
-/* slide title */
-
-h2{
-
-font-family:Playfair Display;
-
-font-size:3.3rem;
-
-margin-bottom:30px;
-
-color:#a6ffd8;
-}
-
-/* main text */
-
-.text{
-
-font-size:1.8rem;
-
-line-height:1.75;
-
-margin-bottom:30px;
-
-font-weight:300;
-
-}
-
-/* Turkish text */
-
-.tr{
-
-font-size:1.9rem;
-
-color:#d6fff0;
-
-font-style:italic;
-
-border-left:5px solid #8cffd0;
-
-padding:25px;
-
-background:rgba(255,255,255,0.05);
-
-border-radius:10px;
-
-}
-
-/* reveal animation */
-
-.reveal{
-
-opacity:0;
-
-transform:translateY(120px) scale(.96);
-
-transition:1.4s cubic-bezier(.17,.67,.3,1);
-
-}
-
-.reveal.active{
-
-opacity:1;
-
-transform:translateY(0) scale(1);
-
-}
-
-/* title slide special */
-
-.hero{
-
-text-align:center;
-
-}
-
-.hero h1{
-
-font-size:7rem;
-
-background:linear-gradient(90deg,#9ff2cf,#ffffff);
-
--webkit-background-clip:text;
-
--webkit-text-fill-color:transparent;
-
-}
-
-.hero-sub{
-
-font-size:2rem;
-
-letter-spacing:6px;
-
-opacity:.7;
-
-margin-bottom:20px;
-
-}
-
-.author{
-
-text-align:center;
-
-font-size:2.3rem;
-
-margin-top:40px;
-
-font-family:Playfair Display;
-
-}
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmakolojinin Alt Dalları | Guldana & Purje</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glass: rgba(255, 255, 255, 0.12);
+            --accent: #9ff2cf;
+        }
+
+        body { 
+            margin: 0; 
+            font-family: 'Montserrat', sans-serif; 
+            color: white; 
+            background: #0d0f0e;
+            overflow-x: hidden;
+        }
+        
+        /* BACKGROUND - Сүрөт даана көрүнүшү үчүн */
+        .bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url("photo.JPG");
+            background-size: cover; 
+            background-position: center; 
+            z-index: -2;
+            filter: brightness(0.8);
+        }
+
+        /* Арткы пландагы кыймылдуу сызыктар */
+        .lines {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; pointer-events: none;
+        }
+        .line {
+            position: absolute; width: 2px; height: 100vh;
+            background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+            opacity: 0.2; animation: moveLines 8s infinite linear;
+        }
+
+        @keyframes moveLines {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        section { 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 40px; 
+            perspective: 1000px;
+        }
+        
+        /* Мөлбүрөгөн тунук блок (Water/Glass Effect) */
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 50px; 
+            border-radius: 40px; 
+            max-width: 1000px; 
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            transition: all 0.5s ease;
+        }
+
+        /* БАШКЫ СЛАЙД ДИЗАЙНЫ */
+        .hero-card {
+            border: 2px solid var(--accent);
+            background: rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 5.5rem; 
+            margin: 10px 0; 
+            line-height: 1;
+            text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+        
+        h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 3rem; 
+            color: var(--accent);
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--accent);
+            display: inline-block;
+        }
+        
+        .text { font-size: 1.4rem; line-height: 1.6; margin-bottom: 25px; font-weight: 300; }
+        .tr { 
+            font-size: 1.5rem; 
+            color: #d1d4d1; 
+            font-style: italic; 
+            border-left: 3px solid var(--accent); 
+            padding-left: 20px; 
+        }
+
+        /* АНИМАЦИЯЛАР */
+        .reveal { 
+            opacity: 0; 
+            transform: scale(0.9) translateY(100px) rotateX(-10deg); 
+            transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1); 
+        }
+        .reveal.active { 
+            opacity: 1; 
+            transform: scale(1) translateY(0) rotateX(0); 
+        }
+
+        .author-box {
+            margin-top: 40px;
+            font-size: 1.8rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg"></div>
+<div class="lines">
+    <div class="line" style="left: 20%;"></div>
+    <div class="line" style="left: 50%; animation-delay: 2s;"></div>
+    <div class="line" style="left: 80%; animation-delay: 4s;"></div>
+</div>
+
+<section>
+    <div class="card hero-card reveal">
+        <p style="font-size: 1rem; opacity: 0.8; letter-spacing: 4px;">KTMU VETERINER FAKÜLTESİ</p>
+        <h1 style="font-style: italic;">Farmakolojinin<br><span style="color: var(--accent);">Alt Dalları</span></h1>
+        <div class="author-box">Guldana & Purje</div>
+        <p style="margin-top: 20px; opacity: 0.6;">2026 | Слайд-презентация</p>
+    </div>
+</section>
+
+<section>
+    <div class="card reveal">
+        <h2>1. Farmakodinami</h2>
+        <div class="text">Бул бөлүм дарылардын организмге тийгизген биологиялык жана физиологиялык таасирлерин, ошондой эле алардын иштөө механизмдерин молекулалык деңгээлде изилдейт. Башкача айтканда, "Дары организмге эмне кылат?" деген суроого жооп берет. Ал рецепторлор, ферменттер жана иондук каналдар менен болгон байланышты карайт.</div>
+        <div class="tr">İlacın organizmaya ne yaptığını, etki mekanizmasını ve doz-yanıt ilişkisini hücresel düzeyde inceleyen bilim dalıdır.</div>
+    </div>
+</section>
+
+<section>
+    <div class="card reveal">
+        <h2>2. Farmakokinetik</h2>
+        <div class="text">Бул тармак "Организм дарыга эмне кылат?" деген процессти изилдейт. Бул жерде ADME системасы (Absorption, Distribution, Metabolism, Excretion) каралат. Дарынын денеге сиңүүсүнөн баштап, анын ткандарга таралышын, боордогу өзгөрүүсүн жана бөйрөк аркылуу сыртка чыгышын сандык көрсөткүчтөр менен түшүндүрөт.</div>
+        <div class="tr">İlacın vücuttaki kaderini; emilim, dağılım, biyotransformasyon ve atılım süreçlerini matematiksel olarak inceler.</div>
+    </div>
+</section>
+
+<section>
+    <div class="card reveal">
+        <h2>3. Farmakoterapi</h2>
+        <div class="text">Дарыларды ооруларды алдын алуу жана дарылоо үчүн практикалык колдонууну үйрөтөт. Бул тармак клиникалык диагнозго жараша эң натыйжалуу дарыны, анын дозасын жана дарылоо схемасын тандап алууга негизделген. Ветеринарияда бул "Рационалдуу дары колдонуунун" негизи болуп саналат.</div>
+        <div class="tr">Hastalıkların tedavisinde ilaçların pratik ve klinik uygulanışını kapsayan bilim dalıdır.</div>
+    </div>
+</section>
+
+<section>
+    <div class="card reveal">
+        <h2>4. Toksikoloji (Zehir Bilimi)</h2>
+        <div class="text">Химиялык заттардын жана дарылардын жаныбарлардын организмине тийгизген терс, зыяндуу таасирлерин изилдейт. Уулануунун белгилерин, механизмдерин аныктайт жана антидотторду (ууга каршы дарыларды) иштеп чыгат. Бул ветеринар үчүн жаныбарларды өлүмдөн сактап калуучу эң маанилүү тармак.</div>
+        <div class="tr">Zehirli maddelerin ve ilaçların istenmeyen etkilerini, teşhisini ve tedavi yöntemlerini inceler.</div>
+    </div>
+</section>
+
+<section>
+    <div class="card reveal">
+        <h2>5. Kemoterapi</h2>
+        <div class="text">Организмдеги инфекциялык козгогучтарды (бактериялар, вирустар, грибоктор) же шишик клеткаларын жаныбардын өзүнүн ткандарына зыян келтирбестен жок кылуучу химиялык заттарды изилдейт. Бул жерге антибиотиктер, антигельминтиктер жана ракка каршы дарылар кирет.</div>
+        <div class="tr">Vücuttaki mikroorganizmaları veya tümör hücrelerini yok eden ilaçların kullanımını inceleyen daldır.</div>
+    </div>
+</section>
+
+<section>
+    <div class="card reveal">
+        <h2>6. Farmakognozi</h2>
+        <div class="text">Табигый булактардан, негизинен өсүмдүктөрдөн, жаныбарлардан жана минералдардан алынган дарылык заттарды изилдөөчү тармак. Бул илим жаратылыштагы дары чөптөрдүн химиялык курамын жана алардын дарылык касиеттерин илимий негизде далилдейт.</div>
+        <div class="tr">Bitkisel, hayvansal ve mineral kaynaklı doğal ilaç hammaddelerini inceleyen eczacılık ve tıp dalıdır.</div>
+    </div>
+</section>
+
+<section>
+    <div class="card reveal">
+        <h2>7. Klinik Farmakoloji</h2>
+        <div class="text">Дарылардын оорулуу жаныбарлардагы таасирин түздөн-түз изилдейт. Жаңы дарылардын натыйжалуулугун жана коопсуздугун текшерүү үчүн клиникалык сыноолорду өткөрөт. Максаты — конкреттүү бир ооруга карата дарынын эң коопсуз дозасын аныктоо.</div>
+        <div class="tr">İlaçların hastalar üzerindeki etkilerini inceleyen ve rasyonel kullanımı hedefleyen klinik disiplindir.</div>
+    </div>
+</section>
+
+<section>
+    <div class="card reveal">
+        <h2>8. Farmakogenetik</h2>
+        <div class="text">Тукум куучулуктун же генетикалык өзгөчөлүктөрдүн дарыга болгон реакцияга тийгизген таасирин изилдейт. Эмне үчүн бир эле дары бир жаныбарга жардам берип, экинчисине уулуу таасир этерин түшүндүрөт. Мисалы, кээ бир ит тукумдарындагы (Колли) MDR1 генинин мутациясы.</div>
+        <div class="tr">Genetik farklılıkların ilaçlara verilen yanıt üzerindeki etkilerini inceleyen bilim dalıdır.</div>
+    </div>
+</section>
+
+<section>
+    <div class="card reveal">
+        <h2>9. Biyoteknolojik Farmakoloji</h2>
+        <div class="text">Заманбап биологиялык ыкмаларды, гендик инженерияны колдонуу менен дарыларды (вакциналар, гормондор, моноклоналдык антителолор) иштеп чыгууну изилдейт. Бул ветеринариянын келечеги болгон тармактардын бири.</div>
+        <div class="tr">Genetik mühendisliği ve hücre kültürü yöntemleriyle üretilen ilaçları konu alan yeni bir daldır.</div>
+    </div>
+</section>
+
+<section>
+    <div class="card reveal" style="text-align: center;">
+        <h2 style="border: none;">Чоң Рахмат!</h2>
+        <p class="text">Ветеринардык фармакологиянын ар бир бөлүмү жаныбарлардын өмүрүн сактоодо жана адамзаттын азык-түлүк коопсуздугун камсыз кылууда өтө маанилүү роль ойнойт.</p>
+        <div class="tr" style="border: none; text-align: center;">Dinlediğiniz için teşekkürler. Veteriner hekimlikte farmakoloji hayat kurtarır.</div>
+        <div class="author-box" style="font-size: 2.2rem; margin-top: 50px;">Guldana & Purje</div>
+    </div>
+</section>
+
+<script>
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
