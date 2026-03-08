@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ветеринардык Фармакология | Guldana & Pvrje</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Farmakolojinin alt dalları | Guldana & Pvrje</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700;1,900&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         body { 
             margin: 0; 
@@ -15,13 +15,16 @@
             overflow-x: hidden; 
         }
         
+        /* ФОНДУ ЖАРЫК КЫЛУУ (АЧУУ) */
         .bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url("photo.JPG");
+            /* Көлөңкө (black overlay) 0.3төн 0.1ге түшүрүлдү - бул сүрөттү жарык кылат */
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), url("photo.JPG");
             background-size: cover; 
             background-position: center; 
             z-index: -1;
-            filter: brightness(1.2) contrast(1.1);
+            /* Жаркыроо (brightness) 1.2ден 1.4кө көтөрүлдү */
+            filter: brightness(1.4) contrast(1.1);
         }
 
         section { 
@@ -35,89 +38,86 @@
         }
         
         .card {
-            background: rgba(255, 255, 255, 0.1); 
-            backdrop-filter: blur(25px) saturate(180%);
-            -webkit-backdrop-filter: blur(25px) saturate(180%);
-            padding: 50px; 
-            border-radius: 50px; 
-            max-width: 1000px; 
-            width: 85%;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
-            position: relative;
+            /* Картанын фону бир аз тунуктукту сактайт, текст окулуш үчүн */
+            background: rgba(0, 0, 0, 0.45); 
+            backdrop-filter: blur(15px) saturate(180%);
+            -webkit-backdrop-filter: blur(15px) saturate(180%);
+            padding: 60px; 
+            border-radius: 60px; 
+            max-width: 1100px; 
+            width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.6);
             text-align: center;
-            animation: breathingEffect 7s ease-in-out infinite;
+            animation: breathingEffect 8s ease-in-out infinite;
         }
 
         @keyframes breathingEffect {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); box-shadow: 0 0 50px rgba(159, 242, 207, 0.3); }
+            50% { transform: scale(1.02); box-shadow: 0 0 50px rgba(159, 242, 207, 0.4); }
         }
 
-        /* БАШКЫ БЕТТЕГИ ЖАРКЫРАГАН АРИПТЕР */
         .hero-title { 
             font-family: 'Playfair Display', serif; 
-            font-size: 4.5rem; 
-            font-weight: 700; 
+            font-size: 5rem; 
+            font-weight: 900; 
             color: #ffffff;
-            margin: 0;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            text-shadow: 0 0 15px #9ff2cf, 0 0 30px #2ecc71;
+            letter-spacing: 5px;
+            text-shadow: 0 0 20px #9ff2cf, 0 0 40px #2ecc71;
             animation: titleGlow 3s ease-in-out infinite alternate;
         }
 
         @keyframes titleGlow {
-            from { text-shadow: 0 0 10px #9ff2cf, 0 0 20px #2ecc71; }
-            to { text-shadow: 0 0 20px #9ff2cf, 0 0 40px #2ecc71, 0 0 60px #2ecc71; }
+            from { text-shadow: 0 0 15px #9ff2cf, 0 0 30px #2ecc71; }
+            to { text-shadow: 0 0 30px #9ff2cf, 0 0 60px #2ecc71, 0 0 90px #2ecc71; }
         }
 
         h2 { 
             font-family: 'Playfair Display', serif; 
-            font-size: 2.8rem; 
+            font-size: 3.2rem; 
             color: #b1ffdf; 
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
+            margin-bottom: 35px;
+            text-shadow: 3px 3px 15px rgba(0,0,0,1); 
         }
         
         .text-slide {
-            font-size: 1.55rem; 
-            line-height: 1.65; 
-            margin-bottom: 30px; 
+            font-size: 1.85rem; 
+            line-height: 1.7; 
+            margin-bottom: 35px; 
             text-align: justify;
-            text-shadow: 1px 1px 8px rgba(0,0,0,1); 
+            text-shadow: 2px 2px 12px rgba(0,0,0,1); 
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(25px);
             transition: all 1.2s ease-out;
         }
 
         .active .text-slide { 
             opacity: 1; 
             transform: translateY(0); 
-            animation: textFloat 5s ease-in-out infinite;
+            animation: textFloat 6s ease-in-out infinite;
         }
 
         @keyframes textFloat {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+            50% { transform: translateY(-8px); }
         }
 
         .tr { 
-            font-size: 1.45rem; 
-            color: #e0fff3; 
+            font-size: 1.7rem; 
+            color: #f0fff9; 
             font-style: italic; 
-            border-left: 5px solid #9ff2cf; 
-            padding: 15px 25px; 
-            background: rgba(0, 0, 0, 0.4); 
-            border-radius: 0 15px 15px 0;
-            margin-top: 20px;
+            border-left: 8px solid #9ff2cf; 
+            padding: 20px 30px; 
+            background: rgba(0, 0, 0, 0.6); 
+            border-radius: 0 25px 25px 0;
+            margin-top: 25px;
             text-align: left;
         }
 
-        .author { font-size: 2.2rem; margin-top: 40px; font-family: 'Playfair Display'; font-style: italic; font-weight: 700; }
+        .author { font-size: 2.8rem; margin-top: 50px; font-family: 'Playfair Display'; font-style: italic; font-weight: 800; color: #9ff2cf; }
         .reveal { opacity: 0; transition: 1.5s all ease-in-out; }
         .reveal.active { opacity: 1; }
-        
     </style>
 </head>
 <body>
@@ -126,11 +126,11 @@
 
 <section>
     <div class="card reveal">
-        <div style="letter-spacing: 10px; font-weight: 600; margin-bottom: 20px; opacity: 0.9;">КЫРГЫЗ-ТҮРК "МАНАС" УНИВЕРСИТЕТИ</div>
+        <div style="letter-spacing: 15px; font-weight: 800; margin-bottom: 30px;">МАНАС УНИВЕРСИТЕТИ</div>
         <h1 class="hero-title">Ветеринардык Фармакология</h1>
-        <p style="font-size: 1.8rem; color: #9ff2cf; margin-top: 20px;">Жаныбарлардын саламаттыгы жана Коомдук коопсуздук</p>
+        <p style="font-size: 2.2rem; color: #9ff2cf; font-weight: 600;">Жаныбарлардын саламаттыгы - Адамзаттын келечеги</p>
         <div class="author">Гүлдана & Пврже</div>
-        <div style="margin-top: 15px; font-weight: 600;">2026</div>
+        <p style="font-weight: 800; margin-top: 20px;">2026</p>
     </div>
 </section>
 
@@ -153,7 +153,7 @@
 <section>
     <div class="card reveal">
         <h2>4. Негизги тармактар</h2>
-        <div class="text-slide">Бул илим төрт чоң багытты камтыйт: Фармакокинетика (организмдин дарыга болгон таасири), Фармакодинамика (дарынын организмге болгон таасири), Фармакотерапия жана Токсикология. Бул тармактар дарылоо стратегиясын иштеп чыгууда бирдей мааниге ээ.</div>
+        <div class="text-slide">Бул илим төрт чоң багытты камтыйт: Фармакокинетика (организмдин дарыга таасири), Фармакодинамика (дарынын организмге таасири), Фармакотерапия жана Токсикология. Бул тармактар дарылоо стратегиясын иштеп чыгууда бирдей мааниге ээ.</div>
         <div class="tr">Farmakoloji; kinetik, dinamik, toksikoloji ve tedavi dallarına ayrılır.</div>
     </div>
 </section>
@@ -274,27 +274,28 @@
     <div class="card reveal">
         <h2>19. Күтүү мөөнөтү (Withdrawal Period)</h2>
         <div class="text-slide">Дарыны колдонууну токтоткондон баштап, продукцияны (эт, сүт) тамак-ашка колдонууга чейинки убакыт. Бул мөөнөттү сактоо — ветеринардын этикалык жана юридикалык милдети. Бул адамзатты химиялык булгануудан сактайт.</div>
-        <div class="tr">İlacın vücuttan tamamen atılması için gereken bekleme süresidir.</div>
+        <div class="tr">İlaç kalıntıları için gereken bekleme süresine uymak toplum sağlığı için esastır.</div>
     </div>
 </section>
 
 <section>
     <div class="card reveal">
-        <h2>20. Жыйынтык: Стратегиялык мааниси</h2>
-        <div class="text-slide">Ветеринардык фармакология — бул жаныбарларды дарылоо эле эмес, бул бүтүндөй **Адамзаттын тамак-аш коопсуздугунун соот кийими.** Жаныбарларга туура тандалган терапия — дени сак мал чарбасын жана адамдардын столундагы таза продукцияны камсыз кылат. Биз бир эле учурда жаныбарды да, адамды да коргойбуз!</div>
-        <div class="tr">Sağlıklı hayvan, sağlıklı toplum ve güvenli gıda demektir.</div>
+        <h2>20. Корутунду: Адамзаттын коопсуздук сооту</h2>
+        <div class="text-slide" style="text-align: center; font-weight: 600;">Ветеринардык фармакология — бул жөн гана жаныбарды айыктыруу эмес, бул бүтүндөй адамзаттын тамак-аш коопсуздугунун жана ден соолугунун "БРОНУ". Биз жаныбарларга туура дары тандоо менен, адамдардын столундагы сүттүн тазалыгын, эттин коопсуздугун жана келечек муундун дени сак өсүшүн коргойбуз. Ветеринария бул — адамзатты коргогон биринчи тосмо. Дени сак жаныбар — бул дени сак адамзат жана бейпил коом!</div>
+        <div class="tr" style="text-align: center;">Veteriner farmakolojisi insanlığın gıda güvenliği ve sağlığının zırhıdır. Sağlıklı hayvan, sağlıklı toplum demektir.</div>
     </div>
 </section>
 
 <section>
     <div class="card reveal">
-        <h1 class="hero-title" style="font-size: 3.5rem;">Чоң рахмат!</h1>
-        <div class="text-slide" style="text-align: center; margin-top: 30px; font-weight: 600;">
-            Сиздердин суроолоруңуздарга жооп берүүгө даярбыз. <br>
-            <span style="font-style: italic; font-size: 1.4rem;">Sorularınızı yanıtlamaktan mutluluk duyarız.</span>
-        </div>
-        <div class="author">Гүлдана & Пврже</div>
-        <div style="margin-top: 20px; color: #9ff2cf; font-weight: 700;">Кыргыз-Түрк "Манас" Университети | 2026</div>
+        <h1 class="hero-title" style="font-size: 4rem;">Көңүл бурганыңыздарга чоң рахмат!</h1>
+        <div class="text-slide" style="text-align: center; margin-top: 25px; font-weight: 700; font-size: 2.2rem;">Сиздердин суроолоруңуздарга жооп берүүгө даярбыз.</div>
+        
+        <h1 class="hero-title" style="font-size: 3rem; margin-top: 20px;">İlginiz İçin Teşekkür Ederiz!</h1>
+        <div class="text-slide" style="text-align: center; margin-top: 10px; font-style: italic;">Sorularınızı yanıtlamaktan mutluluk duyarız.</div>
+        
+        <div class="author">Guldana & Pvrje</div>
+        <div style="margin-top: 20px; color: #9ff2cf; font-weight: 800; font-size: 1.5rem;">Veteriner  | 2026</div>
     </div>
 </section>
 
@@ -309,8 +310,8 @@
 
     document.addEventListener('mousemove', (e) => {
         const cards = document.querySelectorAll('.card');
-        const x = (window.innerWidth / 2 - e.pageX) / 70;
-        const y = (window.innerHeight / 2 - e.pageY) / 70;
+        const x = (window.innerWidth / 2 - e.pageX) / 80;
+        const y = (window.innerHeight / 2 - e.pageY) / 80;
         cards.forEach(card => {
             card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
         });
