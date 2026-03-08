@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veterinary Pharmacology | Super Motion Edition</title>
+    <title>Farmakolojinin Alt Dalları | Crystal Water Edition</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
     <style>
         body { margin: 0; font-family: 'Montserrat', sans-serif; color: white; overflow-x: hidden; scroll-behavior: smooth; background: #000; }
@@ -11,37 +11,29 @@
         
         section { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; box-sizing: border-box; perspective: 1200px; }
         
-        /* КАРТА - ТИРҮҮ ЖАНА НАЗИК */
+        /* КАРТА - КӨЛӨКӨСҮЗ, МӨЛДҮР СУУДАЙ ТУНУК */
         .card {
-            background: rgba(0, 0, 0, 0.4); 
+            background: rgba(255, 255, 255, 0.05); /* Өтө тунук */
             padding: 60px 90px; border-radius: 60px; 
             max-width: 1300px; width: fit-content;
-            border: 5px solid #b1ffdf; 
+            border: 2px solid rgba(177, 255, 223, 0.5); /* Назик чек ара */
             text-align: center;
-            /* БАШТАПКЫ АБАЛЫ - ЖОК ЖАНА КИЧИНЕ */
+            box-shadow: none; /* Картанын көлөкөсү алынды */
             opacity: 0;
-            transform: scale(0.5) rotateX(10deg) translateY(100px);
-            transition: all 1.8s cubic-bezier(0.19, 1, 0.22, 1); /* Өтө назик чыгуу */
-            /* ТЫНЫМСЫЗ КОЗГОЛУУ АНИМАЦИЯСЫ */
-            animation: breatheFloating 6s ease-in-out infinite;
+            transform: scale(0.6) translateY(80px);
+            transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
         }
 
-        /* ЭКРАНГА КЕЛГЕНДЕ 0.5 СЕКУНД КҮТҮП, АНАН ЧЫГАТ */
         section.visible .card {
             opacity: 1;
-            transform: scale(1) rotateX(0deg) translateY(0);
-            transition-delay: 0.5s; /* Күтүү убактысы */
+            transform: scale(1) translateY(0);
+            transition-delay: 0.4s; /* Назик күтүү */
         }
 
-        @keyframes breatheFloating {
-            0%, 100% { transform: scale(1) translateY(0); }
-            50% { transform: scale(1.05) translateY(-20px); } /* Чоңоюп жана өйдө жылат */
-        }
-
-        /* ТАМГАЛАРДЫН КАЛЫҢДЫГЫ ЖАНА КҮЧТҮҮ КӨЛӨКӨСҮ */
+        /* ТАМГАЛАРГА ГАНА КҮЧТҮҮ КӨЛӨКӨ ЖАНА НУР */
         .glow-text { 
             color: #b1ffdf; font-family: 'Playfair Display', serif; font-size: 5.8rem; font-weight: 900;
-            text-shadow: 6px 6px 15px #000, -3px -3px 5px #000, 0 0 30px rgba(177, 255, 223, 0.4);
+            text-shadow: 6px 6px 12px #000, 0 0 25px rgba(177, 255, 223, 0.8); /* Тамгалардын нуру */
         }
 
         h2 { 
@@ -50,23 +42,39 @@
         }
 
         .text-slide { 
-            font-size: 2.6rem; line-height: 1.5; font-weight: 900; 
+            font-size: 2.6rem; line-height: 1.4; font-weight: 900; 
             text-align: justify; margin-bottom: 35px; 
-            text-shadow: 4px 4px 12px #000; color: #ffffff;
+            text-shadow: 4px 4px 10px #000; color: #ffffff;
         }
 
         .tr { 
-            font-size: 2.2rem; color: #d1fae5; font-weight: 900; font-style: italic; 
+            font-size: 2.1rem; color: #d1fae5; font-weight: 900; font-style: italic; 
             border-left: 15px solid #b1ffdf; padding: 25px 45px; 
-            background: rgba(0, 0, 0, 0.7); border-radius: 0 30px 30px 0; 
+            background: rgba(0, 0, 0, 0.6); border-radius: 0 30px 30px 0; 
             text-align: left; text-shadow: 3px 3px 8px #000;
         }
 
+        /* ТЕЗ СОККОН ЖҮРӨК АНИМАЦИЯСЫ (АКЫРКЫ БЕТ ҮЧҮН) */
+        .heartbeat-fast { 
+            animation: fastHeart 0.8s ease-in-out infinite; 
+            display: inline-block;
+            color: #ff4d4d;
+            text-shadow: 0 0 20px #ff4d4d;
+        }
+
+        @keyframes fastHeart {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.3); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
         /* БАШКЫ БЕТТЕГИ НУРДУУ СОГУУ */
-        .sync-pulse { animation: syncPulse 2.5s ease-in-out infinite; }
+        .sync-glow { animation: syncPulse 2s ease-in-out infinite; }
         @keyframes syncPulse {
-            0%, 100% { filter: brightness(1) drop-shadow(0 0 10px #b1ffdf); }
-            50% { filter: brightness(1.4) drop-shadow(0 0 40px #b1ffdf); }
+            0%, 100% { filter: brightness(1) drop-shadow(0 0 10px #b1ffdf); transform: scale(1); }
+            50% { filter: brightness(1.5) drop-shadow(0 0 40px #b1ffdf); transform: scale(1.02); }
         }
     </style>
 </head>
@@ -74,51 +82,50 @@
 <div class="bg"></div>
 
 <section>
-    <div class="card sync-pulse" style="opacity: 1; transform: scale(1);">
-        <div style="letter-spacing: 15px; font-size: 1.8rem; margin-bottom: 25px; font-weight: 900; text-shadow: 3px 3px 5px #000;">MANAS ÜNİVERSİTESİ</div>
+    <div class="card sync-glow" style="opacity: 1; transform: scale(1);">
+        <div style="letter-spacing: 15px; font-size: 1.8rem; margin-bottom: 25px; font-weight: 900; text-shadow: 4px 4px 8px #000;">MANAS ÜNİVERSİTESİ</div>
         <h1 class="glow-text">Farmakolojinin Alt Dalları</h1>
         <div style="font-size: 5rem; margin-top: 40px; color: #ffffff; font-weight: 900; text-shadow: 5px 5px 15px #000;">Guldana & Pvrje</div>
-        <div style="font-size: 2.8rem; border: 6px solid #b1ffdf; padding: 15px 70px; border-radius: 100px; display: inline-block; margin-top: 30px; font-weight: 900;">2026</div>
+        <div style="font-size: 2.8rem; border: 4px solid #b1ffdf; padding: 15px 70px; border-radius: 100px; display: inline-block; margin-top: 30px; font-weight: 900; background: rgba(0,0,0,0.3);">2026</div>
     </div>
 </section>
 
 <section><div class="card"><h2>Фармакологиянын илимий маңызы</h2><div class="text-slide">Фармакология — дарылардын тирүү организм менен молекулярдык деңгээлде өз ара аракеттенүүсүн изилдөөчү фундаменталдык илим.</div><div class="tr">Farmakoloji, ilaçların canlı organizmadaki sistemlerle etkileşimini inceler.</div></div></section>
 
-<section><div class="card"><h2>Түрлөр аралык айырмачылыктар</h2><div class="text-slide">Ар бир жаныбардын түрү (ат, уй, ит, мышык) дарыларга өзгөчө сезгичтикке ээ. Бул ветеринардык дарылоонун негизги шарты.</div><div class="tr">Veteriner farmakolojisinde türler arası farmakodinamik farklar esastır.</div></div></section>
+<section><div class="card"><h2>Түрлөр аралык айырмачылыктар</h2><div class="text-slide">Ар бир жаныбардын түрү дарыларга өзгөчө сезгичтикке ээ. Бул анатомиялык жана физиологиялык айырмачылыктар ветеринариянын негизи.</div><div class="tr">Veteriner farmakolojisinde türler arası farmakodinamik farklar esastır.</div></div></section>
 
-<section><div class="card"><h2>Фармакодинамиканын негиздери</h2><div class="text-slide">Бул бөлүм дарынын организмдеги биохимиялык эффекттерин жана механизмин изилдейт. Ал "Дары организмге эмне кылат?" деген суроого жооп берет.</div><div class="tr">Farmakodinamik, ilacın organizmadaki etkilerini ve mekanizmalarını inceler.</div></div></section>
+<section><div class="card"><h2>Фармакодинамика</h2><div class="text-slide">Бул бөлүм дарынын организмдеги биохимиялык эффекттерин изилдейт. Ал "Дары организмге эмне кылат?" деген суроого жооп берет.</div><div class="tr">Farmakodinamik, ilacın organizmadaki etkilerini ve mekanizmalarını inceler.</div></div></section>
 
-<section><div class="card"><h2>Фармакокинетика: ADME</h2><div class="text-slide">Дарынын организмдеги тагдыры төрт этаптан турат: Absorption (сиңүү), Distribution (таралуу), Metabolism (өзгөрүү) жана Excretion (чыгаруу).</div><div class="tr">Farmakokinetik; ilacın emilim, dağılım, metabolizma ve atılım süreçlerini kapsar.</div></div></section>
+<section><div class="card"><h2>Фармакокинетика: ADME</h2><div class="text-slide">Дарынын организмдеги жолу: Absorption (сиңүү), Distribution (таралуу), Metabolism (өзгөрүү) жана Excretion (чыгаруу).</div><div class="tr">Farmakokinetik; ilacın emilim, dağılım, metabolizma ve atılım süreçlerini kapsar.</div></div></section>
 
 [attachment_0](attachment)
 
-<section><div class="card"><h2>Сиңүү процесси (Absorption)</h2><div class="text-slide">Дарынын киргизилген жерден системалык канга өтүүсү. Вена ичине (IV) сайганда дары дароо 100% канга жетет.</div><div class="tr">Emilim, ilacın uygulama yerinden sistemik dolaşıma geçişidir.</div></div></section>
-
-<section><div class="card"><h2>Биотрансформация (Metabolism)</h2><div class="text-slide">Дарынын боордогу ферменттер аркылуу химиялык өзгөрүүсү. Максаты — дарыны организмден чыгарууга ыңгайлуу абалга келтирүү.</div><div class="tr">Metabolizma, ilacın vücutta kimyasal değişimlere uğrayarak atılıma hazırlanmasıdır.</div></div></section>
-
-<section><div class="card"><h2>Терапиялык Индекс (TI)</h2><div class="text-slide">Дарынын коопсуздук диапазону. Терапиялык доза менен уулуу дозанын ортосундагы чек канчалык чоң болсо, дары ошончолук коопсуз.</div><div class="tr">Terapötik İndeks, ilacın güvenlilik sınırını belirleyen bir ölçüttür.</div></div></section>
+<section><div class="card"><h2>Биотрансформация (Metabolism)</h2><div class="text-slide">Дарынын боордогу ферменттер аркылуу химиялык өзгөрүүсү. Максаты — дарыны организмден чыгарууга даярдоо.</div><div class="tr">Metabolizma, ilacın vücutta kimyasal değişimlere uğrayarak atılıma hazırlanmasıdır.</div></div></section>
 
 <section><div class="card"><h2>Клиникалык мисал: Мышыктар</h2><div class="text-slide">Мышыктарда боор ферменттеринин жетишсиздигинен улам Парацетамол өтө токсикалуу. Кичинекей доза да өлүмгө алып келиши мүмкүн.</div><div class="tr">Kedilerde enzim eksikliği nedeniyle parasetamol kullanımı ölümcüldür.</div></div></section>
 
-<section><div class="card"><h2>Күтүү мөөнөтү (Withdrawal)</h2><div class="text-slide">Дарыны токтоткондон кийин продукцияны колдонууга чейинки убакыт. Бул мөөнөттү сактоо — ветеринардын ыйык милдети.</div><div class="tr">İlacın vücuttan atılması için gereken yasal arınma süresidir.</div></div></section>
+<section><div class="card"><h2>Күтүү мөөнөтү (Withdrawal)</h2><div class="text-slide">Дарыны токтоткондон кийин продукцияны (эт, сүт) колдонууга чейинки убакыт. Бул коомдук коопсуздуктун кепилдиги.</div><div class="tr">İlacın vücuttan atılması için gereken yasal arınma süresidir.</div></div></section>
 
 <section>
-    <div class="card sync-pulse" style="border: 6px solid #b1ffdf;">
-        <h1 class="glow-text" style="font-size: 5.5rem;">Чоң Рахмат! / Teşekkürler!</h1>
-        <div style="font-size: 2.4rem; font-weight: 900; color: #ffffff; margin: 35px 0; line-height: 1.5; text-shadow: 4px 4px 10px #000;">
+    <div class="card sync-glow" style="border: 6px solid #b1ffdf; background: rgba(0,0,0,0.5);">
+        <h1 class="glow-text" style="font-size: 5.5rem;">Чоң Рахмат! <span class="heartbeat-fast">❤</span></h1>
+        
+        <div style="font-size: 2.3rem; font-weight: 900; color: #ffffff; margin: 35px 0; line-height: 1.6; text-shadow: 4px 4px 12px #000;">
             Көңүл бурганыңыздарга чоң рахмат! <br><br>
-            <span style="color: #b1ffdf; font-size: 3rem;">Айдай эже</span>, алтын убактыңызды бизге арнап, <br>
-            назар салганыңыз үчүн Сизге терең ыраазычылык билдиребиз. <br>
-            <span style="font-style: italic; opacity: 0.9; font-size: 2rem; text-shadow: 3px 3px 8px #000;">
-                Değerli vaktinizi bize ayırdığınız için teşekkür ederiz hocamız.
-            </span>
+            Өзгөчө <span style="color: #b1ffdf; font-size: 3rem;">Айдай эже</span>, алтын убактыңызды бизге арнап, <br>
+            билимиңиз менен бөлүшкөнүңүз үчүн Сизге терең ыраазычылык билдиребиз.
         </div>
-        <div style="font-size: 4.8rem; color: #b1ffdf; font-weight: 900; margin-top: 25px;">Guldana & Pvrje</div>
+
+        <div style="font-style: italic; opacity: 0.9; font-size: 1.8rem; text-shadow: 2px 2px 5px #000; color: #d1fae5; border-top: 1px solid rgba(177,255,223,0.3); padding-top: 20px;">
+            Değerli vaktinizi bize ayırdığınız ve ilginiz için teşekkür ederiz Aydai Hocamız.
+        </div>
+        
+        <div style="font-size: 4.8rem; color: #b1ffdf; font-weight: 900; margin-top: 30px; text-shadow: 5px 5px 15px #000;">Guldana & Pvrje</div>
+        <div style="font-size: 1.8rem; letter-spacing: 12px; color: #ffffff; margin-top: 10px; font-weight: 900;">KTMU | 2026</div>
     </div>
 </section>
 
 <script>
-    // СЛАЙДДАРДЫ БИРАЗДАН СОҢ ЖАЙ ЧЫГАРУУ СКРИПТИ
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
