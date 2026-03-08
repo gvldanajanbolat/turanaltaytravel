@@ -18,58 +18,74 @@
         section { 
             min-height: 100vh; display: flex; align-items: center; justify-content: center; 
             padding: 30px; box-sizing: border-box; 
-            opacity: 0; transition: opacity 0.8s ease-in-out;
+            opacity: 0; transform: scale(0.9); transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        section.visible { opacity: 1; }
+        section.visible { opacity: 1; transform: scale(1); }
 
-        /* КАРТА ТАПТАКЫР ТУНУК - КӨЛӨКӨ ЖАНА ЖЭЭК ЖОК */
+        /* КАРТА ТУНУК ЖАНА ДЕМ АЛУУ АНИМАЦИЯСЫ МЕНЕН */
         .card {
-            background: transparent; /* Түсү жок, таптакыр тунук */
-            padding: 40px; 
-            max-width: 1200px; width: 95%;
+            background: transparent; 
+            padding: 50px 70px; border-radius: 50px; 
+            max-width: 1250px; width: 92%;
             text-align: center;
-            border: none; /* Жээги жок */
-            box-shadow: none; /* Көлөкөсү жок */
+            animation: midBreathe 4s ease-in-out infinite; /* Картанын дем алуусу */
         }
 
-        /* ТАМГАЛАРДЫН КӨЛӨКӨСҮ (ТЕКСТ ОКУЛУШУ ҮЧҮН ГАНА) */
+        @keyframes midBreathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        /* ӨЗГӨЧӨ СЛАЙДДАРДЫН АНИМАЦИЯСЫ */
+        .special-card {
+            animation: heartBeat 1.5s ease-in-out infinite !important;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* ТАМГАЛАРДА ГАНА КӨЛӨКӨ */
         .glow-text { 
             color: #b1ffdf; font-family: 'Playfair Display', serif; font-size: 5.5rem;
-            text-shadow: 6px 6px 12px #000; /* Тамгалар даана көрүнүш үчүн */
+            text-shadow: 6px 6px 15px rgba(0,0,0,1), 0 0 25px rgba(177, 255, 223, 0.4);
             margin: 10px 0;
         }
 
         h2 { 
             font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 25px; 
-            color: #b1ffdf; text-shadow: 4px 4px 10px #000; font-weight: 900; 
+            color: #b1ffdf; text-shadow: 5px 5px 15px #000; font-weight: 900; 
         }
         
         .text-slide { 
             font-size: 2.3rem; line-height: 1.6; font-weight: 800; text-align: justify; 
-            text-shadow: 4px 4px 8px #000; margin-bottom: 35px; color: #fff; 
+            text-shadow: 4px 4px 12px #000; margin-bottom: 35px; color: #fff; 
         }
         
         .tr { 
             font-size: 1.9rem; color: #d1fae5; font-weight: 800; font-style: italic; 
-            border-left: 10px solid #b1ffdf; padding: 15px 30px; 
-            background: rgba(0, 0, 0, 0.5); /* Котормо бираз бөлүнүп турушу үчүн */
-            text-align: left; text-shadow: 2px 2px 5px #000;
+            border-left: 12px solid #b1ffdf; padding: 20px 35px; 
+            background: rgba(0, 0, 0, 0.6); border-radius: 0 25px 25px 0; 
+            text-align: left; line-height: 1.4; text-shadow: 3px 3px 10px #000;
         }
 
-        .mini-heart { color: #ff4d4d; display: inline-block; font-size: 4.5rem; vertical-align: middle; }
+        /* ЖҮРӨК АНИМАЦИЯСЫ */
+        .mini-heart { color: #ff4d4d; display: inline-block; animation: heartMini 0.8s infinite; font-size: 4.5rem; vertical-align: middle; }
+        @keyframes heartMini { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.3); } }
     </style>
 </head>
 <body>
 <div class="bg"></div>
 
 <section class="visible">
-    <div class="card">
+    <div class="card special-card">
         <div style="letter-spacing: 10px; font-size: 1.5rem; font-weight: 900; text-shadow: 3px 3px 6px #000;">MANAS ÜNİVERSİTESİ</div>
         <h1 class="glow-text">Veteriner Farmakolojisi</h1>
         <div style="font-size: 3rem; color: #ffffff; font-weight: 900; margin-bottom: 25px; text-shadow: 4px 4px 10px #000;">Farmakolojinin Alt Dalları</div>
         <div class="glow-text" style="font-size: 5rem;">Guldana & Pvrje</div>
-        <div style="margin-top: 30px; font-size: 2.5rem; border: 4px solid #b1ffdf; display: inline-block; padding: 5px 50px; border-radius: 50px; font-weight: 900; text-shadow: 3px 3px 6px #000;">2026</div>
+        <div style="margin-top: 30px; font-size: 2.5rem; border: 4px solid #b1ffdf; padding: 10px 60px; border-radius: 60px; font-weight: 900; text-shadow: 3px 3px 6px #000; display: inline-block;">2026</div>
     </div>
 </section>
 
@@ -79,24 +95,24 @@
 <section><div class="card"><h2>5. Фармакодинамиканын принциптери</h2><div class="text-slide">Бул бөлүм дарынын организмдеги биохимиялык эффекттерин жана анын таасир этүү механизмин изилдейт. Ал "Дары организмге эмне кылат жана кандай өзгөртүүлөрдү киргизет?" деген суроого жооп берет.</div><div class="tr">Farmakodinamik, ilacın vücut üzerindeki biyokimyasal ve fizyolojik etkilerini ve bu etkilerin oluşum süreçlerini bilimsel olarak inceler.</div></div></section>
 <section><div class="card"><h2>6. Рецепторлордун механизми</h2><div class="text-slide">Дарылар клеткадагы атайын белоктор — рецепторлор менен байланышат. Бул байланыш "Ачкыч жана Кулпу" принцибинде иштеп, клетка ичиндеги биологиялык сигналдарды активдештирет же блоктоп коёт.</div><div class="tr">İlaçlar, hücrelerdeki reseptörlerle etkileşime girerek "Anahtar-Kilit" prensibiyle biyolojik sinyalleri aktive eder veya inhibe eder.</div></div></section>
 <section><div class="card"><h2>7. Агонисттер жана Антагонисттер</h2><div class="text-slide">Агонист — бул рецепторду активдештирип, тиешелүү биологиялык жоопту жараткан зат. Антагонист болсо рецепторге байланышып, бирок аны активдештирбейт, башка заттардын таасирине жол бербей блоктоп коёт.</div><div class="tr">Agonistler reseptörü aktive ederek biyolojik yanıt oluşturur, antagonistler ise reseptörü bloke ederek diğer maddelerin etkisini engeller.</div></div></section>
-<section><div class="card"><h2>8. Фармакокинетика: ADME Динамикасы</h2><div class="text-slide">Дарынын организмдеги тагдыры төрт негизги этаптан турат: Absorption (сиңүү), Distribution (таралуу), Metabolism (биотрансформация) жана Excretion (чыгаруу).</div><div class="tr">Farmakokinetik; ilacın vücudundaki emilim, dağılım, metabolizma ve atılım süreçlerini analiz eder.</div></div></section>
+<section><div class="card"><h2>8. Фармакокинетика: ADME Динамикасы</h2><div class="text-slide">Дарынын организмдеги тагдыры төрт негизги этаптан турат: Absorption (сиңүү), Distribution (таралуу), Metabolism (биотрансформация) жана Excretion (чыгаруу).</div><div class="tr">Farmakokinetik; ilacın vücudundaki emilim, dağılım, metabolizma ve atılım süreçlerini анализдөөчү динамикалык процесс.</div></div></section>
 <section><div class="card"><h2>9. Absorption (Сиңүү процесси)</h2><div class="text-slide">Дарынын киргизилген жерден (ооз, булчуң ж.б.) системалык канга өтүүсү. Вена ичине (IV) сайганда сиңүү баскычы болбойт, анткени дары дароо кан айланууга жетет.</div><div class="tr">Emilim, ilacın uygulandığı bölgeden kan dolaşımına geçiş sürecidir. İntravenöz (IV) uygulamalarda emilim safhası bulunmamaktadır.</div></div></section>
-<section><div class="card"><h2>10. Distribution (Дарынын таралуусу)</h2><div class="text-slide">Канга кирген дарынын ткандарга жана максаттуу органдарга жайылуу процесси. Бул жерде дарынын белоктор менен байланышуусу жана биологиялык барьерлер чечүүчү ролду ойнойт.</div><div class="tr">Dağılım, ilacın kan dolaşımı yoluyla hedef dokulara ve organlara yayılmasıdır. Proteinlere bağlanma ve biyolojik bariyerler önemlidir.</div></div></section>
+<section><div class="card"><h2>10. Distribution (Дарынын таралуусу)</h2><div class="text-slide">Канга кирген дарынын ткандарга жана максаттуу органдарга жайылуу процесси. Бул жерде дарынын белоктор менен байланышуусу жана биологиялык барьерлер чечүүчү ролду ойнойт.</div><div class="tr">Dağılım, ilacın kan dolaşımı yoluyla hedef dokulara ve organlara yayılmasıdır. Proteinlere bağlanma жана биологиялык барьерлер маанилүү.</div></div></section>
 <section><div class="card"><h2>11. Metabolism (Биотрансформация)</h2><div class="text-slide">Дарынын боордогу ферменттер аркылуу химиялык өзгөрүүсү. Негизги максат — дарыны организмден чыгарууга ыңгайлуу сууда эрүүчү (гидрофилдик) абалга келтирүү.</div><div class="tr">Metabolizma, ilaçların karaciğer enzimleriyle kimyasal değişikliğe uğrayarak atılmaya hazır, suda çözünür hale gelme sürecidir.</div></div></section>
 <section><div class="card"><h2>12. Excretion (Организмден чыгаруу жолдору)</h2><div class="text-slide">Дарылардын денеден бөйрөк (заара), ичеги (заң) же сүт, тер жана дем алуу аркылуу чыгуусу. Ветеринарияда сүт аркылуу чыгуу — тамак-аш коопсуздугу үчүн өтө маанилүү.</div><div class="tr">Atılım, ilacın ve metabolitlerinin böbrekler, safra, süt veya solunum yoluyla vücut dışına uzaklaştırılması işlemidir.</div></div></section>
 <section><div class="card"><h2>13. Терапиялык Индекс жана Коопсуздук</h2><div class="text-slide">Дарынын коопсуздук диапазонун аныктоочу көрсөткүч. Терапиялык эффект берүүчү доза менен токсикалык дозанын ортосундагы чек канчалык кенен болсо, дары ошончолук коопсуз.</div><div class="tr">Terapötik İndeks, ilacın tedavi edici dozu ile toksik dozu arasındaki güvenli aralığı temsil eden bir parametredir.</div></div></section>
-<section><div class="card"><h2>14. Ветеринардык Токсикология</h2><div class="text-slide">Жаныбарлардын ар кандай уулуу заттарга болгон реакциясын изилдөө. Ал уулануунун диагностикасын жана антидоттук терапиясын иштеп чыгат.</div><div class="tr">Veteriner Toksikoloji, zehirli maddelerin hayvanlar üzerindeki zararlı etkilerini ve antidot tedavilerini konu alır.</div></div></section>
-<section><div class="card"><h2>15. Биожеткиликтүүлүк (Bioavailability)</h2><div class="text-slide">Кабыл алынган дарынын канча пайызы өзгөрүүсүз түрдө системалык кан айланууга жетип, өз таасирин көрсөтө аларын билдирген параметр.</div><div class="tr">Biyoyararlanım, uygulanan ilacın değişmeden sistemik dolaşıma ulaşan ve etki gösteren kısmının oranını ifade eder.</div></div></section>
+<section><div class="card"><h2>14. Ветеринардык Токсикология</h2><div class="text-slide">Жаныбарлардын ар кандай уулуу заттарга болгон реакциясын изилдөө. Ал уулануунун диагностикасын жана антидоттук терапиясын иштеп чыгат.</div><div class="tr">Veteriner Toksikoloji, zehirli maddelerin hayvanlar üzerindeki zararlı etkilerini жана antidot tedavilerini konu alır.</div></div></section>
+<section><div class="card"><h2>15. Биожеткиликтүүлүк (Bioavailability)</h2><div class="text-slide">Кабыл алынган дарынын канча пайызы өзгөрүүсуз түрдө системалык кан айланууга жетип, өз таасирин көрсөтө аларын билдирген параметр.</div><div class="tr">Biyoyararlanım, uygulanan ilacın değişmeden sistemik dolaşıma ulaşan ve etki gösteren kısmının oranını ifade eder.</div></div></section>
 <section><div class="card"><h2>16. Клиникалык мисал: Мышыктардын сезгичтиги</h2><div class="text-slide">Мышыктарда боордогу "глюкуронизация" ферментинин жетишсиздигинен улам Парацетамол өтө токсикалуу болуп саналат. Бул өлүмгө алып келиши мүмкүн.</div><div class="tr">Kedilerde glukuronidasyon enzim eksikliği nedeniyle parasetamol kullanımı şiddetli toksisiteye ve ölüme yol açabilir.</div></div></section>
 <section><div class="card"><h2>17. Ruminantтардын фармакологиялык өзгөчөлүгү</h2><div class="text-slide">Кепшөөчү жаныбарлардын көп камералуу ашказанындагы микрофлора дарыларды бузуп же өзгөртүп жибериши мүмкүн. Эффективдүүлүк микроорганизмдерге көз каранды.</div><div class="tr">Ruminantlarda mide mikroflorası ilaçları parçalayabilir; bu durum ağızdan alınan ilaçların etkisini belirler.</div></div></section>
-<section><div class="card"><h2>18. Продукциядагы дары калдыктары</h2><div class="text-slide">Дары калдыктары эт, сүт жана жумуртка аркылуу адамга өтүп, антибиотиктерге туруктуулукту жана патологияларды жаратат. Бул — глобалдык маселе.</div><div class="tr">Hayvansal gıdalardaki ilaç kalıntıları insanlarda antibiyotik direncine neden olan küresel bir risk faktörüdür.</div></div></section>
+<section><div class="card"><h2>18. Продукциядагы дары калдыктары</h2><div class="text-slide">Дары калдыктары эт, сүт жана жумуртка аркылуу адамга өтүп, антибиотиктерге туруктуулукту жана патологияларды жаратат.</div><div class="tr">Hayvansal gıdalardaki ilaç kalıntıları insanlarda antibiyotik direncine neden olan küresel bir risk faktörüdür.</div></div></section>
 <section><div class="card"><h2>19. Күтүү мөөнөтүнүн маанилүүлүгү</h2><div class="text-slide">Күтүү мөөнөтү (withdrawal period) — дары акыркы жолу берилгенден кийин жаныбардын продукциясын тамак-ашка колдонууга чейинки убакыт.</div><div class="tr">İlaç arınma süresi, ilacın dokulardan tamamen temizlenmesi için ürünlerin tüketime sunulmadan önce beklenmesi gereken süredir.</div></div></section>
 
 <section>
     <div class="card">
         <h2>20. Жыйынтык (Sonuç)</h2>
         <div class="text-slide" style="text-align: center;">
-            Ветеринардык фармакология — жаныбарлардын саламаттыгын гана эмес, тамак-аш коопсуздугу аркылуу бүткүл адамзатты коргогон стратегиялык илим. Туура дарылоо — дени сак келечектин кепилдиги.
+            Ветеринардык фармакология — жаныбарлардын саламаттыгын гана эмес, тамак-аш коопсуздугу аркылуу бүткүл адамзатты коргогон стратегиялык илим. Туура дарылоо — дени сак коомдун кепилдиги.
         </div>
         <div class="tr" style="text-align: center;">
             Sonuç olarak; farmakoloji hem hayvan refahını hem de toplum sağlığını koruyan vazgeçilmez bir bilimsel köprüdür.
@@ -105,16 +121,16 @@
 </section>
 
 <section>
-    <div class="card">
+    <div class="card special-card">
         <h1 class="glow-text">Чоң Рахмат! <span class="mini-heart">❤</span></h1>
         <div style="font-size: 2.3rem; font-weight: 900; color: #ffffff; margin: 25px 0; text-shadow: 4px 4px 10px #000;">
             Көңүл бурганыңыздар үчүн терең ыраазычылык билдиребиз!
         </div>
         <hr style="border: 2px solid #b1ffdf; width: 60%; margin: 30px auto; opacity: 0.7;">
-        <h1 class="glow-text" style="font-size: 4.5rem;">Teşekkürler!</h1>
+        <h1 class="glow-text" style="font-size: 5rem;">Teşekkürler!</h1>
         <div style="margin-top: 40px;">
-            <div class="glow-text" style="font-size: 5rem;">Guldana & Pvrje</div>
-            <div style="font-size: 2rem; letter-spacing: 12px; font-weight: 900; text-shadow: 3px 3px 6px #000;">MANAS UNIVERSITY | 2026</div>
+            <div class="glow-text" style="font-size: 5.5rem;">Guldana & Pvrje</div>
+            <div style="font-size: 2.2rem; letter-spacing: 12px; font-weight: 900; text-shadow: 3px 3px 6px #000;">MANAS UNIVERSITY | 2026</div>
         </div>
     </div>
 </section>
