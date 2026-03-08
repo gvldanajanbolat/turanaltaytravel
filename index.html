@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmakolojinin alt dalları 2026</title>
+    <title>Veterinary Pharmacology 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
         body { margin: 0; font-family: 'Montserrat', sans-serif; color: white; overflow-x: hidden; scroll-behavior: smooth; background: #000; }
         
-        /* АРТКЫ ФОН ДААНА КӨРҮНӨТ */
+        /* АРТКЫ ФОН */
         .bg { 
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
             background: url("photo.JPG") no-repeat center center; 
@@ -23,44 +23,38 @@
         
         section.visible { opacity: 1; }
 
-        /* КАРТА ӨТӨ ТУНУК ЖАНА БУЛУҢГУР ЭМЕС (NO BLUR) */
+        /* КАРТА ТАПТАКЫР ТУНУК - КӨЛӨКӨ ЖАНА ЖЭЭК ЖОК */
         .card {
-            background: rgba(0, 0, 0, 0.25); /* Өтө тунук кара түс */
-            backdrop-filter: none; /* Булуңгур эффект алынып салынды */
-            -webkit-backdrop-filter: none;
-            padding: 50px 70px; border-radius: 40px; 
-            max-width: 1250px; width: 92%;
-            border: 1.5px solid rgba(255, 255, 255, 0.3); 
+            background: transparent; /* Түсү жок, таптакыр тунук */
+            padding: 40px; 
+            max-width: 1200px; width: 95%;
             text-align: center;
+            border: none; /* Жээги жок */
+            box-shadow: none; /* Көлөкөсү жок */
         }
 
-        .special-card {
-            border: 4px solid #b1ffdf !important;
-            background: rgba(0, 0, 0, 0.45) !important;
-        }
-
-        /* ТАМГАЛАРДЫН КӨЛӨКӨСҮ - ТЕКСТТИН ДААНАЛЫГЫ ҮЧҮН */
+        /* ТАМГАЛАРДЫН КӨЛӨКӨСҮ (ТЕКСТ ОКУЛУШУ ҮЧҮН ГАНА) */
         .glow-text { 
             color: #b1ffdf; font-family: 'Playfair Display', serif; font-size: 5.5rem;
-            text-shadow: 6px 6px 15px #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+            text-shadow: 6px 6px 12px #000; /* Тамгалар даана көрүнүш үчүн */
             margin: 10px 0;
         }
 
         h2 { 
             font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 25px; 
-            color: #b1ffdf; text-shadow: 5px 5px 12px #000; font-weight: 900; 
+            color: #b1ffdf; text-shadow: 4px 4px 10px #000; font-weight: 900; 
         }
         
         .text-slide { 
             font-size: 2.3rem; line-height: 1.6; font-weight: 800; text-align: justify; 
-            text-shadow: 4px 4px 10px #000, 2px 2px 5px #000; margin-bottom: 35px; color: #fff; 
+            text-shadow: 4px 4px 8px #000; margin-bottom: 35px; color: #fff; 
         }
         
         .tr { 
             font-size: 1.9rem; color: #d1fae5; font-weight: 800; font-style: italic; 
-            border-left: 12px solid #b1ffdf; padding: 20px 35px; 
-            background: rgba(0, 0, 0, 0.6); border-radius: 0 25px 25px 0; 
-            text-align: left; line-height: 1.4; text-shadow: 3px 3px 8px #000;
+            border-left: 10px solid #b1ffdf; padding: 15px 30px; 
+            background: rgba(0, 0, 0, 0.5); /* Котормо бираз бөлүнүп турушу үчүн */
+            text-align: left; text-shadow: 2px 2px 5px #000;
         }
 
         .mini-heart { color: #ff4d4d; display: inline-block; font-size: 4.5rem; vertical-align: middle; }
@@ -70,12 +64,12 @@
 <div class="bg"></div>
 
 <section class="visible">
-    <div class="card special-card">
+    <div class="card">
         <div style="letter-spacing: 10px; font-size: 1.5rem; font-weight: 900; text-shadow: 3px 3px 6px #000;">MANAS ÜNİVERSİTESİ</div>
-        <h1 class="glow-text">Farmakolojinin alt dalları</h1>
-        <div style="font-size: 3rem; color: #ffffff; font-weight: 900; margin-bottom: 25px; text-shadow: 4px 4px 10px #000;">KTMÜ</div>
+        <h1 class="glow-text">Veteriner Farmakolojisi</h1>
+        <div style="font-size: 3rem; color: #ffffff; font-weight: 900; margin-bottom: 25px; text-shadow: 4px 4px 10px #000;">Farmakolojinin Alt Dalları</div>
         <div class="glow-text" style="font-size: 5rem;">Guldana & Pvrje</div>
-        <div style="margin-top: 30px; font-size: 2.5rem; border: 4px solid #b1ffdf; padding: 10px 60px; border-radius: 60px; font-weight: 900; text-shadow: 3px 3px 6px #000;">2026</div>
+        <div style="margin-top: 30px; font-size: 2.5rem; border: 4px solid #b1ffdf; display: inline-block; padding: 5px 50px; border-radius: 50px; font-weight: 900; text-shadow: 3px 3px 6px #000;">2026</div>
     </div>
 </section>
 
@@ -111,7 +105,7 @@
 </section>
 
 <section>
-    <div class="card special-card">
+    <div class="card">
         <h1 class="glow-text">Чоң Рахмат! <span class="mini-heart">❤</span></h1>
         <div style="font-size: 2.3rem; font-weight: 900; color: #ffffff; margin: 25px 0; text-shadow: 4px 4px 10px #000;">
             Көңүл бурганыңыздар үчүн терең ыраазычылык билдиребиз!
