@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veterinary Pharmacology | Full Deep Edition</title>
+    <title>Veterinary Pharmacology | Deep Glow Edition</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <style>
         body { margin: 0; font-family: 'Montserrat', sans-serif; color: white; overflow-x: hidden; scroll-behavior: smooth; background: #000; }
@@ -11,135 +11,111 @@
         
         section { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 60px 20px; box-sizing: border-box; perspective: 1200px; }
         
-        /* КАРТА - МӨЛДҮР ТУНУК, КӨЛӨКӨСҮЗ */
+        /* КАРТА - МӨЛДҮР ТУНУК */
         .card {
             background: rgba(255, 255, 255, 0.05); 
             padding: 50px 80px; border-radius: 60px; 
-            max-width: 1200px; width: 90%;
+            max-width: 1250px; width: 95%;
             border: 2px solid rgba(177, 255, 223, 0.4); 
             text-align: center;
             box-shadow: none;
             opacity: 0;
-            transform: scale(0.8) translateY(40px);
+            transform: scale(0.8) translateY(50px);
             transition: all 1.8s cubic-bezier(0.19, 1, 0.22, 1);
-            animation: gentleBreathe 5s ease-in-out infinite;
         }
 
-        /* НАЗИК КҮТҮҮ МӨӨНӨТҮ МЕНЕН ЧЫГУУ */
         section.visible .card {
             opacity: 1;
             transform: scale(1) translateY(0);
-            transition-delay: 0.7s;
+            transition-delay: 0.8s;
         }
 
-        /* ТЕЗ-ТЕЗ НАЗИК ДЕМ АЛУУ АНИМАЦИЯСЫ */
-        @keyframes gentleBreathe {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.03); }
+        /* НУР ЖАНА ЖҮРӨК СОГУУ АНИМАЦИЯСЫ */
+        .glow-heartbeat {
+            animation: glowHeart 2s ease-in-out infinite;
+            display: inline-block;
         }
 
-        /* ТАМГАЛАРГА КАЛЫҢ КӨЛӨКӨ ЖАНА НУР */
+        @keyframes glowHeart {
+            0%, 100% { transform: scale(1); text-shadow: 0 0 10px rgba(177, 255, 223, 0.5), 8px 8px 15px #000; }
+            50% { transform: scale(1.1); text-shadow: 0 0 40px rgba(177, 255, 223, 1), 10px 10px 25px #000; color: #ffffff; }
+        }
+
+        /* ТАМГАЛАРГА КАЛЫҢ КӨЛӨКӨ */
         .glow-text { 
             color: #b1ffdf; font-family: 'Playfair Display', serif; font-size: 5.5rem; font-weight: 900;
-            text-shadow: 8px 8px 15px #000, -2px -2px 5px #000, 0 0 30px rgba(177, 255, 223, 0.6);
+            text-shadow: 10px 10px 20px #000;
         }
 
-        h2 { font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 25px; color: #b1ffdf; font-weight: 900; text-shadow: 6px 6px 12px #000; }
-        
-        .text-slide { 
-            font-size: 2.3rem; line-height: 1.4; font-weight: 900; 
-            text-align: justify; margin-bottom: 30px; 
-            text-shadow: 5px 5px 12px #000; color: #ffffff; 
-        }
+        h2 { font-family: 'Playfair Display', serif; font-size: 3.8rem; margin-bottom: 25px; color: #b1ffdf; font-weight: 900; text-shadow: 6px 6px 15px #000; }
+        .text-slide { font-size: 2.2rem; line-height: 1.5; font-weight: 900; text-align: justify; margin-bottom: 30px; text-shadow: 6px 6px 12px #000; color: #ffffff; }
+        .tr { font-size: 1.8rem; color: #d1fae5; font-weight: 900; font-style: italic; border-left: 12px solid #b1ffdf; padding: 20px 40px; background: rgba(0, 0, 0, 0.6); border-radius: 0 25px 25px 0; text-align: left; text-shadow: 5px 5px 10px #000; }
 
-        .tr { 
-            font-size: 1.9rem; color: #d1fae5; font-weight: 900; font-style: italic; 
-            border-left: 12px solid #b1ffdf; padding: 20px 40px; 
-            background: rgba(0, 0, 0, 0.6); border-radius: 0 25px 25px 0; 
-            text-align: left; text-shadow: 4px 4px 8px #000; 
-        }
-
-        .final-card { background: rgba(255, 255, 255, 0.1) !important; border: 4px solid #b1ffdf !important; }
+        .red-heart { color: #ff4d4d; animation: glowHeart 1s infinite; font-size: 3.5rem; vertical-align: middle; }
     </style>
 </head>
 <body>
 <div class="bg"></div>
 
 <section>
-    <div class="card" style="opacity: 1; transform: scale(1);">
-        <div style="letter-spacing: 12px; font-size: 1.5rem; margin-bottom: 20px; font-weight: 900; text-shadow: 4px 4px 8px #000;">KTMU VETERİNER FAKÜLTESİ</div>
+    <div class="card glow-heartbeat" style="opacity: 1; transform: scale(1); border: 4px solid #b1ffdf;">
+        <div style="letter-spacing: 12px; font-size: 1.5rem; margin-bottom: 20px; font-weight: 900; text-shadow: 5px 5px 10px #000;">KTMU VETERİNER FAKÜLTESİ</div>
         <h1 class="glow-text">Farmakolojinin Alt Dalları</h1>
-        <div style="font-size: 4.8rem; margin-top: 35px; color: #ffffff; font-weight: 900; text-shadow: 6px 6px 15px #000;">Guldana & Pvrje</div>
+        <div style="font-size: 4.5rem; margin-top: 30px; color: #ffffff; font-weight: 900;">Guldana & Pvrje</div>
         <div style="font-size: 2.5rem; border: 3px solid #b1ffdf; padding: 10px 60px; border-radius: 100px; display: inline-block; margin-top: 30px; font-weight: 900;">2026</div>
     </div>
 </section>
 
-<section><div class="card"><h2>1. Фармакологиянын аныктамасы</h2><div class="text-slide">Фармакология — дарылардын тирүү организм менен молекулярдык деңгээлде өз ара аракеттенүүсүн изилдөөчү фундаменталдык илим. Ал химиялык заттардын биохимиялык жана физиологиялык таасирлерин терең анализдейт.</div><div class="tr">Farmakoloji, ilaçların canlı organizmadaki biyolojik sistemlerle etkileşimini inceleyen bilim dalıdır.</div></div></section>
+<section><div class="card"><h2>1. Фармакологиянын илимий пайдубалы</h2><div class="text-slide">Ветеринардык фармакология — бул дарылык заттардын жаныбарлардын организмине тийгизген таасирин молекулярдык, клеткалык жана системалык деңгээлде изилдөөчү фундаменталдык илим. Ал диагностика, терапия жана профилактиканын негизин түзөт.</div><div class="tr">Farmakoloji, ilaçların canlı organizma üzerindeki etkilerini tüm yönleriyle inceler.</div></div></section>
 
-<section><div class="card"><h2>2. Түрлөр аралык фармакология</h2><div class="text-slide">Ветеринарияда ар бир жаныбардын түрү (ат, уй, ит, мышык) дарыларга өзгөчө сезгичтикке ээ. Бул анатомиялык жана физиологиялык айырмачылыктар ветеринардык дарылоонун негизги шарты.</div><div class="tr">Veteriner farmakolojisinde türler arası farmakodinamik farklar esastır.</div></div></section>
+<section><div class="card"><h2>2. Түрлөр аралык өзгөчөлүктөр</h2><div class="text-slide">Ветеринариянын медицинадан башкы айырмасы — бул түрлөрдүн ар түрдүүлүгү. Ар бир жаныбардын (ат, уй, кой, ит, мышык) анатомиялык түзүлүшү жана ферменттик системасы дарыларды кабыл алууда уникалдуу жооп кайтарат.</div><div class="tr">Türler arası farmakokinetik ve farmakodinamik farklılıklar veteriner tıbbın temelidir.</div></div></section>
 
-<section><div class="card"><h2>3. Фармакодинамиканын негизи</h2><div class="text-slide">Бул бөлүм дарынын организмдеги биохимиялык эффекттерин жана анын таасир этүү механизмин изилдейт. Ал "Дары организмге эмне кылат?" деген суроого жооп берет.</div><div class="tr">Farmakodinamik, ilacın organizmadaki etkilerini жана mekanizmalarını inceler.</div></div></section>
-
-<section><div class="card"><h2>4. Фармакокинетика (ADME)</h2><div class="text-slide">Дарынын организмдеги жолу төрт этаптан турат: Absorption (сиңүү), Distribution (таралуу), Metabolism (өзгөрүү) жана Excretion (чыгаруу). Бул процесстер дарынын эффективдүүлүгүн аныктайт.</div><div class="tr">Farmakokinetik; ilacın emilim, dağılım, metabolizma ve atılım süreçlerini kapsar.</div></div></section>
+<section><div class="card"><h2>3. Фармакокинетика: ADME системасы</h2><div class="text-slide">Бул илим дарынын организмдеги "тагдырын" изилдейт. Ал төрт этапты камтыйт: Absorption (сиңүү), Distribution (таралуу), Metabolism (биохимиялык өзгөрүү) жана Excretion (организмден чыгаруу). Бул процесстер дарынын кандагы концентрациясын аныктайт.</div><div class="tr">Farmakokinetik, ilacın vücuttaki emilim, dağılım, metabolizma ve atılım süreçlerini kapsar.</div></div></section>
 [attachment_0](attachment)
 
-<section><div class="card"><h2>5. Рецепторлордун ролу</h2><div class="text-slide">Дарылар клеткадагы атайын белоктор — рецепторлор менен байланышат. Бул байланыш клетка ичиндеги сигналдарды активдештирип, керектүү терапиялык жоопту же эффектти жаратат.</div><div class="tr">İlaçlar reseptörlerle etkileşime girerek hücresel yanıtları başlatır.</div></div></section>
+<section><div class="card"><h2>4. Фармакодинамика: Таасир механизми</h2><div class="text-slide">Бул бөлүм "Дары организмге эмне кылат?" деген суроого жооп берет. Ал дарылардын рецепторлор менен байланышуусун, биохимиялык реакцияларды жана анын натыйжасында пайда болгон физиологиялык өзгөрүүлөрдү анализдейт.</div><div class="tr">Farmakodinamik, ilacın organizmadaki biyokimyasal ve fizyolojik etkilerini inceler.</div></div></section>
 
-<section><div class="card"><h2>6. Агонисттер жана Антагонисттер</h2><div class="text-slide">Агонист рецепторду активдештирип биологиялык процессти күчөтөт. Антагонист болсо рецепторду блоктоп, башка заттардын (гормондордун, дарылардын) таасирине жол бербейт.</div><div class="tr">Agonistler reseptörü aktive ederken, antagonistler reseptörü bloke eder.</div></div></section>
+<section><div class="card"><h2>5. Рецепторлор жана Лиганддар</h2><div class="text-slide">Дарылар клетканын бетиндеги же ичиндеги атайын максаттуу белоктор — рецепторлор менен байланышат. Бул байланыш ачкыч менен кулпу сыяктуу иштеп, клетканын ишинин өзгөрүшүнө же функциясынын активдешүүсүнө алып келет.</div><div class="tr">İlaç-reseptör etkileşimi, hücresel sinyal iletiminin ve tedavi edici yanıtın başlangıcıdır.</div></div></section>
+[attachment_1](attachment)
 
-<section><div class="card"><h2>7. Сиңүү процесси (Absorption)</h2><div class="text-slide">Дарынын киргизилген жерден системалык кан айланууга өтүүсү. Дарыны вена ичине (IV) сайганда сиңүү этабы болбойт, анткени дары дароо 100% канга жетет.</div><div class="tr">Emilim, ilacın uygulama yerinden sistemik dolaşıma geçişidir.</div></div></section>
+<section><div class="card"><h2>6. Биотрансформация (Метаболизм)</h2><div class="text-slide">Дарылардын боордогу ферменттер аркылуу химиялык өзгөрүүсү. Негизги максат — майда эрүүчү (липофилдик) заттарды сууда эрүүчү (гидрофилдик) абалга келтирип, организмден заара же өт аркылуу чыгарууга даярдоо.</div><div class="tr">Metabolizma, ilacın vücuttan atılması için kimyasal olarak modifiye edilmesidir.</div></div></section>
 
-<section><div class="card"><h2>8. Дарынын таралуусу (Distribution)</h2><div class="text-slide">Канга кирген дарынын ткандарга жана органдарга жайылуусу. Дарынын "Кан-мээ тосмосунан" (BBB) өтүү жөндөмдүүлүгү борбордук нерв системасын дарылоодо маанилүү.</div><div class="tr">Dağılım, ilacın kan yoluyla hedef dokulara жана hücrelere ulaşmasıdır.</div></div></section>
+<section><div class="card"><h2>7. Клиникалык Фармакология</h2><div class="text-slide">Дарыларды конкреттүү ооруларды дарылоодо практикалык колдонуу. Бул бөлүм дозаларды тандоону, дарылардын өз ара аракеттенүүсүн жана мүмкүн болгон терс таасирлерди алдын алууну камтыйт.</div><div class="tr">Klinik farmakoloji, ilaçların hastalıkların tedavisinde rasyonel kullanımını sağlar.</div></div></section>
 
-<section><div class="card"><h2>9. Биотрансформация (Metabolism)</h2><div class="text-slide">Дарынын боордогу ферменттер аркылуу химиялык өзгөрүүсү. Негизги максат — дарыны организмден чыгарууга ыңгайлуу сууда эрүүчү (гидрофилдик) абалга келтирүү.</div><div class="tr">Metabolizma, ilacın vücutta kimyasal değişimlere uğrayarak atılıma hazırlanmasıdır.</div></div></section>
+<section><div class="card"><h2>8. Ветеринардык Токсикология</h2><div class="text-slide">Бул илим жаныбарлардын ууланууларын изилдейт. Уулуу өсүмдүктөр, пестициддер жана оор металлдардын таасирин анализдеп, аларга каршы атайын антидоттук терапияны иштеп чыгат.</div><div class="tr">Toksikoloji, zehirli maddelerin canlılar üzerindeki zararlı etkilerini ve antidotları inceler.</div></div></section>
 
-<section><div class="card"><h2>10. Организмден чыгаруу (Excretion)</h2><div class="text-slide">Дарылардын денеден бөйрөк (заара), ичеги (заң) же сүт аркылуу чыгуусу. Дарынын сүт менен чыгышы ветеринарияда коомдук коопсуздук үчүн өтө маанилүү.</div><div class="tr">Atılım, ilacın ve metabolitlerinin vücuttan uzaklaştırılması sürecidir.</div></div></section>
+<section><div class="card"><h2>9. Продукциядагы калдыктар жана Коопсуздук</h2><div class="text-slide">Ветеринарияда дарыларды колдонуу адамдардын ден соолугуна түз таасир этет. Эт, сүт жана жумурткадагы дары калдыктары адамдарда аллергияны же антибиотиктерге туруктуулукту пайда кылышы мүмкүн.</div><div class="tr">Hayvansal gıdalardaki ilaç kalıntıları halk sağlığı açısından kritik bir risk faktörüdür.</div></div></section>
 
-<section><div class="card"><h2>11. Терапиялык Индекс (TI)</h2><div class="text-slide">Дарынын коопсуздук диапазону. Терапиялык доза менен уулуу дозанын ортосундагы чек канчалык чоң болсо, дары ошончолук коопсуз жана пайдаланууга ыңгайлуу.</div><div class="tr">Terapötik İndeks, ilacın güvenlilik sınırını belirleyen bir ölçüttür.</div></div></section>
+<section><div class="card"><h2>10. Күтүү мөөнөтү (Withdrawal Period)</h2><div class="text-slide">Дарыны акыркы жолу бергенден баштап, продукцияны тамак-ашка колдонууга чейинки убакыт аралыгы. Бул мөөнөттү сактоо — ветеринардык дарыгердин мыйзамдык жана этикалык милдети.</div><div class="tr">Arınma süresi, ilacın kalıntı limitlerinin altına düşmesi için gereken yasal süredir.</div></div></section>
 
-<section><div class="card"><h2>12. Биожеткиликтүүлүк</h2><div class="text-slide">Киргизилген дарынын канча пайызы өзгөрүүсүз түрдө системалык кан айланууга жетип, таасир эте баштаганын көрсөткөн сандык параметр.</div><div class="tr">Biyoyararlanım, sistemik dolaşıma ulaşan etkin ilaç miktarının oranıdır.</div></div></section>
-
-<section><div class="card"><h2>13. Клиникалык мисал: Мышыктар</h2><div class="text-slide">Мышыктарда боор ферменттеринин (глюкуронилтрансфераза) жетишсиздигинен улам Парацетамол өтө токсикалуу. Кичинекей доза да алар үчүн өлүмгө алып келиши мүмкүн.</div><div class="tr">Kedilerde enzim eksikliği nedeniyle parasetamol kullanımı ölümcüldür.</div></div></section>
-
-<section><div class="card"><h2>14. Ruminantтардын фармакологиясы</h2><div class="text-slide">Кепшөөчү жаныбарлардын ашказан микрофлорасы кээ бир дарыларды сиңирилгиче эле бузуп салышы мүмкүн. Бул дарылоо схемасын тандоодо эске алынат.</div><div class="tr">Ruminantlarda mide florası ilaç metabolizmasını doğrudan etkiler.</div></div></section>
-
-<section><div class="card"><h2>15. Продукциядагы калдыктар</h2><div class="text-slide">Дары калдыктары эт жана сүт аркылуу адамдарга өтүп, аллергиялык реакцияларды же бактериялардын антибиотиктерге туруктуулугун пайда кылат.</div><div class="tr">Hayvansal gıdalardaki ilaç kalıntıları halk sağlığı için ciddi bir tehdittir.</div></div></section>
-
-<section><div class="card"><h2>16. Күтүү мөөнөтү (Withdrawal)</h2><div class="text-slide">Дарыны токтоткондон кийин мал чарба продукциясын тамак-ашка колдонууга чейинки убакыт. Бул мөөнөттү так сактоо — ветеринардын ыйык милдети.</div><div class="tr">İlacın vücuttan atılması için gereken yasal arınma süresidir.</div></div></section>
-
-<section><div class="card"><h2>17. Ветеринардык Токсикология</h2><div class="text-slide">Жаныбарлардын ууланууларын, уулуу өсүмдүктөрдүн таасирин жана аларга каршы антидоттук терапияны изилдөөчү маанилүү тармак.</div><div class="tr">Toksikoloji, zehirli maddelerin canlılar üzerindeki zararlı etkilerini inceler.</div></div></section>
-
-<section><div class="card"><h2>18. Антибиотикке туруктуулук</h2><div class="text-slide">Антибиотиктерди негизсиз жана туура эмес колдонуу бактериялардын аларга көнүп калуусуна алып келет. Бул ветеринарияда жана медицинада глобалдык көйгөй.</div><div class="tr">Antimikrobiyal direnç, veteriner tıbbında stratejik bir sorundur.</div></div></section>
-
-<section><div class="card"><h2>19. Заманбап Фармакотерапия</h2><div class="text-slide">Инновациялык дарылар, гендик терапия жана иммуномодуляторлор жаныбарларды дарылоодогу жаңы мүмкүнчүлүктөрдү жана келечекти аныктайт.</div><div class="tr">Modern veteriner hekimlikte yenilikçi tedaviler büyük önem taşır.</div></div></section>
+<section><div class="card"><h2>11. Жыйынтык: Бирдиктүү Ден Соолук</h2><div class="text-slide">Ветеринардык фармакология — бул жаныбарлардын, адамдардын жана айлана-чөйрөнүн ден соолугунун кесилиши. Дени сак жаныбар гана коопсуз тамак-ашты жана таза коомду камсыздай алат.</div><div class="tr">Veteriner farmakolojisi, "Tek Sağlık" yaklaşımının vazgeçilmez bir parçasıdır.</div></div></section>
 
 <section>
-    <div class="card final-card">
-        <h1 class="glow-text">Чоң Рахмат!</h1>
-        <div style="font-size: 2.2rem; font-weight: 900; color: #ffffff; margin: 30px 0; line-height: 1.6; text-shadow: 5px 5px 12px #000;">
+    <div class="card glow-heartbeat" style="border: 5px solid #b1ffdf; background: rgba(0,0,0,0.4);">
+        <h1 class="glow-text">Чоң Рахмат! <span class="red-heart">❤</span></h1>
+        
+        <div style="font-size: 2.3rem; font-weight: 900; color: #ffffff; margin: 30px 0; line-height: 1.7; text-shadow: 8px 8px 15px #000;">
             Көңүл бурганыңыздарга чоң рахмат! <br><br>
-            Алтын убактыңызды бизге арнаганыңыз үчүн, <br>
-            өзгөчө <span style="color: #b1ffdf; font-size: 2.8rem;">Айдай эжеге</span>, ыраазычылык билдиребиз.
+            Өзүнүн терең билимин биз менен бөлүшүп, <br>
+            алтын убактысын арнаган кадырлуу <br>
+            <span style="color: #b1ffdf; font-size: 3.2rem;">Айдай эжеге</span> өзгөчө ыраазычылык билдиребиз.
         </div>
-        <div style="font-style: italic; font-size: 1.8rem; text-shadow: 4px 4px 8px #000; color: #d1fae5; border-top: 2px solid rgba(177,255,223,0.3); padding-top: 20px;">
-            Değerli vaktinizi bize ayırdığınız için teşekkür ederiz Aydai Hocamız.
+
+        <div style="font-style: italic; font-size: 1.9rem; text-shadow: 4px 4px 10px #000; color: #d1fae5; border-top: 2px solid #b1ffdf; padding-top: 25px;">
+            Değerli vaktinizi bize ayırdığınız ve emeğiniz için teşekkür ederiz Aydai Hocamız.
         </div>
-        <div style="font-size: 4.5rem; color: #b1ffdf; font-weight: 900; margin-top: 35px; text-shadow: 6px 6px 15px #000;">Guldana & Pvrje</div>
+        
+        <div style="font-size: 5rem; color: #b1ffdf; font-weight: 900; margin-top: 40px;">Guldana & Pvrje</div>
     </div>
 </section>
 
 <script>
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
+            if (entry.isIntersecting) entry.target.classList.add('visible');
         });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
-    });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
 </script>
 
 </body>
