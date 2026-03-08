@@ -6,36 +6,76 @@
     <title>Veterinary Pharmacology | Complete 20 Slides 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; font-family: 'Montserrat', sans-serif; color: white; overflow-x: hidden; scroll-behavior: smooth; background: #000; }
-        .bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url("photo.JPG") no-repeat center center; background-size: cover; z-index: -1; filter: brightness(0.6); }
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: white; overflow-x: hidden; scroll-behavior: smooth; background: #fff; }
+        
+        /* ФОН ОРИГИНАЛ ЖАРЫК */
+        .bg { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: url("photo.JPG") no-repeat center center; 
+            background-size: cover; z-index: -1; 
+        }
+
         section { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; box-sizing: border-box; }
         
+        /* КАРТАЛАР ТУНУК ЖАНА МӨЛДҮР */
         .card {
-            background: rgba(255, 255, 255, 0.1); 
-            backdrop-filter: blur(6px) saturate(150%);
-            -webkit-backdrop-filter: blur(6px) saturate(150%);
-            padding: 50px 70px; border-radius: 50px; 
-            max-width: 1400px; width: fit-content;
-            border: 1.5px solid rgba(255, 255, 255, 0.2); text-align: center;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            animation: breathe 5s ease-in-out infinite;
+            background: rgba(0, 0, 0, 0.45); /* Тунук каралжын фон */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 50px 70px; border-radius: 60px; 
+            max-width: 1400px; width: 95%;
+            border: 2px solid rgba(177, 255, 223, 0.5); 
+            text-align: center;
+            /* Ортоңку слайддардын тынымсыз кыймылы */
+            animation: midBreathe 2s ease-in-out infinite;
         }
 
+        /* ОРТОҢКУ СЛАЙДДАРДЫН КЫЙМЫЛЫ */
+        @keyframes midBreathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+
+        /* БАШКЫ ЖАНА АКЫРКЫ БЕТТИН ЖҮРӨК СОГУШУ */
         .special-card {
-            background: radial-gradient(circle, rgba(177, 255, 223, 0.25) 0%, rgba(0, 0, 0, 0.5) 100%);
-            border: 3px solid #b1ffdf !important;
-            box-shadow: 0 0 80px rgba(177, 255, 223, 0.4), inset 0 0 40px rgba(177, 255, 223, 0.2) !important;
+            background: rgba(0, 0, 0, 0.6) !important;
+            border: 5px solid #b1ffdf !important;
+            animation: heartBeat 1.2s ease-in-out infinite !important;
         }
 
-        @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.015); } }
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(177, 255, 223, 0.3); }
+            50% { transform: scale(1.08); box-shadow: 0 0 60px rgba(177, 255, 223, 0.7); }
+        }
 
-        .glow-text { color: #b1ffdf; font-family: 'Playfair Display', serif; font-size: 6rem; text-shadow: 0 0 40px rgba(177, 255, 223, 0.8), 4px 4px 20px #000; margin: 0; }
-        .fast-pulse { display: inline-block; color: #b1ffdf; font-weight: 900; text-shadow: 0 0 30px #b1ffdf, 4px 4px 15px #000; animation: fastHeartbeat 1.3s ease-in-out infinite; }
-        @keyframes fastHeartbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+        /* ТЕКСТТЕРДИН НУРУ ЖАНА СОГУШУ */
+        .glow-text { 
+            color: #b1ffdf; font-family: 'Playfair Display', serif; font-size: 6rem;
+            text-shadow: 0 0 30px rgba(177, 255, 223, 0.9), 4px 4px 15px rgba(0,0,0,0.8);
+            animation: textPulse 1.2s ease-in-out infinite;
+        }
 
-        h2 { font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 30px; color: #b1ffdf; text-shadow: 4px 4px 20px #000; font-weight: 900; }
-        .text-slide { font-size: 2.3rem; line-height: 1.6; font-weight: 800; text-align: justify; text-shadow: 3px 3px 12px #000; margin-bottom: 35px; color: #fdfdfd; }
-        .tr { font-size: 1.9rem; color: #d1fae5; font-weight: 800; font-style: italic; border-left: 12px solid #b1ffdf; padding: 20px 40px; background: rgba(0, 0, 0, 0.6); border-radius: 0 25px 25px 0; text-align: left; }
+        .pulse-item {
+            display: inline-block;
+            animation: textPulse 1.2s ease-in-out infinite;
+        }
+
+        @keyframes textPulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.1); opacity: 1; filter: brightness(1.2); }
+        }
+
+        h2 { font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 30px; color: #b1ffdf; text-shadow: 4px 4px 15px #000; font-weight: 900; }
+        .text-slide { font-size: 2.3rem; line-height: 1.6; font-weight: 800; text-align: justify; text-shadow: 3px 3px 12px #000; margin-bottom: 35px; color: #fff; }
+        
+        .tr { 
+            font-size: 1.9rem; color: #d1fae5; font-weight: 800; font-style: italic; 
+            border-left: 12px solid #b1ffdf; padding: 20px 40px; 
+            background: rgba(0, 0, 0, 0.6); border-radius: 0 25px 25px 0; 
+            text-align: left; 
+        }
+
+        .fast-pulse { animation: textPulse 1.2s ease-in-out infinite; display: block; }
     </style>
 </head>
 <body>
@@ -43,13 +83,13 @@
 
 <section>
     <div class="card special-card">
-        <div style="letter-spacing: 12px; font-size: 1.4rem; margin-bottom: 25px; font-weight: 900;">MANAS ÜNİVERSİTESİ</div>
+        <div class="pulse-item" style="letter-spacing: 12px; font-size: 1.6rem; margin-bottom: 25px; font-weight: 900;">MANAS ÜNİVERSİTESİ</div>
         <h1 class="glow-text">Veteriner Farmakolojisi</h1>
-        <div class="fast-pulse" style="font-size: 3.2rem; color: #ffffff; margin-top: 20px; letter-spacing: 6px;">Farmakolojinin Alt Dalları</div>
+        <div class="pulse-item" style="font-size: 3.2rem; color: #ffffff; margin-top: 20px; font-weight: 900;">Farmakolojinin Alt Dalları</div>
         <div style="margin-top: 60px;">
-            <div class="fast-pulse" style="font-size: 5rem;">Guldana & Pvrje</div>
+            <div class="glow-text" style="font-size: 5rem;">Guldana & Pvrje</div>
             <br><br>
-            <div class="fast-pulse" style="font-size: 3rem; border: 4px solid #b1ffdf; padding: 15px 70px; border-radius: 80px;">2026</div>
+            <div class="pulse-item" style="font-size: 3rem; border: 5px solid #b1ffdf; padding: 15px 70px; border-radius: 80px; font-weight: 900;">2026</div>
         </div>
     </div>
 </section>
@@ -64,7 +104,7 @@
 
 <section><div class="card"><h2>6. Рецепторлордун механизми</h2><div class="text-slide">Дарылар клеткадагы атайын белоктор — рецепторлор менен байланышат. Бул байланыш "Ачкыч жана Кулпу" принцибинде иштеп, клетка ичиндеги биологиялык сигналдарды активдештирет же блоктоп, терапиялык натыйжаны жаратат.</div><div class="tr">İlaçlar reseptörlerle etkileşime girerek hücresel fonksiyonları başlatır veya engeller.</div></div></section>
 
-<section><div class="card"><h2>7. Агонисттер жана Антагонисттер</h2><div class="text-slide">Агонист — бул рецепторду активдештирип, тиешелүү биологиялык жоопту жараткан зат. Антагонист болсо рецепторго байланышып, бирок аны активдештирбейт, тескерисинче башка заттардын таасирине жол бербей блоктоп коёт.</div><div class="tr">Agonistler reseptörü aktive ederek yanıt oluşturur, antagonistler ise reseptörü bloke ederek yanıtı engeller.</div></div></section>
+<section><div class="card"><h2>7. Агонисттер жана Антагонисттер</h2><div class="text-slide">Агонист — бул рецепторду активдештирип, тиешелүү биологиялык жоопту жараткан зат. Антагонист болсо рецепторге байланышып, бирок аны активдештирбейт, тескерисинче башка заттардын таасирине жол бербей блоктоп коёт.</div><div class="tr">Agonistler reseptörü aktive ederek yanıt oluşturur, antagonistler ise reseptörü bloke ederek yanıtı engeller.</div></div></section>
 
 <section><div class="card"><h2>8. Фармакокинетика: ADME Динамикасы</h2><div class="text-slide">Дарынын организмдеги тагдыры төрт негизги динамикалык этаптан турат: Absorption (сиңүү), Distribution (таралуу), Metabolism (биотрансформация) жана Excretion (чыгаруу). Бул процесстер дарынын кан плазмасындагы концентрациясын аныктайт.</div><div class="tr">Farmakokinetik; ilacın emilim, dağılım, metabolizma ve atılım süreçlerinin matematiksel analizidir.</div></div></section>
 
@@ -93,21 +133,21 @@
 <section>
     <div class="card special-card">
         <h1 class="glow-text" style="font-size: 6.5rem;">Чоң Рахмат!</h1>
-        <div style="font-size: 2.6rem; font-weight: 900; color: #ffffff; margin: 40px 0; line-height: 1.4;">
-            Көңүл бурганыңыздар жана биздин илимий изилдөөбүзгө убакыт бөлгөнүңүздөр үчүн терең ыраазычылык билдиребиз!
+        <div class="pulse-item" style="font-size: 2.6rem; font-weight: 900; color: #ffffff; margin: 40px 0; line-height: 1.4; display: block;">
+            Көңүл бурганыңыздар жана алтын убакытыңызды бизге арнаганыңыз үчүн терең ыраазычылык билдиребиз!
         </div>
 
-        <hr style="border: 1px solid rgba(177, 255, 223, 0.4); width: 60%; margin: 40px auto;">
+        <hr style="border: 2px solid #b1ffdf; width: 60%; margin: 40px auto; opacity: 0.5;">
 
-        <h1 class="glow-text" style="font-size: 5rem; opacity: 0.9;">Teşekkürler!</h1>
-        <div style="font-size: 2.3rem; font-weight: 800; color: #d1fae5; font-style: italic; margin-top: 20px;">
-            İlginiz, sabrınız ve değerli vaktiniz için içtenlikle teşekkür ederiz. Mesleki hayatınızda başarılar dileriz!
+        <h1 class="glow-text" style="font-size: 5rem;">Teşekkürler!</h1>
+        <div class="pulse-item" style="font-size: 2.3rem; font-weight: 800; color: #d1fae5; font-style: italic; margin-top: 20px; display: block;">
+            İlginiz, sabrınız ve değerli vaktiniz için içtenlikle teşekkür ederiz.
         </div>
         
         <div style="margin-top: 80px;">
-            <div class="fast-pulse" style="font-size: 5.5rem;">Guldana & Pvrje</div>
-            <br><br>
-            <div class="fast-pulse" style="font-size: 2.2rem; letter-spacing: 12px; color: #ffffff;">MANAS UNIVERSITY | 2026</div>
+            <div class="glow-text" style="font-size: 5.5rem;">Guldana & Pvrje</div>
+            <br>
+            <div class="pulse-item" style="font-size: 2.2rem; letter-spacing: 12px; color: #ffffff; font-weight: 900;">MANAS UNIVERSITY | 2026</div>
         </div>
     </div>
 </section>
